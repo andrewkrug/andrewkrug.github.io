@@ -16,12 +16,14 @@ Step 2. Scroll down until you find the line with the "kernel parameters".
     linux16 /vmlinuz-3.10.0-123.4.4.el7.x86_64 root=/dev/mapper/centos-root ro rd.lvm.lv=centos/swap vconsole.font=latarcyrheb-sun16 rd.lvm.lv=centos/root crashkernel=auto vconsole.keymap=us rhgb quiet LANG=en_US.UTF-8
 
     initrd16 /initramfs-3.10.0-123.4.4.el7.x86_64.img
-> It should look something like this.
+
+>It should look something like this.
 
 Step 3.  After the language parameter add ` init=/bin/sh `
 
     linux16 /vmlinuz-3.10.0-123.4.4.el7.x86_64 root=/dev/mapper/centos-root ro rd.lvm.lv=centos/swap vconsole.font=latarcyrheb-sun16 rd.lvm.lv=centos/root crashkernel=auto vconsole.keymap=us rhgb quiet LANG=en_US.UTF-8 init=/bin/sh
-> It should look something like this
+
+>It should look something like this
 
 Step 4.  Press the CTRL+X key to proceed with booting.
 

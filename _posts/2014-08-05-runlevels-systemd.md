@@ -22,8 +22,8 @@ This table from the [RedHat systemd documentation](https://access.redhat.com/doc
 | 2        |    runlevel2.target, multi-user.target | Set up a non-graphical multi-user system.  |
 | 3        | runlevel3.target, multi-user.target |  Set up a non-graphical multi-user system. |
 | 4        |  runlevel4.target, multi-user.target | Set up a non-graphical multi-user system. |
-|5         | runlevel5.target, graphical.target |  Set up a graphical multi-user system. |
-|6         | 	runlevel6.target, reboot.target | Shut down and reboot the system. |
+| 5        | runlevel5.target, graphical.target |  Set up a graphical multi-user system. |
+| 6        | 	runlevel6.target, reboot.target | Shut down and reboot the system. |
 
 > As you can see many of the same runlevel concepts are intact and carried forward.
 
@@ -49,10 +49,6 @@ This table from the [RedHat systemd documentation](https://access.redhat.com/doc
 
 #### How do I switch runlevels on the fly?
     systemctl isolate name.target
-
-
-
-
 
 
 [jekyll-gh]: https://github.com/jekyll/jekyll

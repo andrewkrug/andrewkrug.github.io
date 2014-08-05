@@ -13,17 +13,15 @@ In systemd runlevels have been rebranded as targets.  A target is a group of sys
 
 This table from the [RedHat systemd documentation](https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/System_Administrators_Guide/sect-Managing_Services_with_systemd-Targets.html) describes the built in targets and their relation to runlevels.
 
-
-
-| Runlevel |    Target Units                      | Description |
-|----------------------------------------------------------------|
-| 0        |  	runlevel0.target, poweroff.target | Shut down and power off the system.|
-| 1        |    runlevel1.target, rescue.target   | Set up a rescue shell. |
-| 2        |    runlevel2.target, multi-user.target | Set up a non-graphical multi-user system.  |
-| 3        | runlevel3.target, multi-user.target |  Set up a non-graphical multi-user system. |
-| 4        |  runlevel4.target, multi-user.target | Set up a non-graphical multi-user system. |
-| 5        | runlevel5.target, graphical.target |  Set up a graphical multi-user system. |
-| 6        | 	runlevel6.target, reboot.target | Shut down and reboot the system. |
+Runlevel |Target Units | Description
+|------------------------------------|
+0        |runlevel0.target, poweroff.target| Shut down and power off the system.
+1        |runlevel1.target, rescue.target| Set up a rescue shell.
+2        |runlevel2.target, multi-user.target| Set up a non-graphical multi-user system.
+3        |runlevel3.target, multi-user.target|  Set up a non-graphical multi-user system.
+4        |runlevel4.target, multi-user.target| Set up a non-graphical multi-user system.
+5        |runlevel5.target, graphical.target|  Set up a graphical multi-user system.
+6        |runlevel6.target, reboot.target| Shut down and reboot the system.
 
 > As you can see many of the same runlevel concepts are intact and carried forward.
 

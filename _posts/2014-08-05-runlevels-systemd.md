@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Switching Run Levels in CentOS 7"
+title:  "Switching Run Levels in CentOS v7"
 date:   2014-08-05 14:23:32
 categories: CentOS Linux
 ---

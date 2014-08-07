@@ -2,7 +2,7 @@
 layout: post
 title:  "Key Based Authentication"
 date:   2014-08-05 14:23:32
-categories: CentOS RedHat Linux Security
+categories: CentOS v7 RedHat Linux Security
 ---
 
 ##CONFIGURING OPENSSH FOR KEY-BASED AUTHENTICATION

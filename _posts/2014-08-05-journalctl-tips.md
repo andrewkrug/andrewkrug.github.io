@@ -16,7 +16,7 @@ Passed alone without any parameters journalctl opens the systemlog for all targe
 
 **The coolest thing is probably that journalctl has tab completion for all of the parameters.**
 
-For example journalctl <tab tab> produces the following output
+###For example journalctl <tab tab> produces the following output:
 
     _AUDIT_LOGINUID=             __MONOTONIC_TIMESTAMP=
     _AUDIT_SESSION=              _PID=

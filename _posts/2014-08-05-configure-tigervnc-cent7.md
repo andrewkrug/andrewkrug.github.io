@@ -33,6 +33,7 @@ categories: CentOS v7 RedHat Linux Security
     cp /lib/systemd/system/vncserver@.service /etc/systemd/system/vncserver@:1.service
 
     runuser -l larry -c /usr/bin/vncserver :1
+
 >This prompted for a password
 
 >You will require a password to access your desktops.

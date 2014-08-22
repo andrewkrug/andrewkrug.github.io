@@ -17,7 +17,7 @@ If you live in the Rogue Valley you may have read the Mail Tribune article, "SOU
 * Computer Organization
 * Programming Languages
 
-[meme]("http://andrewkrug.github.io/static/53692924.jpg")
+![meme]({{ site.url }}/static/53692924.jpg)
 
 While this is a step in the right direction and these courses were sorely lacking from the CS Curriculum before the Mail Tribune article makes it sound like SOU has solved the "problem" which was allegedly tracks that students could, "slide through".  This still doesn't explain why when the "demand for cybersecurity professionals over the past five years grew 3.5 times faster than demand for other IT jobs and about 12 times faster than for all other jobs." (http://www.computerworld.com/s/article/9237394/Demand_for_IT_security_experts_outstrips_supply)
 

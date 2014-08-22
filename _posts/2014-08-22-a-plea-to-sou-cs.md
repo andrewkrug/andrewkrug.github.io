@@ -9,7 +9,7 @@ date:   2014-08-22 10:23:32
 
 My name is Andrew Krug and I am a graduate of a dead program at SOU.  Among lots of other things stated along with my degree it asserts that I am a computer security professional.  Some people call us hackers.  In trying times like today where our own government spies on its citizens, digital identities are compromised, and malware brings fortune 100s to their knees one would ask why a university's computer science program would eliminate its securty component.
 
-If you live in the Rogue Valley you may have read the Mail Tribune article, "SOU reboots its computer science program" avilable here http://bit.ly/VLvawE .  The article essentialy applauds SOU for listening to area business and re-tooling the CS program to include more traditional curriculum to produce "software engineers".  If you were to compare the old program and new programs side-by-side you would notice only minor changes to the programming track that once existed.
+If you live in the Rogue Valley you may have read the Mail Tribune article, "SOU reboots its computer science program" avilable [here](http://bit.ly/VLvawE) .  The article essentialy applauds SOU for listening to area business and re-tooling the CS program to include more traditional curriculum to produce "software engineers".  If you were to compare the old program and new programs side-by-side you would notice only minor changes to the programming track that once existed.
 
 ## Three new classes:
 
@@ -50,6 +50,6 @@ During my time as a student at SOU I lived in this lab and more learning than I 
 
 #How you can help:
 
-Sign the petition:  https://www.change.org/p/dr-ettlich-re-evaluate-computer-science-at-sou
+Sign the petition:  [https://www.change.org/p/dr-ettlich-re-evaluate-computer-science-at-sou](https://www.change.org/p/dr-ettlich-re-evaluate-computer-science-at-sou)
 
 Send your own letter :  PresidentsOffice@sou.edu emphasize the importance of security in the CS program at SOU and the importance of maintaining the "Hacker Space"

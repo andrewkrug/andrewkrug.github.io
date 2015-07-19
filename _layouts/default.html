@@ -20,6 +20,7 @@
 
 
   <header id="header">
+    <img src="{{ site.baseurl }}/static/krugiconography-flatcolored.png" style="max-width:100%;height:auto;"></img>
     <h1><a href="/"><i class="icon-sun"></i> {{ site.name }}</a></h1>
     <p>{{ site.description }}</p>
   </header>
@@ -36,8 +37,10 @@
           <li><a href="/">Home</a></li>
           <li><a href="/blog">Blog</a></li>
           <li><a href="/about">About</a></li>
+          <li><a href="/Resume">Resume</a></li>
           <li><a href="http://twitter.com/andrewkrug">Twitter</a></li>
           <li><a href="/feed.xml">RSS Feed</a></li>
+          <li><a href="/OpenProjects">Open Projects</a></li>
         </ul>
       </nav>
     </div>
@@ -55,7 +58,7 @@
 
 
   <footer id="footer">
-    <p class="copyright">Copyright &copy; {{ site.time | date: '%Y' }} {{ site.name }}. Powered by <a href="http://jekyllrb.com">Jekyll</a>, derived from theme by <a href="http://www.webmaster-source.com">Matt Harzewski by andrewkrug</a></p>
+    <p class="copyright">Copyright &copy; {{ site.time | date: '%Y' }} {{ site.name }}. Powered by <a href="http://jekyllrb.com">Jekyll</a>, derived from theme by <a href="http://www.webmaster-source.com">Matt Harzewski </a> by andrewkrug.</p>
   </footer>
 
 
@@ -63,6 +66,9 @@
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
   <script src="/assets/js/jquery.mobilemenu.min.js"></script>
 
+  <!-- Include bootstrap -->
+  <script src="{{ site.baseurl }}/bower_components/jquery/dist/jquery.min.js"></script>
+  <script src="{{ site.baseurl }}/bower_components/bootstrap-sass/assets/javascripts/bootstrap.min.js"></script>
   <script>
     $(document).ready(function(){
       $('#sidebar nav ul').mobileMenu({'topOptionText': 'Menu', 'prependTo': '#sidebar nav'});

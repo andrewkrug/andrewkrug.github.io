@@ -1,6 +1,7 @@
 ---
 title: "5 Things About Working in Management from an Engineer who was a Manager"
 layout: post
+comments: true
 ---
 
 It is no secret to many that my last job was in management.  Management for a large non-profit organization no less.

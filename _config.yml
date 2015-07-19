@@ -1,11 +1,15 @@
 # Site settings
 title: Andrew Krug's Musings
 email: andrewkrug@gmail.com
-description: "Security, Linux, and other blog musings by Andrew Krug.  Now with extra markdown awesome. :)"
+description: "Security, Linux, and other musings by Andrew Krug."
 baseurl: ""
 url: "http://andrewkrug.github.io"
 twitter_username: andrewkrug
 github_username:  andrewkrug
+
+permalink: /:year/:month/:day/:title/
+paginate: 10
+pygments: true
 
 # Build settings
 markdown: kramdown
@@ -26,3 +30,17 @@ transfer:
   settings: -av
   source: _site/
   destination: ~/Git/username.github.com/
+
+  #Add bootstrap SASS support
+
+  sass:
+  # loading path from site root
+  # default to _sass
+  sass_dir: bower_components/bootstrap-sass/assets/stylesheets
+
+  # style : nested (default), compact, compressed, expanded
+  #         :nested, :compact, :compressed, :expanded also works
+  # see http://sass-lang.com/documentation/file.SASS_REFERENCE.html#output_style
+  # on a typical twitter bootstrap stats are :
+  # nested 138,7kB, compact 129,1kB, expanded 135,9 kB, compressed 122,4 kB
+  style: compressed

@@ -8,8 +8,8 @@ twitter_username: andrewkrug
 github_username:  andrewkrug
 
 permalink: /:year/:month/:day/:title/
-paginate: 10
-pygments: true
+paginate: 3
+highlighter: pygments
 
 # Build settings
 markdown: kramdown

@@ -10,3 +10,19 @@ github_username:  andrewkrug
 # Build settings
 markdown: kramdown
 permalink: pretty
+
+#Rake Generator
+post:
+  template: _template/_post.txt
+  extension: md
+page:
+  template: _template/_page.txt
+  extension: md
+editor: gvim
+git:
+  branch: master
+transfer:
+  command: rsync
+  settings: -av
+  source: _site/
+  destination: ~/Git/username.github.com/

@@ -1,4 +1,11 @@
 /* Base */
+
+@import "bootstrap";
+
+@charset "utf-8";
+
+# custom variable
+$body-bg: red;
 /* ----------------------------------------------------------*/
 
 * {

@@ -1,12 +1,37 @@
 # Site settings
 title: Andrew Krug's Musings
 email: andrewkrug@gmail.com
-description: "Security, Linux, and other blog musings by Andrew Krug.  Now with extra markdown awesome. :)"
+description: "Security, Linux, and other musings by Andrew Krug."
 baseurl: ""
 url: "http://andrewkrug.github.io"
 twitter_username: andrewkrug
 github_username:  andrewkrug
 
+permalink: /:year/:month/:day/:title/
+paginate: 3
+highlighter: pygments
+
 # Build settings
 markdown: kramdown
 permalink: pretty
+
+#Rake Generator
+post:
+  template: _template/_post.txt
+  extension: md
+page:
+  template: _template/_page.txt
+  extension: md
+editor: gvim
+git:
+  branch: master
+transfer:
+  command: rsync
+  settings: -av
+  source: _site/
+  destination: ~/Git/username.github.com/
+
+#Add bootstrap SASS support
+sass:
+  sass_dir: bower_components/bootstrap-sass/assets/stylesheets
+  style: compressed

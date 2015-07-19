@@ -1,6 +1,7 @@
 ---
 layout: default
 title: resume | andrewkrug.com
+permalink: /Resume/
 ---
 
 ##Resume

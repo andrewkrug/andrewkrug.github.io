@@ -1,0 +1,7 @@
+[submodule "themes/ananke"]
+	path = themes/ananke
+	url = git@github.com:andrewkrug/gohugo-theme-ananke.git
+
+[submodule "public"]
+	path = public
+	url = git@github.com:andrewkrug/andrewkrug.github.io.git

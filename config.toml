@@ -1,0 +1,4 @@
+baseURL = "https://www.andrewkrug.com/"
+languageCode = "en-us"
+title = "Andrew Krug | Security Professional"
+theme = "ananke"

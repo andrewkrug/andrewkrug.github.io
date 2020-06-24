@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Andrew Krug | Security Professional</title>
+    <link>https://www.andrewkrug.com/</link>
+    <description>Recent content on Andrew Krug | Security Professional</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 24 Jun 2020 11:00:54 -0700</lastBuildDate>
+    
+	<atom:link href="https://www.andrewkrug.com/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>New Site</title>
+      <link>https://www.andrewkrug.com/posts/new-site/</link>
+      <pubDate>Wed, 24 Jun 2020 11:00:54 -0700</pubDate>
+      
+      <guid>https://www.andrewkrug.com/posts/new-site/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

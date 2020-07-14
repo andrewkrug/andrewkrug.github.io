@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>OSS on Andrew Krug | Security Professional</title>
+    <link>https://www.andrewkrug.com/oss/</link>
+    <description>Recent content in OSS on Andrew Krug | Security Professional</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    
+	<atom:link href="https://www.andrewkrug.com/oss/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Mozilla IAM</title>
+      <link>https://www.andrewkrug.com/oss/mozilla-iam/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.andrewkrug.com/oss/mozilla-iam/</guid>
+      <description>Mozilla IAM Github
+What is it? Mozilla’s Identity and Access Management (IAM) aim to improve the productivity of Mozillians (end-users and operational teams) by streamlining IAM management tasks while providing visibility. Additionally, IAM provides an easier and significantly safer experience for the user and for services in need of authentication.
+What did I work on? The Mozilla Change Integration service and technical architecture for the platform.
+Primary repositories include but are not limited to:</description>
+    </item>
+    
+    <item>
+      <title>ThreatResponse</title>
+      <link>https://www.andrewkrug.com/oss/threatresponse/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.andrewkrug.com/oss/threatresponse/</guid>
+      <description>ThreatResponse Github
+What is it? The ThreatResponse project was started in 2013 by Andrew Krug and Alex McCormack inspired by AWS Security Geek Beetle Bailey. The goal was to help customers in the cloud perform complex and automated incident response with zero assumptions about the environment.
+Later in the timeline Joel Ferrier became heavily involved as the memory acquisition expert ultimately developing MargaritaShotgun.
+There was also significant investment in the UI, UX, and community from Jeff Parr.</description>
+    </item>
+    
+  </channel>
+</rss>

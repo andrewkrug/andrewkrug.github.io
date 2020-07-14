@@ -7,33 +7,32 @@ all:
 .PHONY: setup
 setup: 
 	@echo 'Pulling submodules for forked themes'
-	git submodule update --init --recursive
+	git submodule update --init --recursive -j 8
 	git pull --recurse-submodules
 
 .PHONY: clean
 clean:
 	@echo 'Blowing away old builds'
-	rm -rf public
+	rm -rf public/*
 
 .PHONY: preview
 preview:
-	hugo serve
+	hugo server -D
 	@echo 'The site is now being served at http://localhost:1313'
 
 .PHONY: build
-build: clean
+build: clean setup
+	cd public && git checkout master
 	hugo -D
 	@echo 'The site is now ready to deploy within /public.'
-	git submodule update
 
 .PHONY: deploy
-deploy: clean setup
+deploy: build
 	@echo 'Attempting a deploy to master'
-	cd public && git checkout master
-	make build
 	cp CNAME public/
+	cp README.md public/
 	cp favicon.ico public/
 	cd public && git add -A
 	cd public &&  git commit -m 'Hugo site updated content.  See gh-pages branch for detailed info'
 	cd public && git push origin master
-	@echo 'deploy compete to master branch'
+	@echo 'deploy complete to master branch'

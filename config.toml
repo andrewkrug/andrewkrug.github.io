@@ -2,3 +2,26 @@ baseURL = "https://www.andrewkrug.com/"
 languageCode = "en-us"
 title = "Andrew Krug | Security Professional"
 theme = "ananke"
+
+MetaDataFormat = "yaml"
+DefaultContentLanguage = "en"
+SectionPagesMenu = "main"
+Paginate = 100 
+googleAnalytics = ""
+enableRobotsTXT = true
+
+[sitemap]
+  changefreq = "monthly"
+  priority = 0.5
+  filename = "sitemap.xml"
+
+[params]
+  site_logo = "images/lock-logo.svg"
+  facebook = "https://facebook.com/andrewkrug"
+  twitter = "https://twitter.com/andrewkrug"
+  instagram = "https://www.instagram.com/therealandrewkrug/"
+  youtube = "https://www.youtube.com/user/andrewkrug"
+  github = "https://github.com/andrewkrug"
+  linkedin = "https://www.linkedin.com/in/andrewkrug/"
+  featured_image = "/images/hero.png"
+  recent_posts_number = 2

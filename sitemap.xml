@@ -63,7 +63,36 @@
   </url>
   
   <url>
+    <loc>https://www.andrewkrug.com/posts/pihole/</loc>
+    <lastmod>2020-07-25T11:00:54-07:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>https://www.andrewkrug.com/</loc>
+    <lastmod>2020-07-25T11:00:54-07:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.andrewkrug.com/posts/</loc>
+    <lastmod>2020-07-25T11:00:54-07:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.andrewkrug.com/posts/awsssooptions/</loc>
+    <lastmod>2020-07-25T11:00:54-07:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.andrewkrug.com/posts/new-site/</loc>
+    <lastmod>2020-06-24T11:00:54-07:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -76,6 +105,12 @@
   
   <url>
     <loc>https://www.andrewkrug.com/categories/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.andrewkrug.com/oss/datadog-http-observatory/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -112,6 +147,12 @@
   
   <url>
     <loc>https://www.andrewkrug.com/oss/threatresponse/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.andrewkrug.com/whitepapers/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>

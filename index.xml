@@ -6,6 +6,7 @@
     <description>Recent content in Ahoy! on Andrew Krug | Security Professional</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
+    <lastBuildDate>Sat, 25 Jul 2020 11:00:54 -0700</lastBuildDate>
     
 	<atom:link href="https://www.andrewkrug.com/index.xml" rel="self" type="application/rss+xml" />
     
@@ -108,6 +109,48 @@ Responsible for comprehensive security strategy, cloud security, GRC for Vacasa.
 Staff Security Engineer - Mozilla
 January 2017 - Jan 2020
 Mozilla Enterprise Information Security is responsible for the day to day security of Mozilla systems and properties, touching millions of users and powering thousands of volunteers and developers.</description>
+    </item>
+    
+    <item>
+      <title>A Review of PiHole</title>
+      <link>https://www.andrewkrug.com/posts/pihole/</link>
+      <pubDate>Sat, 25 Jul 2020 11:00:54 -0700</pubDate>
+      
+      <guid>https://www.andrewkrug.com/posts/pihole/</guid>
+      <description>Pi-hole® – A black hole for Internet advertisements What is it? Why do you need it? UI Highlights Tips for loving using Pi-hole® Give Feedback or Contact Me Did you love this content? Room for improvement? Send a message.
+Your Name Email Address An email address is required.  Message   </description>
+    </item>
+    
+    <item>
+      <title>Single Sign-On and Evolution on AWS</title>
+      <link>https://www.andrewkrug.com/posts/awsssooptions/</link>
+      <pubDate>Sat, 25 Jul 2020 11:00:54 -0700</pubDate>
+      
+      <guid>https://www.andrewkrug.com/posts/awsssooptions/</guid>
+      <description>Why SSO? A brief history of SSO in AWS The startup conundrum Solving the problem ( hacker style ) Enter SAML via GSuite Prescriptive Guidance for AWS ( Single / Multi Account ) Inverting the flow for CLI ala AWS CLIv2 Validating Trusts using Trust Policy Did you love this content? Room for improvement? Send a message.
+Your Name Email Address An email address is required.  Message   </description>
+    </item>
+    
+    <item>
+      <title>New Site</title>
+      <link>https://www.andrewkrug.com/posts/new-site/</link>
+      <pubDate>Wed, 24 Jun 2020 11:00:54 -0700</pubDate>
+      
+      <guid>https://www.andrewkrug.com/posts/new-site/</guid>
+      <description>This site was rebooted on the 24th June 2020. The content that was here before lives in github. The purpose of a personal portfolio has changed for me and the rest of the world since I launched andrewkrug.com back in the 1990s.
+Now I seek to use this blog space for personal experiments and security evangelism.
+Give Feedback or Contact Me Did you love this content? Room for improvement? Send a message.</description>
+    </item>
+    
+    <item>
+      <title>Datadog HTTP Observatory</title>
+      <link>https://www.andrewkrug.com/oss/datadog-http-observatory/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.andrewkrug.com/oss/datadog-http-observatory/</guid>
+      <description>Github
+What is it? A scanning integration that consumes a certificate transparency list from crt.sh for a given list of domains then scans them with the Mozilla Web Observatory. The result of the data in the form of A-F scores is then converted to a JSON payload and sent to Datadog.
+What did I work on? I created this integration as part of a blog series on open source and monitoring platforms like Datadog.</description>
     </item>
     
     <item>

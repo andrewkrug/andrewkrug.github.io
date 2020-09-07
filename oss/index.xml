@@ -11,6 +11,17 @@
     
     
     <item>
+      <title>Datadog HTTP Observatory</title>
+      <link>https://www.andrewkrug.com/oss/datadog-http-observatory/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.andrewkrug.com/oss/datadog-http-observatory/</guid>
+      <description>Github
+What is it? A scanning integration that consumes a certificate transparency list from crt.sh for a given list of domains then scans them with the Mozilla Web Observatory. The result of the data in the form of A-F scores is then converted to a JSON payload and sent to Datadog.
+What did I work on? I created this integration as part of a blog series on open source and monitoring platforms like Datadog.</description>
+    </item>
+    
+    <item>
       <title>Mozilla IAM</title>
       <link>https://www.andrewkrug.com/oss/mozilla-iam/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>

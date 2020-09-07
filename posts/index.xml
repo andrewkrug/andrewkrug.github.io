@@ -6,30 +6,10 @@
     <description>Recent content in Posts on Andrew Krug | Security Professional</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 25 Jul 2020 11:00:54 -0700</lastBuildDate>
+    <lastBuildDate>Wed, 24 Jun 2020 11:00:54 -0700</lastBuildDate>
     
 	<atom:link href="https://www.andrewkrug.com/posts/index.xml" rel="self" type="application/rss+xml" />
     
-    
-    <item>
-      <title>A Review of PiHole</title>
-      <link>https://www.andrewkrug.com/posts/pihole/</link>
-      <pubDate>Sat, 25 Jul 2020 11:00:54 -0700</pubDate>
-      
-      <guid>https://www.andrewkrug.com/posts/pihole/</guid>
-      <description>Pi-hole® – A black hole for Internet advertisements What is it? Why do you need it? UI Highlights Tips for loving using Pi-hole® Give Feedback or Contact Me Did you love this content? Room for improvement? Send a message.
-Your Name Email Address An email address is required.  Message   </description>
-    </item>
-    
-    <item>
-      <title>Single Sign-On and Evolution on AWS</title>
-      <link>https://www.andrewkrug.com/posts/awsssooptions/</link>
-      <pubDate>Sat, 25 Jul 2020 11:00:54 -0700</pubDate>
-      
-      <guid>https://www.andrewkrug.com/posts/awsssooptions/</guid>
-      <description>Why SSO? A brief history of SSO in AWS The startup conundrum Solving the problem ( hacker style ) Enter SAML via GSuite Prescriptive Guidance for AWS ( Single / Multi Account ) Inverting the flow for CLI ala AWS CLIv2 Validating Trusts using Trust Policy Did you love this content? Room for improvement? Send a message.
-Your Name Email Address An email address is required.  Message   </description>
-    </item>
     
     <item>
       <title>New Site</title>

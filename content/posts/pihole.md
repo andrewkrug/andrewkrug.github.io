@@ -1,6 +1,6 @@
 ---
 title: "A Review of PiHole"
-date: 2020-07-25T11:00:54-07:00
+date: 2020-12-25T11:00:54-07:00
 draft: true
 show_reading_time: true
 ---

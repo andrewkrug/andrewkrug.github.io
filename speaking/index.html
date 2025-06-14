@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Speaking - Andrew Krug</title>
+    <meta name="description" content="Technical speaking engagements, keynotes, and conference talks on software engineering, leadership, and technology innovation.">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="Speaking - Andrew Krug">
+    <meta property="og:description" content="Technical speaking engagements, keynotes, and conference talks on software engineering, leadership, and technology innovation.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://andrewkrug.dev/speaking/">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Speaking - Andrew Krug">
+    <meta name="twitter:description" content="Technical speaking engagements, keynotes, and conference talks on software engineering, leadership, and technology innovation.">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="/assets/css/style.css">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/images/favicon.svg">
+    <link rel="icon" type="image/x-icon" href="/assets/favicon.ico">
+    
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-EF8DXYLJRG"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-EF8DXYLJRG');
+    </script>
+</head>
+<body>
+    <nav class="nav">
+    <div class="nav-container">
+        <a href="/" class="nav-logo">Andrew Krug</a>
+        <button class="nav-toggle" onclick="toggleMobileMenu()">☰</button>
+        <ul class="nav-menu" id="nav-menu">
+            <li><a href="/" class="nav-link">Home</a></li>
+            <li><a href="/bio/" class="nav-link">About</a></li>
+            <li><a href="/speaking/" class="nav-link">Speaking</a></li>
+            <li><a href="/writing/" class="nav-link">Writing</a></li>
+            <li><a href="/wheres-andrew/" class="nav-link">Where's Andrew</a></li>
+            <li><a href="/contact/" class="nav-link">Contact</a></li>
+            <li><a href="https://farmstofirewalls.substack.com/" class="nav-link" target="_blank" style="background: var(--accent-color); color: white; padding: 0.5rem 1rem; border-radius: var(--border-radius); font-weight: 600;">Newsletter</a></li>
+        </ul>
+    </div>
+</nav>
+
+<script>
+function toggleMobileMenu() {
+    const navMenu = document.getElementById('nav-menu');
+    navMenu.classList.toggle('active');
+}
+
+// Close mobile menu when clicking on a link
+document.addEventListener('DOMContentLoaded', function() {
+    const navLinks = document.querySelectorAll('.nav-link');
+    navLinks.forEach(link => {
+        link.addEventListener('click', function() {
+            const navMenu = document.getElementById('nav-menu');
+            navMenu.classList.remove('active');
+        });
+    });
+});
+</script>
+    
+    <main>
+        
+<section class="full-width-hero" style="
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('/images/speaking-hero.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 70vh;
+    min-height: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    position: relative;
+">
+    <div class="container" style="position: relative; z-index: 2;">
+        <div class="hero-content" style="background: rgba(0, 0, 0, 0.3); padding: 3rem 2rem; border-radius: 12px; backdrop-filter: blur(10px);">
+            <h1 style="font-size: clamp(2.5rem, 5vw, 4rem); font-weight: 700; margin-bottom: 1rem; text-shadow: 3px 3px 6px rgba(0,0,0,0.8);">Speaking Engagements</h1>
+            <p style="font-size: 1.25rem; margin-bottom: 2rem; max-width: 600px; margin-left: auto; margin-right: auto; text-shadow: 2px 2px 4px rgba(0,0,0,0.8);">I&#39;m passionate about sharing knowledge and insights with the global tech community. From BlackHat USA to AWS re:Invent, I deliver practical security insights that help organizations build more secure systems.</p>
+            <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+                <a href="/contact/" class="btn btn-primary" style="box-shadow: 0 4px 8px rgba(0,0,0,0.3);">Book Me to Speak</a>
+                <a href="#topics" class="btn btn-secondary" style="background: rgba(255,255,255,0.2); border: 2px solid rgba(255,255,255,0.8); color: white; box-shadow: 0 4px 8px rgba(0,0,0,0.3);">View Topics</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="section" style="background: var(--surface);">
+    <div class="container">
+        <h2 class="section-title">Upcoming Talks</h2>
+        
+        <div class="card-grid">
+            
+            <div class="card">
+                <div style="display: flex; justify-content: between; align-items: start; margin-bottom: 1rem;">
+                    <h3 style="margin: 0; flex: 1;">Elmininating Blindspots in your security monitoring strategy</h3>
+                    <span style="background: var(--primary-color); color: white; padding: 0.25rem 0.75rem; border-radius: 1rem; font-size: 0.875rem; font-weight: 500;">Breakout</span>
+                </div>
+                <p style="color: var(--text-secondary); margin-bottom: 1rem; font-weight: 500;">
+                    DevLeadership Summit 2024 • Phillidalphia, PA • June 17, 2025
+                </p>
+                <p>
+                    Cloud security is being shaped by the rapid adoption of technologies like Generative AI, Kubernetes, and SaaS platforms, making comprehensive security monitoring more critical than ever. This session will explore strategies to eliminate blind spots in your security monitoring strategy. We will focus on precise instrumentation and data collection, and demonstrate an end-to-end detection strategy that includes cloud audit logs, runtime security, and data enrichment. The session will also emphasize leveraging runtime context to enhance threat detection and response. Participants will learn how to build a robust security monitoring framework that can adapt to evolving cloud technologies and ensure thorough coverage. This presentation is brought to you by Datadog, an AWS Partner.
+                </p>
+                
+                <div style="margin-top: 1.5rem;">
+                    
+                    <span style="display: inline-block; background: var(--surface); border: 1px solid var(--border); padding: 0.25rem 0.5rem; border-radius: 0.5rem; font-size: 0.75rem; margin-right: 0.5rem;">Cloud</span>
+                    
+                    <span style="display: inline-block; background: var(--surface); border: 1px solid var(--border); padding: 0.25rem 0.5rem; border-radius: 0.5rem; font-size: 0.75rem; margin-right: 0.5rem;">Cloud Security</span>
+                    
+                    <span style="display: inline-block; background: var(--surface); border: 1px solid var(--border); padding: 0.25rem 0.5rem; border-radius: 0.5rem; font-size: 0.75rem; margin-right: 0.5rem;">SIEM</span>
+                    
+                    <span style="display: inline-block; background: var(--surface); border: 1px solid var(--border); padding: 0.25rem 0.5rem; border-radius: 0.5rem; font-size: 0.75rem; margin-right: 0.5rem;">Practicioner</span>
+                    
+                </div>
+                
+            </div>
+            
+        </div>
+    </div>
+</section>
+
+<section class="section">
+    <div class="container">
+        <h2 class="section-title">Recent Talks</h2>
+        
+        <div class="card-grid">
+            
+            <div class="card">
+                <div style="display: flex; justify-content: between; align-items: start; margin-bottom: 1rem;">
+                    <h3 style="margin: 0; flex: 1;">Datadog Detect</h3>
+                    <span style="background: var(--accent-color); color: white; padding: 0.25rem 0.75rem; border-radius: 1rem; font-size: 0.875rem; font-weight: 500;">Conference</span>
+                </div>
+                <p style="color: var(--text-secondary); margin-bottom: 1rem; font-weight: 500;">
+                    Datadog Detect • Virtual • May 2024
+                </p>
+                <p>
+                    Datadog Detect is a virtual mini-conference focused on modernizing detection and response through engineering principles. This event includes multiple technical sessions and a live Q&amp;A with our expert speakers from Datadog, Snowflake, FireMon, and more. Whether you’re a security leader or hands-on engineer, you’ll leave with concrete tactics to build a more resilient and scalable detection program.
+                </p>
+                
+                <div style="margin-top: 1.5rem; display: flex; gap: 1rem; flex-wrap: wrap;">
+                    
+                    <a href="https://ddog.io/datadog-detect-25" class="btn btn-secondary" style="font-size: 0.875rem; padding: 0.5rem 1rem;">Watch Recording</a>
+                    
+                </div>
+                
+            </div>
+            
+            <div class="card">
+                <div style="display: flex; justify-content: between; align-items: start; margin-bottom: 1rem;">
+                    <h3 style="margin: 0; flex: 1;">Beyond just observing, protecting your whole software supply chain (SEC406)</h3>
+                    <span style="background: var(--accent-color); color: white; padding: 0.25rem 0.75rem; border-radius: 1rem; font-size: 0.875rem; font-weight: 500;">Conference</span>
+                </div>
+                <p style="color: var(--text-secondary); margin-bottom: 1rem; font-weight: 500;">
+                    Amazon re:Invent • Las Vegas, NV • November 2024
+                </p>
+                <p>
+                    How do you protect your software supply chain from threat actors, and how do you mitigate vulnerabilities across fleets? Observing the supply chain is only part of the answer. In this session, explore supply chain best practices, and learn about Datadog’s open source tool GuardDog and how they use it to protect critical repos. Also, gain insight into how Datadog AVM helps prioritize acting on security findings in your AWS environment. This presentation is brought to you by Datadog, an AWS Partner.
+                </p>
+                
+                <div style="margin-top: 1.5rem; display: flex; gap: 1rem; flex-wrap: wrap;">
+                    
+                    <a href="https://www.youtube.com/watch?v=1b0RIi19qrw" class="btn btn-secondary" style="font-size: 0.875rem; padding: 0.5rem 1rem;">Watch Recording</a>
+                    
+                </div>
+                
+            </div>
+            
+            <div class="card">
+                <div style="display: flex; justify-content: between; align-items: start; margin-bottom: 1rem;">
+                    <h3 style="margin: 0; flex: 1;">Securing the Speed</h3>
+                    <span style="background: var(--primary-color); color: white; padding: 0.25rem 0.75rem; border-radius: 1rem; font-size: 0.875rem; font-weight: 500;">Virtual</span>
+                </div>
+                <p style="color: var(--text-secondary); margin-bottom: 1rem; font-weight: 500;">
+                    Anticast • Virtual • July 2024
+                </p>
+                <p>
+                    CI/CD (Continuous Integration and Continuous Delivery) is at the very heart of every DevOps strategy. Whether it includes security or not, security practitioners should have familiarity with CI/CD systems. Often these systems have implicit trust, or the “keys to the kingdom,” when it comes to forming resources in cloud environments. Join us for a free one-hour Antisyphon Anti-cast, with instructor Andrew Krug, where he’ll explain best practices for CI/CD, detail common pitfalls, and get hands on with Github Actions + Cloud Providers. Andrew will cover common best practices for project layouts and discuss do’s and don’ts. You&#39;ll leave with a firm understanding of how to properly federate identity – in a safe way with cloud providers.
+                </p>
+                
+                <div style="margin-top: 1.5rem; display: flex; gap: 1rem; flex-wrap: wrap;">
+                    
+                    <a href="https://www.youtube.com/watch?v=vd5JpQB_owg" class="btn btn-secondary" style="font-size: 0.875rem; padding: 0.5rem 1rem;">Watch Recording</a>
+                    
+                </div>
+                
+            </div>
+            
+            <div class="card">
+                <div style="display: flex; justify-content: between; align-items: start; margin-bottom: 1rem;">
+                    <h3 style="margin: 0; flex: 1;">Securing the Blobs</h3>
+                    <span style="background: var(--primary-color); color: white; padding: 0.25rem 0.75rem; border-radius: 1rem; font-size: 0.875rem; font-weight: 500;">Virtual</span>
+                </div>
+                <p style="color: var(--text-secondary); margin-bottom: 1rem; font-weight: 500;">
+                    Anticast • Virtual • October 2024
+                </p>
+                <p>
+                    The practices and principles that drive successful technical organizations. From hiring and onboarding to creating psychological safety and fostering innovation.
+                </p>
+                
+                <div style="margin-top: 1.5rem; display: flex; gap: 1rem; flex-wrap: wrap;">
+                    
+                    <a href="https://www.youtube.com/watch?v=PKYOCgBzXcE" class="btn btn-secondary" style="font-size: 0.875rem; padding: 0.5rem 1rem;">Watch Recording</a>
+                    
+                </div>
+                
+            </div>
+            
+        </div>
+    </div>
+</section>
+
+<section class="section" style="background: var(--surface);" id="topics">
+    <div class="container">
+        <h2 class="section-title">Speaking Topics</h2>
+        <p class="section-subtitle">
+            I speak on a wide range of topics related to technology, leadership, and innovation. Here are some of my most popular presentations.
+        </p>
+        
+        <div class="card-grid">
+            
+            <div class="card">
+                <h3>🚀 Engineering Leadership</h3>
+                <ul style="margin-top: 1rem; line-height: 1.8;">
+                    
+                    <li>Scaling engineering teams and organizations</li>
+                    
+                    <li>Building high-performance engineering culture</li>
+                    
+                    <li>Technical decision-making and architecture reviews</li>
+                    
+                    <li>Managing technical debt and system evolution</li>
+                    
+                </ul>
+            </div>
+            
+            <div class="card">
+                <h3>⚡ System Architecture</h3>
+                <ul style="margin-top: 1rem; line-height: 1.8;">
+                    
+                    <li>Microservices architecture and distributed systems</li>
+                    
+                    <li>Cloud-native development and deployment</li>
+                    
+                    <li>Resilience patterns and fault tolerance</li>
+                    
+                    <li>Performance optimization and scalability</li>
+                    
+                </ul>
+            </div>
+            
+            <div class="card">
+                <h3>🔧 DevOps &amp; Platform Engineering</h3>
+                <ul style="margin-top: 1rem; line-height: 1.8;">
+                    
+                    <li>CI/CD best practices and automation</li>
+                    
+                    <li>Infrastructure as code and GitOps</li>
+                    
+                    <li>Observability and monitoring strategies</li>
+                    
+                    <li>Platform engineering and developer experience</li>
+                    
+                </ul>
+            </div>
+            
+            <div class="card">
+                <h3>🤖 AI &amp; Future Tech</h3>
+                <ul style="margin-top: 1rem; line-height: 1.8;">
+                    
+                    <li>AI/ML integration in software systems</li>
+                    
+                    <li>The future of software development</li>
+                    
+                    <li>Emerging technologies and their impact</li>
+                    
+                    <li>Ethics in AI and technology leadership</li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+</section>
+
+<section class="section">
+    <div class="container">
+        <div style="text-align: center; max-width: 600px; margin: 0 auto;">
+            <h2 class="section-title">Let&#39;s Speak Together</h2>
+            <p style="font-size: 1.125rem; color: var(--text-secondary); margin-bottom: 2rem;">
+                I&#39;m always excited to share knowledge and insights with technical communities around the world. Whether you&#39;re organizing a conference, meetup, or corporate event, I&#39;d love to contribute.
+            </p>
+            
+            <div style="background: var(--surface); padding: 2rem; border-radius: var(--border-radius-lg); margin: 2rem 0;">
+                <h3 style="margin-bottom: 1rem; color: var(--primary-color);">What I Bring</h3>
+                <ul style="text-align: left; max-width: 400px; margin: 0 auto; line-height: 1.8;">
+                    
+                    <li>Real-world experience and practical insights</li>
+                    
+                    <li>Engaging presentation style with actionable takeaways</li>
+                    
+                    <li>Customized content tailored to your audience</li>
+                    
+                    <li>Professional speaker materials and promotion</li>
+                    
+                </ul>
+            </div>
+            
+            <a href="/contact/" class="btn btn-primary">Book Me to Speak</a>
+        </div>
+    </div>
+</section>
+    </main>
+    
+    <footer class="footer">
+    <div class="container">
+        <div class="social-links">
+            <a href="https://twitter.com/andrewkrug" class="social-link" title="Twitter">
+                <span>𝕏</span>
+            </a>
+            <a href="https://linkedin.com/in/andrewkrug" class="social-link" title="LinkedIn">
+                <span>in</span>
+            </a>
+            <a href="https://github.com/andrewkrug" class="social-link" title="GitHub">
+                <span>⚡</span>
+            </a>
+            <a href="https://instagram.com/therealandrewkrug" class="social-link" title="Instagram">
+                <span>📷</span>
+            </a>
+            <a href="mailto:andrewkrug@gmail.com" class="social-link" title="Email">
+                <span>@</span>
+            </a>
+            <a href="https://farmstofirewalls.substack.com/" class="social-link" title="Newsletter" target="_blank" style="background: var(--accent-color);">
+                <span>📧</span>
+            </a>
+        </div>
+        <p>&copy; 2024 Andrew Krug. All rights reserved.</p>
+        <p>Building the future of technology, one insight at a time.</p>
+    </div>
+</footer>
+    
+    <script>
+        // Simple navigation scroll effect
+        window.addEventListener('scroll', () => {
+            const nav = document.querySelector('.nav');
+            if (window.scrollY > 100) {
+                nav.style.background = 'rgba(255, 255, 255, 0.98)';
+            } else {
+                nav.style.background = 'rgba(255, 255, 255, 0.95)';
+            }
+        });
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>

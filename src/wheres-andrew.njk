@@ -1,0 +1,133 @@
+---
+layout: base.njk
+title: Where's Andrew
+description: Find Andrew J. Krug at conferences, events, and speaking engagements around the world. Interactive map of upcoming and recent appearances.
+---
+
+<section class="section">
+    <div class="container">
+        <h1 class="section-title">Where's Andrew? 🗺️</h1>
+        <p class="section-subtitle">
+            Track my conference appearances, speaking engagements, and travels around the world. Come say hi if you're at any of these events!
+        </p>
+    </div>
+</section>
+
+
+<section class="section">
+    <div class="container">
+        <h2 class="section-title">Upcoming Events</h2>
+        
+        
+        <div class="card-grid">
+            {% for event in events.upcoming %}
+            <div class="card event-card" data-type="upcoming {{ event.type }}">
+                <div style="display: flex; justify-content: between; align-items: start; margin-bottom: 1rem;">
+                    <h3 style="margin: 0; flex: 1;">{{ event.name }}</h3>
+                    <span style="background: var(--accent-color); color: white; padding: 0.25rem 0.75rem; border-radius: 1rem; font-size: 0.875rem; font-weight: 500;">{{ event.type | capitalize }}</span>
+                </div>
+                
+                <div style="margin-bottom: 1rem;">
+                    <p style="color: var(--text-secondary); margin: 0; font-weight: 500;">
+                        📅 {{ event.date }} • 📍 {{ event.location }}
+                    </p>
+                    <p style="color: var(--text-secondary); margin: 0;">
+                        🏢 {{ event.venue }}
+                    </p>
+                </div>
+                
+                <h4 style="margin: 1rem 0 0.5rem; color: var(--primary-color);">{{ event.talk }}</h4>
+                
+                <div style="margin-top: 1.5rem; display: flex; gap: 1rem; flex-wrap: wrap;">
+                    <a href="{{ event.website }}" class="btn btn-primary" style="font-size: 0.875rem; padding: 0.5rem 1rem;" target="_blank">Event Website</a>
+                    <button class="btn btn-secondary show-on-map" data-lat="{{ event.coordinates[0] }}" data-lng="{{ event.coordinates[1] }}" style="font-size: 0.875rem; padding: 0.5rem 1rem;">Show on Map</button>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+<section class="section" style="background: var(--surface);">
+    <div class="container">
+        <h2 class="section-title">Recent Appearances</h2>
+        
+        <div style="max-width: 800px; margin: 0 auto;">
+            {% for event in events.recent %}
+            <div class="card event-card" data-type="recent {{ event.type }}" style="margin-bottom: 1.5rem;">
+                <div style="display: flex; justify-content: between; align-items: start;">
+                    <div style="flex: 1;">
+                        <h3 style="margin: 0 0 0.5rem;">{{ event.name }}</h3>
+                        <p style="color: var(--text-secondary); margin: 0 0 0.5rem;">
+                            📅 {{ event.date }} • 📍 {{ event.location }}
+                        </p>
+                        <p style="margin: 0 0 1rem;">
+                            <strong>{{ event.talk }}</strong> at {{ event.venue }}
+                        </p>
+                        {% if event.youtube %}
+                        <div style="margin-top: 1rem;">
+                            <a href="{{ event.youtube }}" class="btn btn-primary" style="font-size: 0.875rem; padding: 0.5rem 1rem; margin-right: 0.5rem;" target="_blank">
+                                📺 Watch Video
+                            </a>
+                            <a href="{{ event.website }}" class="btn btn-secondary" style="font-size: 0.875rem; padding: 0.5rem 1rem;" target="_blank">
+                                Event Info
+                            </a>
+                        </div>
+                        {% else %}
+                        <div style="margin-top: 1rem;">
+                            <a href="{{ event.website }}" class="btn btn-secondary" style="font-size: 0.875rem; padding: 0.5rem 1rem;" target="_blank">
+                                Event Info
+                            </a>
+                        </div>
+                        {% endif %}
+                    </div>
+                    <div style="margin-left: 1rem;">
+                        <span style="background: var(--primary-color); color: white; padding: 0.25rem 0.75rem; border-radius: 1rem; font-size: 0.875rem; font-weight: 500;">{{ event.type | capitalize }}</span>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+<section class="section">
+    <div class="container">
+        <h2 class="section-title">Regular Locations</h2>
+        
+        <div class="card-grid">
+            {% for location in events.regular_locations %}
+            <div class="card">
+                <h3>{% if location.type == "office" %}🏢{% elif location.type == "home" %}🏠{% endif %} {{ location.name }}</h3>
+                <p style="color: var(--text-secondary); margin-bottom: 1rem;">📍 {{ location.location }}</p>
+                <p>{{ location.description }}</p>
+                <button class="btn btn-secondary show-on-map" data-lat="{{ location.coordinates[0] }}" data-lng="{{ location.coordinates[1] }}" style="font-size: 0.875rem; padding: 0.5rem 1rem; margin-top: 1rem;">Show on Map</button>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+<section class="section" style="background: var(--surface);">
+    <div class="container">
+        <div style="text-align: center; max-width: 600px; margin: 0 auto;">
+            <h2 class="section-title">Want to Meet Up?</h2>
+            <p style="font-size: 1.125rem; color: var(--text-secondary); margin-bottom: 2rem;">
+                If you're attending any of these events or happen to be in one of these cities, I'd love to connect! Reach out and let's grab coffee or chat about cloud security.
+            </p>
+            
+            <div style="background: var(--background); padding: 2rem; border-radius: var(--border-radius-lg); margin: 2rem 0;">
+                <h3 style="margin-bottom: 1rem; color: var(--primary-color);">Conference Tips</h3>
+                <ul style="text-align: left; max-width: 400px; margin: 0 auto; line-height: 1.8;">
+                    <li>Follow me on social media for real-time updates</li>
+                    <li>Check my talks schedule on event websites</li>
+                    <li>Look for the Datadog booth at major conferences</li>
+                    <li>Join my Datadog SecurityLabs workshops when available</li>
+                </ul>
+            </div>
+            
+            <a href="/contact/" class="btn btn-primary">Get In Touch</a>
+        </div>
+    </div>
+</section>
+

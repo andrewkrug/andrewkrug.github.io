@@ -1,0 +1,19 @@
+{
+  "name": "personal-website",
+  "version": "1.0.0",
+  "description": "Modern personal website for technical influencer",
+  "scripts": {
+    "build": "eleventy",
+    "serve": "eleventy --serve",
+    "start": "eleventy --serve",
+    "debug": "DEBUG=* eleventy"
+  },
+  "devDependencies": {
+    "@11ty/eleventy": "^2.0.1"
+  },
+  "keywords": [
+    "eleventy",
+    "personal-website",
+    "technical-influencer"
+  ]
+}

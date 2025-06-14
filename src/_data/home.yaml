@@ -1,0 +1,55 @@
+hero:
+  title: "Hi, I'm Andrew Krug"
+  description: "Accomplished security leader with 10+ years of experience in cloud security, identity management, and technical advocacy. Currently serving as Head of Security Advocacy at Datadog, building research programs and fostering developer communities. Proven track record of architecting secure cloud solutions, speaking at BlackHat and AWS re:Invent, and building SecurityLabs to reach 80,000+ readers quarterly."
+  primary_cta: "Let's Connect"
+  primary_url: "/contact/"
+  secondary_cta: "Learn More"
+  secondary_url: "/bio/"
+
+what_i_do:
+  title: "What I Do"
+  description: "As Head of Security Advocacy at Datadog, I help organizations secure their cloud infrastructure through hands-on consulting, educational content, and community engagement. From Fortune 500 companies to startups, I provide practical security guidance that works in the real world. I'm also open to board advisory roles for companies looking to strengthen their security posture and technical leadership."
+  
+  services:
+    - title: "🎤 Security Speaking"
+      description: "Keynote speaker at BlackHat USA, AWS re:Invent (9x), and BSides events (10+). Delivering practical insights on cloud security, DevSecOps, and threat detection to audiences worldwide."
+      cta: "View Speaking"
+      url: "/speaking/"
+
+    - title: "✍️ Datadog SecurityLabs Content"
+      description: "Leading Datadog SecurityLabs brand with 80,000+ quarterly readers. Creating practical security content, threat research, and educational materials for the global developer community."
+      cta: "Read Articles"
+      url: "/writing/"
+
+    - title: "🛡️ Cloud Security & Advisory"
+      description: "Cloud Security Audits, Penetration Testing, and secure Architecture design for AWS, GCP, and Azure environments. Also available for board advisory roles, career coaching, and executive coaching to help companies strengthen their security posture and technical leadership."
+      cta: "Get In Touch"
+      url: "/contact/"
+
+recent_highlights:
+  title: "Recent Highlights"
+  
+  items:
+    - title: "Datadog SecurityLabs Growth"
+      description: "Built and scaled Datadog SecurityLabs brand from ground up, now reaching 80,000+ unique readers per quarter with practical security research and educational content."
+      period: "2020-Present • Global Reach"
+      cta: "Read SecurityLabs"
+      url: "/writing/"
+
+    - title: "BlackHat USA Speaker"
+      description: "Presented advanced cloud security research at one of the world's premier security conferences, sharing practical insights from real-world cloud security assessments."
+      period: "2024 • Las Vegas, NV"
+      cta: "View Speaking"
+      url: "/speaking/"
+
+    - title: "\"Securing the Cloud Foundations\" Course"
+      description: "Created and delivered comprehensive training that has educated thousands of cloud practitioners on security best practices and real-world implementation."
+      period: "Ongoing • Online & In-Person"
+      cta: "Get Training"
+      url: "/contact/"
+
+ready_to_connect:
+  title: "Ready to Connect?"
+  description: "Whether you're looking for a speaker, seeking technical guidance, or want to collaborate on innovative projects, I'd love to hear from you."
+  cta: "Get In Touch"
+  url: "/contact/"

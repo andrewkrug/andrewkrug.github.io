@@ -1,0 +1,149 @@
+---
+layout: base.njk
+title: Where's Andrew
+description: Find Andrew Krug at conferences, events, and speaking engagements around the world. Interactive map of upcoming and recent appearances.
+---
+
+<section class="full-width-hero" style="
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('/images/wheres-andrew-hero.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 70vh;
+    min-height: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    position: relative;
+">
+    <div class="container" style="position: relative; z-index: 2;">
+        <div class="hero-content" style="background: rgba(0, 0, 0, 0.3); padding: 3rem 2rem; border-radius: 12px; backdrop-filter: blur(10px);">
+            <h1 style="font-size: clamp(2.5rem, 5vw, 4rem); font-weight: 700; margin-bottom: 1rem; text-shadow: 3px 3px 6px rgba(0,0,0,0.8);">{{ wheres_andrew.hero.title }}</h1>
+            <p style="font-size: 1.25rem; margin-bottom: 2rem; max-width: 600px; margin-left: auto; margin-right: auto; text-shadow: 2px 2px 4px rgba(0,0,0,0.8);">{{ wheres_andrew.hero.description }}</p>
+            <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+                <a href="{{ wheres_andrew.hero.primary_url }}" class="btn btn-primary" style="box-shadow: 0 4px 8px rgba(0,0,0,0.3);">{{ wheres_andrew.hero.primary_cta }}</a>
+                <a href="#upcoming" class="btn btn-secondary" style="background: rgba(255,255,255,0.2); border: 2px solid rgba(255,255,255,0.8); color: white; box-shadow: 0 4px 8px rgba(0,0,0,0.3);">{{ wheres_andrew.hero.secondary_cta }}</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section class="section" id="upcoming">
+    <div class="container">
+        <h2 class="section-title">Upcoming Events</h2>
+        
+        
+        <div class="card-grid">
+            {% for event in events.upcoming %}
+            <div class="card event-card" data-type="upcoming {{ event.type }}">
+                <div style="display: flex; justify-content: between; align-items: start; margin-bottom: 1rem;">
+                    <h3 style="margin: 0; flex: 1;">{{ event.name }}</h3>
+                    <span style="background: var(--accent-color); color: white; padding: 0.25rem 0.75rem; border-radius: 1rem; font-size: 0.875rem; font-weight: 500;">{{ event.type | capitalize }}</span>
+                </div>
+                
+                <div style="margin-bottom: 1rem;">
+                    <p style="color: var(--text-secondary); margin: 0; font-weight: 500;">
+                        📅 {{ event.date }} • 📍 {{ event.location }}
+                    </p>
+                    <p style="color: var(--text-secondary); margin: 0;">
+                        🏢 {{ event.venue }}
+                    </p>
+                </div>
+                
+                <h4 style="margin: 1rem 0 0.5rem; color: var(--primary-color);">{{ event.talk }}</h4>
+                
+                <div style="margin-top: 1.5rem; display: flex; gap: 1rem; flex-wrap: wrap;">
+                    <a href="{{ event.website }}" class="btn btn-primary" style="font-size: 0.875rem; padding: 0.5rem 1rem;" target="_blank">Event Website</a>
+                    <button class="btn btn-secondary show-on-map" data-lat="{{ event.coordinates[0] }}" data-lng="{{ event.coordinates[1] }}" style="font-size: 0.875rem; padding: 0.5rem 1rem;">Show on Map</button>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+<section class="section" style="background: var(--surface);">
+    <div class="container">
+        <h2 class="section-title">Recent Appearances</h2>
+        
+        <div style="max-width: 800px; margin: 0 auto;">
+            {% for event in events.recent %}
+            <div class="card event-card" data-type="recent {{ event.type }}" style="margin-bottom: 1.5rem;">
+                <div style="display: flex; justify-content: between; align-items: start;">
+                    <div style="flex: 1;">
+                        <h3 style="margin: 0 0 0.5rem;">{{ event.name }}</h3>
+                        <p style="color: var(--text-secondary); margin: 0 0 0.5rem;">
+                            📅 {{ event.date }} • 📍 {{ event.location }}
+                        </p>
+                        <p style="margin: 0 0 1rem;">
+                            <strong>{{ event.talk }}</strong> at {{ event.venue }}
+                        </p>
+                        {% if event.youtube %}
+                        <div style="margin-top: 1rem;">
+                            <a href="{{ event.youtube }}" class="btn btn-primary" style="font-size: 0.875rem; padding: 0.5rem 1rem; margin-right: 0.5rem;" target="_blank">
+                                📺 Watch Video
+                            </a>
+                            <a href="{{ event.website }}" class="btn btn-secondary" style="font-size: 0.875rem; padding: 0.5rem 1rem;" target="_blank">
+                                Event Info
+                            </a>
+                        </div>
+                        {% else %}
+                        <div style="margin-top: 1rem;">
+                            <a href="{{ event.website }}" class="btn btn-secondary" style="font-size: 0.875rem; padding: 0.5rem 1rem;" target="_blank">
+                                Event Info
+                            </a>
+                        </div>
+                        {% endif %}
+                    </div>
+                    <div style="margin-left: 1rem;">
+                        <span style="background: var(--primary-color); color: white; padding: 0.25rem 0.75rem; border-radius: 1rem; font-size: 0.875rem; font-weight: 500;">{{ event.type | capitalize }}</span>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+<section class="section">
+    <div class="container">
+        <h2 class="section-title">Regular Locations</h2>
+        
+        <div class="card-grid">
+            {% for location in events.regular_locations %}
+            <div class="card">
+                <h3>{% if location.type == "office" %}🏢{% elif location.type == "home" %}🏠{% endif %} {{ location.name }}</h3>
+                <p style="color: var(--text-secondary); margin-bottom: 1rem;">📍 {{ location.location }}</p>
+                <p>{{ location.description }}</p>
+                <button class="btn btn-secondary show-on-map" data-lat="{{ location.coordinates[0] }}" data-lng="{{ location.coordinates[1] }}" style="font-size: 0.875rem; padding: 0.5rem 1rem; margin-top: 1rem;">Show on Map</button>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+<section class="section" style="background: var(--surface);">
+    <div class="container">
+        <div style="text-align: center; max-width: 600px; margin: 0 auto;">
+            <h2 class="section-title">{{ wheres_andrew.want_to_meet.title }}</h2>
+            <p style="font-size: 1.125rem; color: var(--text-secondary); margin-bottom: 2rem;">
+                {{ wheres_andrew.want_to_meet.description }}
+            </p>
+            
+            <div style="background: var(--background); padding: 2rem; border-radius: var(--border-radius-lg); margin: 2rem 0;">
+                <h3 style="margin-bottom: 1rem; color: var(--primary-color);">{{ wheres_andrew.want_to_meet.conference_tips.title }}</h3>
+                <ul style="text-align: left; max-width: 400px; margin: 0 auto; line-height: 1.8;">
+                    {% for tip in wheres_andrew.want_to_meet.conference_tips.items %}
+                    <li>{{ tip }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+            
+            <a href="{{ wheres_andrew.want_to_meet.url }}" class="btn btn-primary">{{ wheres_andrew.want_to_meet.cta }}</a>
+        </div>
+    </div>
+</section>
+

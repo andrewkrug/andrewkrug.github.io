@@ -1,0 +1,135 @@
+---
+layout: base.njk
+title: Speaking
+description: Technical speaking engagements, keynotes, and conference talks on software engineering, leadership, and technology innovation.
+---
+
+<section class="full-width-hero" style="
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('/images/speaking-hero.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 70vh;
+    min-height: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    position: relative;
+">
+    <div class="container" style="position: relative; z-index: 2;">
+        <div class="hero-content" style="background: rgba(0, 0, 0, 0.3); padding: 3rem 2rem; border-radius: 12px; backdrop-filter: blur(10px);">
+            <h1 style="font-size: clamp(2.5rem, 5vw, 4rem); font-weight: 700; margin-bottom: 1rem; text-shadow: 3px 3px 6px rgba(0,0,0,0.8);">{{ speaking.hero.title }}</h1>
+            <p style="font-size: 1.25rem; margin-bottom: 2rem; max-width: 600px; margin-left: auto; margin-right: auto; text-shadow: 2px 2px 4px rgba(0,0,0,0.8);">{{ speaking.hero.description }}</p>
+            <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+                <a href="/contact/" class="btn btn-primary" style="box-shadow: 0 4px 8px rgba(0,0,0,0.3);">{{ speaking.hero.primary_cta }}</a>
+                <a href="#topics" class="btn btn-secondary" style="background: rgba(255,255,255,0.2); border: 2px solid rgba(255,255,255,0.8); color: white; box-shadow: 0 4px 8px rgba(0,0,0,0.3);">{{ speaking.hero.secondary_cta }}</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="section" style="background: var(--surface);">
+    <div class="container">
+        <h2 class="section-title">Upcoming Talks</h2>
+        
+        <div class="card-grid">
+            {% for talk in speaking.upcoming_talks %}
+            <div class="card">
+                <div style="display: flex; justify-content: between; align-items: start; margin-bottom: 1rem;">
+                    <h3 style="margin: 0; flex: 1;">{{ talk.title }}</h3>
+                    <span style="background: {% if talk.type == 'Keynote' %}var(--accent-color){% elif talk.type == 'Technical' %}var(--primary-color){% else %}var(--primary-color){% endif %}; color: white; padding: 0.25rem 0.75rem; border-radius: 1rem; font-size: 0.875rem; font-weight: 500;">{{ talk.type }}</span>
+                </div>
+                <p style="color: var(--text-secondary); margin-bottom: 1rem; font-weight: 500;">
+                    {{ talk.event }} • {{ talk.location }} • {{ talk.date }}
+                </p>
+                <p>
+                    {{ talk.description }}
+                </p>
+                {% if talk.tags %}
+                <div style="margin-top: 1.5rem;">
+                    {% for tag in talk.tags %}
+                    <span style="display: inline-block; background: var(--surface); border: 1px solid var(--border); padding: 0.25rem 0.5rem; border-radius: 0.5rem; font-size: 0.75rem; margin-right: 0.5rem;">{{ tag }}</span>
+                    {% endfor %}
+                </div>
+                {% endif %}
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+<section class="section">
+    <div class="container">
+        <h2 class="section-title">Recent Talks</h2>
+        
+        <div class="card-grid">
+            {% for talk in speaking.recent_talks %}
+            <div class="card">
+                <div style="display: flex; justify-content: between; align-items: start; margin-bottom: 1rem;">
+                    <h3 style="margin: 0; flex: 1;">{{ talk.title }}</h3>
+                    <span style="background: {% if talk.type == 'Keynote' %}var(--accent-color){% elif talk.type == 'Workshop' %}var(--primary-color){% elif talk.type == 'Conference' %}var(--accent-color){% elif talk.type == 'Virtual' %}var(--primary-color){% else %}var(--primary-color){% endif %}; color: white; padding: 0.25rem 0.75rem; border-radius: 1rem; font-size: 0.875rem; font-weight: 500;">{{ talk.type }}</span>
+                </div>
+                <p style="color: var(--text-secondary); margin-bottom: 1rem; font-weight: 500;">
+                    {{ talk.event }} • {{ talk.location }} • {{ talk.date }}
+                </p>
+                <p>
+                    {{ talk.description }}
+                </p>
+                {% if talk.links %}
+                <div style="margin-top: 1.5rem; display: flex; gap: 1rem; flex-wrap: wrap;">
+                    {% for link in talk.links %}
+                    <a href="{{ link.url }}" class="btn btn-secondary" style="font-size: 0.875rem; padding: 0.5rem 1rem;">{{ link.title }}</a>
+                    {% endfor %}
+                </div>
+                {% endif %}
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+<section class="section" style="background: var(--surface);" id="topics">
+    <div class="container">
+        <h2 class="section-title">Speaking Topics</h2>
+        <p class="section-subtitle">
+            I speak on a wide range of topics related to technology, leadership, and innovation. Here are some of my most popular presentations.
+        </p>
+        
+        <div class="card-grid">
+            {% for topic in speaking.topics %}
+            <div class="card">
+                <h3>{{ topic.title }}</h3>
+                <ul style="margin-top: 1rem; line-height: 1.8;">
+                    {% for item in topic.items %}
+                    <li>{{ item }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+<section class="section">
+    <div class="container">
+        <div style="text-align: center; max-width: 600px; margin: 0 auto;">
+            <h2 class="section-title">{{ speaking.call_to_action.title }}</h2>
+            <p style="font-size: 1.125rem; color: var(--text-secondary); margin-bottom: 2rem;">
+                {{ speaking.call_to_action.description }}
+            </p>
+            
+            <div style="background: var(--surface); padding: 2rem; border-radius: var(--border-radius-lg); margin: 2rem 0;">
+                <h3 style="margin-bottom: 1rem; color: var(--primary-color);">What I Bring</h3>
+                <ul style="text-align: left; max-width: 400px; margin: 0 auto; line-height: 1.8;">
+                    {% for item in speaking.call_to_action.what_i_bring %}
+                    <li>{{ item }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+            
+            <a href="/contact/" class="btn btn-primary">Book Me to Speak</a>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,33 @@
+<nav class="nav">
+    <div class="nav-container">
+        <a href="/" class="nav-logo">{{ site.name }}</a>
+        <button class="nav-toggle" onclick="toggleMobileMenu()">☰</button>
+        <ul class="nav-menu" id="nav-menu">
+            <li><a href="/" class="nav-link">Home</a></li>
+            <li><a href="/bio/" class="nav-link">About</a></li>
+            <li><a href="/speaking/" class="nav-link">Speaking</a></li>
+            <li><a href="/writing/" class="nav-link">Writing</a></li>
+            <li><a href="/wheres-andrew/" class="nav-link">Where's Andrew</a></li>
+            <li><a href="/contact/" class="nav-link">Contact</a></li>
+            <li><a href="https://farmstofirewalls.substack.com/" class="nav-link" target="_blank" style="background: var(--accent-color); color: white; padding: 0.5rem 1rem; border-radius: var(--border-radius); font-weight: 600;">Newsletter</a></li>
+        </ul>
+    </div>
+</nav>
+
+<script>
+function toggleMobileMenu() {
+    const navMenu = document.getElementById('nav-menu');
+    navMenu.classList.toggle('active');
+}
+
+// Close mobile menu when clicking on a link
+document.addEventListener('DOMContentLoaded', function() {
+    const navLinks = document.querySelectorAll('.nav-link');
+    navLinks.forEach(link => {
+        link.addEventListener('click', function() {
+            const navMenu = document.getElementById('nav-menu');
+            navMenu.classList.remove('active');
+        });
+    });
+});
+</script>

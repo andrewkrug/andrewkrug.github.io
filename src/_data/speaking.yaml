@@ -1,0 +1,94 @@
+hero:
+  title: "Speaking Engagements"
+  description: "I'm passionate about sharing knowledge and insights with the global tech community. From BlackHat USA to AWS re:Invent, I deliver practical security insights that help organizations build more secure systems."
+  primary_cta: "Book Me to Speak"
+  secondary_cta: "View Topics"
+
+upcoming_talks:
+  - title: "Elmininating Blindspots in your security monitoring strategy"
+    type: "Breakout"
+    event: "DevLeadership Summit 2024"
+    location: "Phillidalphia, PA"
+    date: "June 17, 2025"
+    description: "Cloud security is being shaped by the rapid adoption of technologies like Generative AI, Kubernetes, and SaaS platforms, making comprehensive security monitoring more critical than ever. This session will explore strategies to eliminate blind spots in your security monitoring strategy. We will focus on precise instrumentation and data collection, and demonstrate an end-to-end detection strategy that includes cloud audit logs, runtime security, and data enrichment. The session will also emphasize leveraging runtime context to enhance threat detection and response. Participants will learn how to build a robust security monitoring framework that can adapt to evolving cloud technologies and ensure thorough coverage. This presentation is brought to you by Datadog, an AWS Partner."
+    tags: ["Cloud", "Cloud Security", "SIEM", "Practicioner"]
+
+
+recent_talks:
+  - title: "Datadog Detect"
+    type: "Conference"
+    event: "Datadog Detect"
+    location: "Virtual"
+    date: "May 2024"
+    description: "Datadog Detect is a virtual mini-conference focused on modernizing detection and response through engineering principles. This event includes multiple technical sessions and a live Q&A with our expert speakers from Datadog, Snowflake, FireMon, and more. Whether you’re a security leader or hands-on engineer, you’ll leave with concrete tactics to build a more resilient and scalable detection program."
+    links:
+      - title: "Watch Recording"
+        url: "https://ddog.io/datadog-detect-25"
+
+  - title: "Beyond just observing, protecting your whole software supply chain (SEC406)"
+    type: "Conference"
+    event: "Amazon re:Invent"
+    location: "Las Vegas, NV"
+    date: "November 2024"
+    description: "How do you protect your software supply chain from threat actors, and how do you mitigate vulnerabilities across fleets? Observing the supply chain is only part of the answer. In this session, explore supply chain best practices, and learn about Datadog’s open source tool GuardDog and how they use it to protect critical repos. Also, gain insight into how Datadog AVM helps prioritize acting on security findings in your AWS environment. This presentation is brought to you by Datadog, an AWS Partner."
+    links:
+      - title: "Watch Recording"
+        url: "https://www.youtube.com/watch?v=1b0RIi19qrw"
+
+  - title: "Securing the Speed"
+    type: "Virtual"
+    event: "Anticast"
+    location: "Virtual"
+    date: "July 2024"
+    description: "CI/CD (Continuous Integration and Continuous Delivery) is at the very heart of every DevOps strategy. Whether it includes security or not, security practitioners should have familiarity with CI/CD systems. Often these systems have implicit trust, or the “keys to the kingdom,” when it comes to forming resources in cloud environments. Join us for a free one-hour Antisyphon Anti-cast, with instructor Andrew Krug, where he’ll explain best practices for CI/CD, detail common pitfalls, and get hands on with Github Actions + Cloud Providers. Andrew will cover common best practices for project layouts and discuss do’s and don’ts. You'll leave with a firm understanding of how to properly federate identity – in a safe way with cloud providers."
+    links:
+      - title: "Watch Recording"
+        url: "https://www.youtube.com/watch?v=vd5JpQB_owg"
+
+  - title: "Securing the Blobs"
+    type: "Virtual"
+    event: "Anticast"
+    location: "Virtual"
+    date: "October 2024"
+    description: "The practices and principles that drive successful technical organizations. From hiring and onboarding to creating psychological safety and fostering innovation."
+    links:
+      - title: "Watch Recording"
+        url: "https://www.youtube.com/watch?v=PKYOCgBzXcE"
+
+topics:
+  - title: "🚀 Engineering Leadership"
+    items:
+      - "Scaling engineering teams and organizations"
+      - "Building high-performance engineering culture"
+      - "Technical decision-making and architecture reviews"
+      - "Managing technical debt and system evolution"
+
+  - title: "⚡ System Architecture"
+    items:
+      - "Microservices architecture and distributed systems"
+      - "Cloud-native development and deployment"
+      - "Resilience patterns and fault tolerance"
+      - "Performance optimization and scalability"
+
+  - title: "🔧 DevOps & Platform Engineering"
+    items:
+      - "CI/CD best practices and automation"
+      - "Infrastructure as code and GitOps"
+      - "Observability and monitoring strategies"
+      - "Platform engineering and developer experience"
+
+  - title: "🤖 AI & Future Tech"
+    items:
+      - "AI/ML integration in software systems"
+      - "The future of software development"
+      - "Emerging technologies and their impact"
+      - "Ethics in AI and technology leadership"
+
+call_to_action:
+  title: "Let's Speak Together"
+  description: "I'm always excited to share knowledge and insights with technical communities around the world. Whether you're organizing a conference, meetup, or corporate event, I'd love to contribute."
+  what_i_bring:
+    - "Real-world experience and practical insights"
+    - "Engaging presentation style with actionable takeaways"
+    - "Customized content tailored to your audience"
+    - "Professional speaker materials and promotion"

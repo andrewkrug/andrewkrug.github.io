@@ -3,18 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Speaking - Andrew J. Krug</title>
+    <title>Speaking - Andrew Krug</title>
     <meta name="description" content="Technical speaking engagements, keynotes, and conference talks on software engineering, leadership, and technology innovation.">
     
     <!-- Open Graph -->
-    <meta property="og:title" content="Speaking - Andrew J. Krug">
+    <meta property="og:title" content="Speaking - Andrew Krug">
     <meta property="og:description" content="Technical speaking engagements, keynotes, and conference talks on software engineering, leadership, and technology innovation.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://andrewkrug.dev/speaking/">
     
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Speaking - Andrew J. Krug">
+    <meta name="twitter:title" content="Speaking - Andrew Krug">
     <meta name="twitter:description" content="Technical speaking engagements, keynotes, and conference talks on software engineering, leadership, and technology innovation.">
     
     <!-- Fonts -->
@@ -26,13 +26,47 @@
     <link rel="stylesheet" href="/assets/css/style.css">
     
     <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/images/favicon.svg">
     <link rel="icon" type="image/x-icon" href="/assets/favicon.ico">
+
+    <!-- Datadog RUM -->
+    <script
+        src="https://www.datadoghq-browser-agent.com/us1/v6/datadog-rum.js"
+        type="text/javascript">
+    </script>
+    <script>
+        window.DD_RUM && window.DD_RUM.init({
+          clientToken: 'pubae28d391e220e8b68852f4c6579f1b3d',
+          applicationId: 'b6006ae4-6d34-405e-97ce-6a2bad8b48d2',
+          // `site` refers to the Datadog site parameter of your organization
+          // see https://docs.datadoghq.com/getting_started/site/
+          site: 'datadoghq.com',
+          service: 'andrewkrug.com',
+          env: '<ENV_NAME>',
+          // Specify a version number to identify the deployed version of your application in Datadog
+          // version: '1.0.0',
+          sessionSampleRate: 100,
+          sessionReplaySampleRate: 20,
+          trackBfcacheViews: true,
+          defaultPrivacyLevel: 'mask-user-input',
+        });
+    </script>
+
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-EF8DXYLJRG"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-EF8DXYLJRG');
+    </script>
 </head>
 <body>
     <nav class="nav">
     <div class="nav-container">
-        <a href="/" class="nav-logo">Andrew J. Krug</a>
-        <ul class="nav-menu">
+        <a href="/" class="nav-logo">Andrew Krug</a>
+        <button class="nav-toggle" onclick="toggleMobileMenu()">☰</button>
+        <ul class="nav-menu" id="nav-menu">
             <li><a href="/" class="nav-link">Home</a></li>
             <li><a href="/bio/" class="nav-link">About</a></li>
             <li><a href="/speaking/" class="nav-link">Speaking</a></li>
@@ -43,18 +77,49 @@
         </ul>
     </div>
 </nav>
+
+<script>
+function toggleMobileMenu() {
+    const navMenu = document.getElementById('nav-menu');
+    navMenu.classList.toggle('active');
+}
+
+// Close mobile menu when clicking on a link
+document.addEventListener('DOMContentLoaded', function() {
+    const navLinks = document.querySelectorAll('.nav-link');
+    navLinks.forEach(link => {
+        link.addEventListener('click', function() {
+            const navMenu = document.getElementById('nav-menu');
+            navMenu.classList.remove('active');
+        });
+    });
+});
+</script>
     
     <main>
         
-<section class="section">
-    <div class="container">
-        <h1 class="section-title">Speaking Engagements</h1>
-        <p class="section-subtitle">
-            I'm passionate about sharing knowledge and insights with the global tech community. Here are some of my recent and upcoming speaking engagements.
-        </p>
-        
-        <div style="text-align: center; margin: 3rem 0;">
-            <a href="/contact/" class="btn btn-primary">Book Me to Speak</a>
+<section class="full-width-hero" style="
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('/images/speaking-hero.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 70vh;
+    min-height: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    position: relative;
+">
+    <div class="container" style="position: relative; z-index: 2;">
+        <div class="hero-content" style="background: rgba(0, 0, 0, 0.3); padding: 3rem 2rem; border-radius: 12px; backdrop-filter: blur(10px);">
+            <h1 style="font-size: clamp(2.5rem, 5vw, 4rem); font-weight: 700; margin-bottom: 1rem; text-shadow: 3px 3px 6px rgba(0,0,0,0.8);">Speaking Engagements</h1>
+            <p style="font-size: 1.25rem; margin-bottom: 2rem; max-width: 600px; margin-left: auto; margin-right: auto; text-shadow: 2px 2px 4px rgba(0,0,0,0.8);">I&#39;m passionate about sharing knowledge and insights with the global tech community. From BlackHat USA to AWS re:Invent, I deliver practical security insights that help organizations build more secure systems.</p>
+            <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+                <a href="/contact/" class="btn btn-primary" style="box-shadow: 0 4px 8px rgba(0,0,0,0.3);">Book Me to Speak</a>
+                <a href="#topics" class="btn btn-secondary" style="background: rgba(255,255,255,0.2); border: 2px solid rgba(255,255,255,0.8); color: white; box-shadow: 0 4px 8px rgba(0,0,0,0.3);">View Topics</a>
+            </div>
         </div>
     </div>
 </section>
@@ -62,43 +127,40 @@
 <section class="section" style="background: var(--surface);">
     <div class="container">
         <h2 class="section-title">Upcoming Talks</h2>
-        
-        <div class="card-grid">
-            <div class="card">
-                <div style="display: flex; justify-content: between; align-items: start; margin-bottom: 1rem;">
-                    <h3 style="margin: 0; flex: 1;">The Evolution of Engineering Leadership</h3>
-                    <span style="background: var(--accent-color); color: white; padding: 0.25rem 0.75rem; border-radius: 1rem; font-size: 0.875rem; font-weight: 500;">Keynote</span>
-                </div>
-                <p style="color: var(--text-secondary); margin-bottom: 1rem; font-weight: 500;">
-                    DevLeadership Summit 2024 • Austin, TX • July 15, 2024
-                </p>
-                <p>
-                    Exploring how engineering leadership has evolved in the age of remote work, AI, and rapidly changing technology landscapes. A deep dive into the skills and mindsets needed to lead successful engineering teams in 2024 and beyond.
-                </p>
-                <div style="margin-top: 1.5rem;">
-                    <span style="display: inline-block; background: var(--surface); border: 1px solid var(--border); padding: 0.25rem 0.5rem; border-radius: 0.5rem; font-size: 0.75rem; margin-right: 0.5rem;">Leadership</span>
-                    <span style="display: inline-block; background: var(--surface); border: 1px solid var(--border); padding: 0.25rem 0.5rem; border-radius: 0.5rem; font-size: 0.75rem; margin-right: 0.5rem;">Management</span>
-                    <span style="display: inline-block; background: var(--surface); border: 1px solid var(--border); padding: 0.25rem 0.5rem; border-radius: 0.5rem; font-size: 0.75rem;">Remote Work</span>
-                </div>
+
+        <div class="card-grid" id="upcoming-talks-container">
+            <div id="no-upcoming-talks" class="card" style="display: none; text-align: center; padding: 3rem;">
+                <h3 style="color: var(--text-secondary); font-weight: 400;">No upcoming talks scheduled</h3>
+                <p style="color: var(--text-secondary); margin-top: 1rem;">Check back later for new speaking engagements, or <a href="/contact/" style="color: var(--primary-color);">reach out</a> to book me for your event.</p>
             </div>
             
-            <div class="card">
+            <div class="card talk-card" data-date="June 17, 2025" data-section="upcoming">
                 <div style="display: flex; justify-content: between; align-items: start; margin-bottom: 1rem;">
-                    <h3 style="margin: 0; flex: 1;">Building Resilient Distributed Systems</h3>
-                    <span style="background: var(--primary-color); color: white; padding: 0.25rem 0.75rem; border-radius: 1rem; font-size: 0.875rem; font-weight: 500;">Technical</span>
+                    <h3 style="margin: 0; flex: 1;">Elmininating Blindspots in your security monitoring strategy</h3>
+                    <span style="background: var(--primary-color); color: white; padding: 0.25rem 0.75rem; border-radius: 1rem; font-size: 0.875rem; font-weight: 500;">Breakout</span>
                 </div>
                 <p style="color: var(--text-secondary); margin-bottom: 1rem; font-weight: 500;">
-                    CloudNative Conference • San Francisco, CA • August 22, 2024
+                    DevLeadership Summit 2024 • Phillidalphia, PA • June 17, 2025
                 </p>
                 <p>
-                    A technical deep-dive into patterns, practices, and principles for building systems that gracefully handle failure. Real-world examples from scaling systems to millions of users.
+                    Cloud security is being shaped by the rapid adoption of technologies like Generative AI, Kubernetes, and SaaS platforms, making comprehensive security monitoring more critical than ever. This session will explore strategies to eliminate blind spots in your security monitoring strategy. We will focus on precise instrumentation and data collection, and demonstrate an end-to-end detection strategy that includes cloud audit logs, runtime security, and data enrichment. The session will also emphasize leveraging runtime context to enhance threat detection and response. Participants will learn how to build a robust security monitoring framework that can adapt to evolving cloud technologies and ensure thorough coverage. This presentation is brought to you by Datadog, an AWS Partner.
                 </p>
+                
                 <div style="margin-top: 1.5rem;">
-                    <span style="display: inline-block; background: var(--surface); border: 1px solid var(--border); padding: 0.25rem 0.5rem; border-radius: 0.5rem; font-size: 0.75rem; margin-right: 0.5rem;">Architecture</span>
-                    <span style="display: inline-block; background: var(--surface); border: 1px solid var(--border); padding: 0.25rem 0.5rem; border-radius: 0.5rem; font-size: 0.75rem; margin-right: 0.5rem;">Microservices</span>
-                    <span style="display: inline-block; background: var(--surface); border: 1px solid var(--border); padding: 0.25rem 0.5rem; border-radius: 0.5rem; font-size: 0.75rem;">Cloud</span>
+                    
+                    <span style="display: inline-block; background: var(--surface); border: 1px solid var(--border); padding: 0.25rem 0.5rem; border-radius: 0.5rem; font-size: 0.75rem; margin-right: 0.5rem;">Cloud</span>
+                    
+                    <span style="display: inline-block; background: var(--surface); border: 1px solid var(--border); padding: 0.25rem 0.5rem; border-radius: 0.5rem; font-size: 0.75rem; margin-right: 0.5rem;">Cloud Security</span>
+                    
+                    <span style="display: inline-block; background: var(--surface); border: 1px solid var(--border); padding: 0.25rem 0.5rem; border-radius: 0.5rem; font-size: 0.75rem; margin-right: 0.5rem;">SIEM</span>
+                    
+                    <span style="display: inline-block; background: var(--surface); border: 1px solid var(--border); padding: 0.25rem 0.5rem; border-radius: 0.5rem; font-size: 0.75rem; margin-right: 0.5rem;">Practicioner</span>
+                    
                 </div>
+                
+                
             </div>
+            
         </div>
     </div>
 </section>
@@ -106,79 +168,169 @@
 <section class="section">
     <div class="container">
         <h2 class="section-title">Recent Talks</h2>
-        
-        <div class="card-grid">
-            <div class="card">
+
+        <div class="card-grid" id="recent-talks-container">
+            
+            <div class="card talk-card" data-date="May 2024" data-section="recent">
                 <div style="display: flex; justify-content: between; align-items: start; margin-bottom: 1rem;">
-                    <h3 style="margin: 0; flex: 1;">The Future of Distributed Systems</h3>
-                    <span style="background: var(--accent-color); color: white; padding: 0.25rem 0.75rem; border-radius: 1rem; font-size: 0.875rem; font-weight: 500;">Keynote</span>
+                    <h3 style="margin: 0; flex: 1;">Datadog Detect</h3>
+                    <span style="background: var(--accent-color); color: white; padding: 0.25rem 0.75rem; border-radius: 1rem; font-size: 0.875rem; font-weight: 500;">Conference</span>
                 </div>
                 <p style="color: var(--text-secondary); margin-bottom: 1rem; font-weight: 500;">
-                    TechConf 2024 • San Francisco, CA • March 2024
+                    Datadog Detect • Virtual • May 2024
                 </p>
                 <p>
-                    Explored emerging patterns in microservices architecture and the evolution of cloud-native development. Discussed the impact of AI/ML on system design and the future of distributed computing.
+                    Datadog Detect is a virtual mini-conference focused on modernizing detection and response through engineering principles. This event includes multiple technical sessions and a live Q&amp;A with our expert speakers from Datadog, Snowflake, FireMon, and more. Whether you’re a security leader or hands-on engineer, you’ll leave with concrete tactics to build a more resilient and scalable detection program.
                 </p>
+                
                 <div style="margin-top: 1.5rem; display: flex; gap: 1rem; flex-wrap: wrap;">
-                    <a href="#" class="btn btn-secondary" style="font-size: 0.875rem; padding: 0.5rem 1rem;">Watch Recording</a>
-                    <a href="#" class="btn btn-secondary" style="font-size: 0.875rem; padding: 0.5rem 1rem;">View Slides</a>
+                    
+                    <a href="https://ddog.io/datadog-detect-25" class="btn btn-secondary" style="font-size: 0.875rem; padding: 0.5rem 1rem;">Watch Recording</a>
+                    
                 </div>
+                
             </div>
             
-            <div class="card">
+            <div class="card talk-card" data-date="November 2024" data-section="recent">
                 <div style="display: flex; justify-content: between; align-items: start; margin-bottom: 1rem;">
-                    <h3 style="margin: 0; flex: 1;">Scaling Engineering Teams</h3>
-                    <span style="background: var(--primary-color); color: white; padding: 0.25rem 0.75rem; border-radius: 1rem; font-size: 0.875rem; font-weight: 500;">Workshop</span>
+                    <h3 style="margin: 0; flex: 1;">Beyond just observing, protecting your whole software supply chain (SEC406)</h3>
+                    <span style="background: var(--accent-color); color: white; padding: 0.25rem 0.75rem; border-radius: 1rem; font-size: 0.875rem; font-weight: 500;">Conference</span>
                 </div>
                 <p style="color: var(--text-secondary); margin-bottom: 1rem; font-weight: 500;">
-                    Engineering Leadership Summit • Austin, TX • February 2024
+                    Amazon re:Invent • Las Vegas, NV • November 2024
                 </p>
                 <p>
-                    A hands-on workshop covering practical strategies for scaling engineering organizations from 10 to 100+ engineers. Covered hiring, team structure, communication patterns, and technical decision-making.
+                    How do you protect your software supply chain from threat actors, and how do you mitigate vulnerabilities across fleets? Observing the supply chain is only part of the answer. In this session, explore supply chain best practices, and learn about Datadog’s open source tool GuardDog and how they use it to protect critical repos. Also, gain insight into how Datadog AVM helps prioritize acting on security findings in your AWS environment. This presentation is brought to you by Datadog, an AWS Partner.
                 </p>
+                
                 <div style="margin-top: 1.5rem; display: flex; gap: 1rem; flex-wrap: wrap;">
-                    <a href="#" class="btn btn-secondary" style="font-size: 0.875rem; padding: 0.5rem 1rem;">Workshop Materials</a>
+                    
+                    <a href="https://www.youtube.com/watch?v=1b0RIi19qrw" class="btn btn-secondary" style="font-size: 0.875rem; padding: 0.5rem 1rem;">Watch Recording</a>
+                    
                 </div>
+                
             </div>
             
-            <div class="card">
+            <div class="card talk-card" data-date="July 2024" data-section="recent">
                 <div style="display: flex; justify-content: between; align-items: start; margin-bottom: 1rem;">
-                    <h3 style="margin: 0; flex: 1;">DevOps in the AI Era</h3>
-                    <span style="background: var(--primary-color); color: white; padding: 0.25rem 0.75rem; border-radius: 1rem; font-size: 0.875rem; font-weight: 500;">Technical</span>
+                    <h3 style="margin: 0; flex: 1;">Securing the Speed</h3>
+                    <span style="background: var(--primary-color); color: white; padding: 0.25rem 0.75rem; border-radius: 1rem; font-size: 0.875rem; font-weight: 500;">Virtual</span>
                 </div>
                 <p style="color: var(--text-secondary); margin-bottom: 1rem; font-weight: 500;">
-                    DevOps Days • New York, NY • January 2024
+                    Anticast • Virtual • July 2024
                 </p>
                 <p>
-                    How AI and machine learning are transforming DevOps practices, from intelligent monitoring and alerting to automated incident response and predictive scaling.
+                    CI/CD (Continuous Integration and Continuous Delivery) is at the very heart of every DevOps strategy. Whether it includes security or not, security practitioners should have familiarity with CI/CD systems. Often these systems have implicit trust, or the “keys to the kingdom,” when it comes to forming resources in cloud environments. Join us for a free one-hour Antisyphon Anti-cast, with instructor Andrew Krug, where he’ll explain best practices for CI/CD, detail common pitfalls, and get hands on with Github Actions + Cloud Providers. Andrew will cover common best practices for project layouts and discuss do’s and don’ts. You&#39;ll leave with a firm understanding of how to properly federate identity – in a safe way with cloud providers.
                 </p>
+                
                 <div style="margin-top: 1.5rem; display: flex; gap: 1rem; flex-wrap: wrap;">
-                    <a href="#" class="btn btn-secondary" style="font-size: 0.875rem; padding: 0.5rem 1rem;">Watch Recording</a>
-                    <a href="#" class="btn btn-secondary" style="font-size: 0.875rem; padding: 0.5rem 1rem;">View Slides</a>
+                    
+                    <a href="https://www.youtube.com/watch?v=vd5JpQB_owg" class="btn btn-secondary" style="font-size: 0.875rem; padding: 0.5rem 1rem;">Watch Recording</a>
+                    
                 </div>
+                
             </div>
             
-            <div class="card">
+            <div class="card talk-card" data-date="October 2024" data-section="recent">
                 <div style="display: flex; justify-content: between; align-items: start; margin-bottom: 1rem;">
-                    <h3 style="margin: 0; flex: 1;">Building High-Performance Teams</h3>
-                    <span style="background: var(--accent-color); color: white; padding: 0.25rem 0.75rem; border-radius: 1rem; font-size: 0.875rem; font-weight: 500;">Keynote</span>
+                    <h3 style="margin: 0; flex: 1;">Securing the Blobs</h3>
+                    <span style="background: var(--primary-color); color: white; padding: 0.25rem 0.75rem; border-radius: 1rem; font-size: 0.875rem; font-weight: 500;">Virtual</span>
                 </div>
                 <p style="color: var(--text-secondary); margin-bottom: 1rem; font-weight: 500;">
-                    CTO Summit • Seattle, WA • December 2023
+                    Anticast • Virtual • October 2024
                 </p>
                 <p>
                     The practices and principles that drive successful technical organizations. From hiring and onboarding to creating psychological safety and fostering innovation.
                 </p>
+                
                 <div style="margin-top: 1.5rem; display: flex; gap: 1rem; flex-wrap: wrap;">
-                    <a href="#" class="btn btn-secondary" style="font-size: 0.875rem; padding: 0.5rem 1rem;">Watch Recording</a>
-                    <a href="#" class="btn btn-secondary" style="font-size: 0.875rem; padding: 0.5rem 1rem;">View Slides</a>
+                    
+                    <a href="https://www.youtube.com/watch?v=PKYOCgBzXcE" class="btn btn-secondary" style="font-size: 0.875rem; padding: 0.5rem 1rem;">Watch Recording</a>
+                    
                 </div>
+                
             </div>
+            
         </div>
     </div>
 </section>
 
-<section class="section" style="background: var(--surface);">
+<script>
+(function() {
+    function parseDateString(dateStr) {
+        // Handle multiple date formats
+        const monthYearMatch = dateStr.match(/^(\w+)\s+(\d{4})$/);
+        if (monthYearMatch) {
+            // "May 2024" format - use first day of month
+            const [_, month, year] = monthYearMatch;
+            return new Date(`${month} 1, ${year}`);
+        }
+
+        const fullDateMatch = dateStr.match(/^(\w+)\s+(\d+),\s+(\d{4})$/);
+        if (fullDateMatch) {
+            // "June 17, 2025" format
+            return new Date(dateStr);
+        }
+
+        const isoMatch = dateStr.match(/^(\d{4})-(\d{2})-(\d{2})$/);
+        if (isoMatch) {
+            // ISO format "2025-06-17"
+            return new Date(dateStr);
+        }
+
+        // Fallback to native Date parsing
+        return new Date(dateStr);
+    }
+
+    function organizeTalks() {
+        const upcomingContainer = document.getElementById('upcoming-talks-container');
+        const recentContainer = document.getElementById('recent-talks-container');
+        const noUpcomingMessage = document.getElementById('no-upcoming-talks');
+        const today = new Date();
+        today.setHours(0, 0, 0, 0);
+
+        const allTalks = document.querySelectorAll('.talk-card');
+
+        allTalks.forEach(talk => {
+            const dateStr = talk.getAttribute('data-date');
+            const talkDate = parseDateString(dateStr);
+            talkDate.setHours(0, 0, 0, 0);
+
+            // Move talk to appropriate section based on date
+            if (talkDate < today) {
+                // Past talk - should be in recent
+                if (talk.parentElement !== recentContainer) {
+                    recentContainer.appendChild(talk);
+                    talk.setAttribute('data-section', 'recent');
+                }
+            } else {
+                // Future talk - should be in upcoming
+                if (talk.parentElement !== upcomingContainer) {
+                    upcomingContainer.appendChild(talk);
+                    talk.setAttribute('data-section', 'upcoming');
+                }
+            }
+        });
+
+        // Check if there are any upcoming talks
+        const upcomingTalks = upcomingContainer.querySelectorAll('.talk-card');
+        if (upcomingTalks.length === 0) {
+            noUpcomingMessage.style.display = 'block';
+        } else {
+            noUpcomingMessage.style.display = 'none';
+        }
+    }
+
+    // Run when DOM is loaded
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', organizeTalks);
+    } else {
+        organizeTalks();
+    }
+})();
+</script>
+
+<section class="section" style="background: var(--surface);" id="topics">
     <div class="container">
         <h2 class="section-title">Speaking Topics</h2>
         <p class="section-subtitle">
@@ -186,45 +338,67 @@
         </p>
         
         <div class="card-grid">
+            
             <div class="card">
                 <h3>🚀 Engineering Leadership</h3>
                 <ul style="margin-top: 1rem; line-height: 1.8;">
+                    
                     <li>Scaling engineering teams and organizations</li>
+                    
                     <li>Building high-performance engineering culture</li>
+                    
                     <li>Technical decision-making and architecture reviews</li>
+                    
                     <li>Managing technical debt and system evolution</li>
+                    
                 </ul>
             </div>
             
             <div class="card">
                 <h3>⚡ System Architecture</h3>
                 <ul style="margin-top: 1rem; line-height: 1.8;">
+                    
                     <li>Microservices architecture and distributed systems</li>
+                    
                     <li>Cloud-native development and deployment</li>
+                    
                     <li>Resilience patterns and fault tolerance</li>
+                    
                     <li>Performance optimization and scalability</li>
+                    
                 </ul>
             </div>
             
             <div class="card">
-                <h3>🔧 DevOps & Platform Engineering</h3>
+                <h3>🔧 DevOps &amp; Platform Engineering</h3>
                 <ul style="margin-top: 1rem; line-height: 1.8;">
+                    
                     <li>CI/CD best practices and automation</li>
+                    
                     <li>Infrastructure as code and GitOps</li>
+                    
                     <li>Observability and monitoring strategies</li>
+                    
                     <li>Platform engineering and developer experience</li>
+                    
                 </ul>
             </div>
             
             <div class="card">
-                <h3>🤖 AI & Future Tech</h3>
+                <h3>🤖 AI &amp; Future Tech</h3>
                 <ul style="margin-top: 1rem; line-height: 1.8;">
+                    
                     <li>AI/ML integration in software systems</li>
+                    
                     <li>The future of software development</li>
+                    
                     <li>Emerging technologies and their impact</li>
+                    
                     <li>Ethics in AI and technology leadership</li>
+                    
                 </ul>
             </div>
+            
         </div>
     </div>
 </section>
@@ -232,18 +406,23 @@
 <section class="section">
     <div class="container">
         <div style="text-align: center; max-width: 600px; margin: 0 auto;">
-            <h2 class="section-title">Let's Speak Together</h2>
+            <h2 class="section-title">Let&#39;s Speak Together</h2>
             <p style="font-size: 1.125rem; color: var(--text-secondary); margin-bottom: 2rem;">
-                I'm always excited to share knowledge and insights with technical communities around the world. Whether you're organizing a conference, meetup, or corporate event, I'd love to contribute.
+                I&#39;m always excited to share knowledge and insights with technical communities around the world. Whether you&#39;re organizing a conference, meetup, or corporate event, I&#39;d love to contribute.
             </p>
             
             <div style="background: var(--surface); padding: 2rem; border-radius: var(--border-radius-lg); margin: 2rem 0;">
                 <h3 style="margin-bottom: 1rem; color: var(--primary-color);">What I Bring</h3>
                 <ul style="text-align: left; max-width: 400px; margin: 0 auto; line-height: 1.8;">
+                    
                     <li>Real-world experience and practical insights</li>
+                    
                     <li>Engaging presentation style with actionable takeaways</li>
+                    
                     <li>Customized content tailored to your audience</li>
+                    
                     <li>Professional speaker materials and promotion</li>
+                    
                 </ul>
             </div>
             
@@ -259,7 +438,7 @@
             <a href="https://twitter.com/andrewkrug" class="social-link" title="Twitter">
                 <span>𝕏</span>
             </a>
-            <a href="https://linkedin.com/in/andrew-krug" class="social-link" title="LinkedIn">
+            <a href="https://linkedin.com/in/andrewkrug" class="social-link" title="LinkedIn">
                 <span>in</span>
             </a>
             <a href="https://github.com/andrewkrug" class="social-link" title="GitHub">
@@ -275,7 +454,7 @@
                 <span>📧</span>
             </a>
         </div>
-        <p>&copy; 2024 Andrew J. Krug. All rights reserved.</p>
+        <p>&copy; 2024 Andrew Krug. All rights reserved.</p>
         <p>Building the future of technology, one insight at a time.</p>
     </div>
 </footer>

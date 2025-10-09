@@ -15,5 +15,8 @@
     "eleventy",
     "personal-website",
     "technical-influencer"
-  ]
+  ],
+  "dependencies": {
+    "js-yaml": "^4.1.0"
+  }
 }

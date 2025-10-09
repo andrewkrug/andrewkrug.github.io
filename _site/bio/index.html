@@ -3,18 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About - Andrew J. Krug</title>
+    <title>About - Andrew Krug</title>
     <meta name="description" content="Learn more about Alex TechLead&#39;s background, experience, and passion for technology leadership and innovation.">
     
     <!-- Open Graph -->
-    <meta property="og:title" content="About - Andrew J. Krug">
+    <meta property="og:title" content="About - Andrew Krug">
     <meta property="og:description" content="Learn more about Alex TechLead&#39;s background, experience, and passion for technology leadership and innovation.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://andrewkrug.dev/bio/">
     
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="About - Andrew J. Krug">
+    <meta name="twitter:title" content="About - Andrew Krug">
     <meta name="twitter:description" content="Learn more about Alex TechLead&#39;s background, experience, and passion for technology leadership and innovation.">
     
     <!-- Fonts -->
@@ -26,13 +26,47 @@
     <link rel="stylesheet" href="/assets/css/style.css">
     
     <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/images/favicon.svg">
     <link rel="icon" type="image/x-icon" href="/assets/favicon.ico">
+
+    <!-- Datadog RUM -->
+    <script
+        src="https://www.datadoghq-browser-agent.com/us1/v6/datadog-rum.js"
+        type="text/javascript">
+    </script>
+    <script>
+        window.DD_RUM && window.DD_RUM.init({
+          clientToken: 'pubae28d391e220e8b68852f4c6579f1b3d',
+          applicationId: 'b6006ae4-6d34-405e-97ce-6a2bad8b48d2',
+          // `site` refers to the Datadog site parameter of your organization
+          // see https://docs.datadoghq.com/getting_started/site/
+          site: 'datadoghq.com',
+          service: 'andrewkrug.com',
+          env: '<ENV_NAME>',
+          // Specify a version number to identify the deployed version of your application in Datadog
+          // version: '1.0.0',
+          sessionSampleRate: 100,
+          sessionReplaySampleRate: 20,
+          trackBfcacheViews: true,
+          defaultPrivacyLevel: 'mask-user-input',
+        });
+    </script>
+
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-EF8DXYLJRG"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-EF8DXYLJRG');
+    </script>
 </head>
 <body>
     <nav class="nav">
     <div class="nav-container">
-        <a href="/" class="nav-logo">Andrew J. Krug</a>
-        <ul class="nav-menu">
+        <a href="/" class="nav-logo">Andrew Krug</a>
+        <button class="nav-toggle" onclick="toggleMobileMenu()">☰</button>
+        <ul class="nav-menu" id="nav-menu">
             <li><a href="/" class="nav-link">Home</a></li>
             <li><a href="/bio/" class="nav-link">About</a></li>
             <li><a href="/speaking/" class="nav-link">Speaking</a></li>
@@ -43,22 +77,46 @@
         </ul>
     </div>
 </nav>
+
+<script>
+function toggleMobileMenu() {
+    const navMenu = document.getElementById('nav-menu');
+    navMenu.classList.toggle('active');
+}
+
+// Close mobile menu when clicking on a link
+document.addEventListener('DOMContentLoaded', function() {
+    const navLinks = document.querySelectorAll('.nav-link');
+    navLinks.forEach(link => {
+        link.addEventListener('click', function() {
+            const navMenu = document.getElementById('nav-menu');
+            navMenu.classList.remove('active');
+        });
+    });
+});
+</script>
     
     <main>
         
 <section class="section">
     <div class="container">
-        <h1 class="section-title">About Andrew J. Krug</h1>
+        <h1 class="section-title">About Andrew Krug</h1>
         
         <div class="bio-section">
             <div>
-                <img src="/images/headshot.jpg" alt="Andrew J. Krug Professional Headshot" class="bio-image" />
+                <img src="/images/headshot.jpg" alt="Andrew Krug Professional Headshot" class="bio-image" />
                 <div class="download-headshot">
-                    <a href="/images/headshot-high-res.jpg" download="andrew-j-krug-headshot.jpg" class="btn btn-primary">
+                    <a href="/images/headshot-high-res.jpg" download="andrew-krug-headshot.jpg" class="btn btn-primary" style="margin-bottom: 0.5rem;">
                         Download Headshot
                     </a>
+                    <button onclick="downloadBioMarkdown()" class="btn btn-secondary" style="margin-bottom: 0.5rem;">
+                        Download Bio (Markdown)
+                    </button>
+                    <a href="/images/andrew-krug-resume.pdf" download="andrew-krug-resume.pdf" class="btn btn-secondary" style="margin-bottom: 0.5rem;">
+                        Download Resume (PDF)
+                    </a>
                     <p style="margin-top: 0.5rem; font-size: 0.875rem; color: var(--text-secondary);">
-                        High-resolution image for media use
+                        Professional materials for media and hiring use
                     </p>
                 </div>
             </div>
@@ -81,6 +139,7 @@
                 <h3 style="margin: 2rem 0 1rem; color: var(--primary-color);">Core Expertise</h3>
                 <ul style="margin-bottom: 2rem; line-height: 1.8;">
                     <li><strong>Cloud Security Services:</strong> Cloud Security Audits, Cloud Penetration Testing, Secure Cloud Architecture Design</li>
+                    <li><strong>Professional Services:</strong> Career Coaching, Executive Coaching, Board Advisory Roles</li>
                     <li><strong>Cloud & Security:</strong> AWS Cloud Architecture, Google Cloud Platform, Identity & Access Management, Cloud Security</li>
                     <li><strong>Technical Skills:</strong> Python, Rust, Kubernetes, DynamoDB, Kinesis, DevSecOps, Infrastructure as Code</li>
                     <li><strong>Security Specialties:</strong> Security Automation, Threat Modeling, Risk Analysis, Digital Forensics, Incident Response</li>
@@ -181,6 +240,95 @@
     </div>
 </section>
 
+<script>
+function downloadBioMarkdown() {
+    const bioContent = `# Andrew Krug
+## Head of Security Advocacy at Datadog
+
+### About
+Accomplished security leader with 10+ years of experience in cloud security, identity management, and technical advocacy. Currently serving as Head of Security Advocacy at Datadog, building research programs and fostering developer communities. Proven track record of architecting secure cloud solutions, leading engineering teams, and speaking at major industry conferences including BlackHat and AWS re:Invent.
+
+Currently leading Datadog SecurityLabs at Datadog, I've built this brand from the ground up to reach over 80,000 unique readers per quarter. My work focuses on bridging the gap between security and development teams, making security practices more accessible and practical for modern cloud environments.
+
+My technical expertise spans across cloud security architecture, identity management, DevSecOps, and security automation. I'm passionate about open source security tools and have contributed to Mozilla's security ecosystem, including the Enterprise Defense Platform and various AWS security utilities.
+
+### Core Expertise
+- **Cloud Security Services:** Cloud Security Audits, Cloud Penetration Testing, Secure Cloud Architecture Design
+- **Cloud & Security:** AWS Cloud Architecture, Google Cloud Platform, Identity & Access Management, Cloud Security
+- **Technical Skills:** Python, Rust, Kubernetes, DynamoDB, Kinesis, DevSecOps, Infrastructure as Code
+- **Security Specialties:** Security Automation, Threat Modeling, Risk Analysis, Digital Forensics, Incident Response
+- **Leadership:** Engineering Management, Product Management, Technical Evangelism, Open Source Strategy
+
+### Speaking & Community Leadership
+I'm an active speaker in the security and cloud communities, having presented at BlackHat USA, AWS re:Invent (9 times), BSides events, and many other conferences. I also created and deliver "Securing the Cloud Foundations," a comprehensive course that has trained thousands of cloud practitioners on security best practices.
+
+### Career Highlights
+
+#### Head of Security Advocacy - Datadog (August 2020 - Present)
+Built and lead SecurityLabs brand from ground up, reaching 80,000+ unique readers per quarter. Create and deliver presentations, workshops, and training materials for global developer community. Represent Datadog at major industry conferences as thought leader in DevOps and observability.
+
+#### Principal Security Engineer - Vacasa (January 2020 - August 2020)
+Directed comprehensive security strategy for AWS cloud environment during company's rapid growth. Led interim DevSecOps engineering team through COVID-19 response. Developed Blockabot (universal blocklist pipeline) and continuous auditing capabilities.
+
+#### Staff Security Engineer - Mozilla (August 2018 - January 2020)
+Led Mozilla's Open Source Security Software Brand initiative. Managed Mozilla Enterprise Defense Platform product roadmap. Architected security solutions for Mozilla's multi-cloud strategy (AWS/GCP). Developed internal security tooling in Python and Rust.
+
+#### Senior Security Engineer - Mozilla (February 2017 - August 2018)
+Designed and developed Identity and Access Management stack serving 100,000+ contributors. Built secure APIs using AWS Lambda, Kinesis, and DynamoDB. Performed digital forensics and incident response for AWS cloud infrastructure.
+
+### Speaking & Recognition
+- **BlackHat USA Speaker** - Presented security research (2 times)
+- **AWS re:Invent Speaker** - Cloud security presentations (9 times)
+- **BSides Speaker** - Community security talks (10+ times)
+- **re:Inforce Speaker** - AWS security conference (3 times)
+- **Cloud Native Security Day Speaker** - CNCF events (2 times)
+
+### Education & Certifications
+- **Bachelor of Science, Computer Science** - Southern Oregon University
+- Specialization: Computer Security & Information Assurance
+- **Red Hat Certified System Administrator (RHCSA) v7** - Recertified 2014
+
+### Program Leadership
+- **CNCF Security Technical Advisory Group (STAG)** - Program Committee
+- **Wild West Hackin' Fest** - Program Committee Chair
+- **Mozilla Open Source Security** - Brand initiative leader
+
+### Contact Information
+- **Email:** andrewkrug@gmail.com
+- **Phone:** 541.708.1002
+- **Location:** Medford, OR
+- **Website:** https://andrewkrug.dev
+- **Twitter:** @andrewkrug
+- **LinkedIn:** andrew-krug
+- **GitHub:** andrewkrug
+- **Instagram:** @therealandrewkrug
+- **Newsletter:** https://farmstofirewalls.substack.com/
+
+### Professional Services Available
+- Cloud Security Audits
+- Cloud Penetration Testing
+- Cloud Architecture Design
+- Board Advisory Roles
+- Career Coaching
+- Executive Coaching
+- Conference Speaking
+- Security Training & Workshops
+
+---
+*Generated from andrewkrug.dev - ${new Date().toLocaleDateString()}*`;
+
+    const blob = new Blob([bioContent], { type: 'text/markdown' });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = 'andrew-krug-bio.md';
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    URL.revokeObjectURL(url);
+}
+</script>
+
 <section class="section">
     <div class="container">
         <h2 class="section-title">Beyond Technology</h2>
@@ -217,7 +365,7 @@
             <a href="https://twitter.com/andrewkrug" class="social-link" title="Twitter">
                 <span>𝕏</span>
             </a>
-            <a href="https://linkedin.com/in/andrew-krug" class="social-link" title="LinkedIn">
+            <a href="https://linkedin.com/in/andrewkrug" class="social-link" title="LinkedIn">
                 <span>in</span>
             </a>
             <a href="https://github.com/andrewkrug" class="social-link" title="GitHub">
@@ -233,7 +381,7 @@
                 <span>📧</span>
             </a>
         </div>
-        <p>&copy; 2024 Andrew J. Krug. All rights reserved.</p>
+        <p>&copy; 2024 Andrew Krug. All rights reserved.</p>
         <p>Building the future of technology, one insight at a time.</p>
     </div>
 </footer>

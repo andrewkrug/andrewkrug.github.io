@@ -1,0 +1,51 @@
+upcoming:
+
+  - name: "AWS re:Inforce"
+    location: "Phillidalphia, PA"
+    coordinates: [36.1699, -114.1398]
+    date: "2025-06-15"
+    type: "security"
+    talk: "Eliminating Blindspots in your security monitoring strategy"
+    venue: "Phillidalphia Convention Center"
+    website: "https://bsideslv.org"
+
+  - name: "BSides Las Vegas"
+    location: "Las Vegas, NV"
+    coordinates: [36.1699, -114.1398]
+    date: "2025-08-04"
+    type: "security"
+    talk: ""
+    venue: "Tuscany Casino"
+    website: "https://bsideslv.org"
+
+  - name: "BlackHat USA 2025"
+    location: "Las Vegas, NV"
+    coordinates: [36.1699, -114.1398]
+    date: "2025-08-02"
+    type: "security"
+    talk: "BlackHat Arsenal"
+    venue: "Mandalay Bay"
+    website: "https://blackhat.com"
+
+recent:
+  - name: "Datadog DASH"
+    location: "New York, NY"
+    coordinates: [36.1699, -114.1398]
+    date: "2024-03-15"
+    type: "security"
+    talk: ""
+    venue: "Javits"
+    website: "https://dashcon.io"
+
+regular_locations:
+  - name: "Datadog HQ"
+    location: "New York, NY"
+    coordinates: [40.7128, -74.0060]
+    type: "office"
+    description: "Primary office location"
+
+  - name: "Home Base"
+    location: "Medford, OR"
+    coordinates: [42.3265, -122.8756]
+    type: "home"
+    description: "Home office and personal base"

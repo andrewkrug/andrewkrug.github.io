@@ -3,18 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Writing - Andrew J. Krug</title>
+    <title>Writing - Andrew Krug</title>
     <meta name="description" content="Technical articles, insights, and thought leadership on software engineering, system architecture, and technology innovation.">
     
     <!-- Open Graph -->
-    <meta property="og:title" content="Writing - Andrew J. Krug">
+    <meta property="og:title" content="Writing - Andrew Krug">
     <meta property="og:description" content="Technical articles, insights, and thought leadership on software engineering, system architecture, and technology innovation.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://andrewkrug.dev/writing/">
     
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Writing - Andrew J. Krug">
+    <meta name="twitter:title" content="Writing - Andrew Krug">
     <meta name="twitter:description" content="Technical articles, insights, and thought leadership on software engineering, system architecture, and technology innovation.">
     
     <!-- Fonts -->
@@ -26,13 +26,47 @@
     <link rel="stylesheet" href="/assets/css/style.css">
     
     <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/images/favicon.svg">
     <link rel="icon" type="image/x-icon" href="/assets/favicon.ico">
+
+    <!-- Datadog RUM -->
+    <script
+        src="https://www.datadoghq-browser-agent.com/us1/v6/datadog-rum.js"
+        type="text/javascript">
+    </script>
+    <script>
+        window.DD_RUM && window.DD_RUM.init({
+          clientToken: 'pubae28d391e220e8b68852f4c6579f1b3d',
+          applicationId: 'b6006ae4-6d34-405e-97ce-6a2bad8b48d2',
+          // `site` refers to the Datadog site parameter of your organization
+          // see https://docs.datadoghq.com/getting_started/site/
+          site: 'datadoghq.com',
+          service: 'andrewkrug.com',
+          env: '<ENV_NAME>',
+          // Specify a version number to identify the deployed version of your application in Datadog
+          // version: '1.0.0',
+          sessionSampleRate: 100,
+          sessionReplaySampleRate: 20,
+          trackBfcacheViews: true,
+          defaultPrivacyLevel: 'mask-user-input',
+        });
+    </script>
+
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-EF8DXYLJRG"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-EF8DXYLJRG');
+    </script>
 </head>
 <body>
     <nav class="nav">
     <div class="nav-container">
-        <a href="/" class="nav-logo">Andrew J. Krug</a>
-        <ul class="nav-menu">
+        <a href="/" class="nav-logo">Andrew Krug</a>
+        <button class="nav-toggle" onclick="toggleMobileMenu()">☰</button>
+        <ul class="nav-menu" id="nav-menu">
             <li><a href="/" class="nav-link">Home</a></li>
             <li><a href="/bio/" class="nav-link">About</a></li>
             <li><a href="/speaking/" class="nav-link">Speaking</a></li>
@@ -43,79 +77,87 @@
         </ul>
     </div>
 </nav>
+
+<script>
+function toggleMobileMenu() {
+    const navMenu = document.getElementById('nav-menu');
+    navMenu.classList.toggle('active');
+}
+
+// Close mobile menu when clicking on a link
+document.addEventListener('DOMContentLoaded', function() {
+    const navLinks = document.querySelectorAll('.nav-link');
+    navLinks.forEach(link => {
+        link.addEventListener('click', function() {
+            const navMenu = document.getElementById('nav-menu');
+            navMenu.classList.remove('active');
+        });
+    });
+});
+</script>
     
     <main>
         
-<section class="section">
-    <div class="container">
-        <h1 class="section-title">Technical Writing</h1>
-        <p class="section-subtitle">
-            I regularly write about software engineering, system architecture, and technology leadership. Here are some of my recent articles and publications.
-        </p>
+<section class="full-width-hero" style="
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('/images/writing-hero.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 70vh;
+    min-height: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    position: relative;
+">
+    <div class="container" style="position: relative; z-index: 2;">
+        <div class="hero-content" style="background: rgba(0, 0, 0, 0.3); padding: 3rem 2rem; border-radius: 12px; backdrop-filter: blur(10px);">
+            <h1 style="font-size: clamp(2.5rem, 5vw, 4rem); font-weight: 700; margin-bottom: 1rem; text-shadow: 3px 3px 6px rgba(0,0,0,0.8);">Technical Writing</h1>
+            <p style="font-size: 1.25rem; margin-bottom: 2rem; max-width: 600px; margin-left: auto; margin-right: auto; text-shadow: 2px 2px 4px rgba(0,0,0,0.8);">I regularly write about software engineering, system architecture, and technology leadership. From Datadog SecurityLabs to industry publications, sharing knowledge through practical insights and research.</p>
+            <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+                <a href="https://farmstofirewalls.substack.com/" class="btn btn-primary" style="box-shadow: 0 4px 8px rgba(0,0,0,0.3);" target="_blank">Read Newsletter</a>
+                <a href="#featured" class="btn btn-secondary" style="background: rgba(255,255,255,0.2); border: 2px solid rgba(255,255,255,0.8); color: white; box-shadow: 0 4px 8px rgba(0,0,0,0.3);">View Articles</a>
+            </div>
+        </div>
     </div>
 </section>
 
-<section class="section" style="background: var(--surface);">
+<section class="section" style="background: var(--surface);" id="featured">
     <div class="container">
         <h2 class="section-title">Featured Articles</h2>
         
         <div class="card-grid">
+            
             <div class="card">
-                <div style="display: flex; justify-content: between; align-items: start; margin-bottom: 1rem;">
-                    <h3 style="margin: 0; flex: 1;">Building High-Performance Engineering Teams</h3>
-                    <span style="background: var(--accent-color); color: white; padding: 0.25rem 0.75rem; border-radius: 1rem; font-size: 0.875rem; font-weight: 500;">Featured</span>
-                </div>
+                
+                <h3>State of DevSecOps Report</h3>
+                
                 <p style="color: var(--text-secondary); margin-bottom: 1rem; font-weight: 500;">
-                    Tech Weekly • February 2024 • 15 min read
+                    Datadog • May 2025 • 8 min read
                 </p>
                 <p>
-                    A comprehensive guide to building and scaling engineering teams that deliver exceptional results. Covers hiring practices, team structure, culture building, and performance optimization strategies used by top tech companies.
+                    The practice of DevSecOps emphasizes the need to identify and respond to security risks at each point in the software development life cycle (SDLC), and has increasingly become the standard in the tech industry. In order to assess the types of risks defenders need to be aware of and what practices they can adopt to improve their security posture, we analyzed tens of thousands of applications and container images within thousands of cloud environments.
                 </p>
+                
                 <div style="margin-top: 1.5rem;">
-                    <span style="display: inline-block; background: var(--surface); border: 1px solid var(--border); padding: 0.25rem 0.5rem; border-radius: 0.5rem; font-size: 0.75rem; margin-right: 0.5rem;">Leadership</span>
-                    <span style="display: inline-block; background: var(--surface); border: 1px solid var(--border); padding: 0.25rem 0.5rem; border-radius: 0.5rem; font-size: 0.75rem; margin-right: 0.5rem;">Team Building</span>
-                    <span style="display: inline-block; background: var(--surface); border: 1px solid var(--border); padding: 0.25rem 0.5rem; border-radius: 0.5rem; font-size: 0.75rem;">Culture</span>
+                    
+                    <span style="display: inline-block; background: var(--surface); border: 1px solid var(--border); padding: 0.25rem 0.5rem; border-radius: 0.5rem; font-size: 0.75rem; margin-right: 0.5rem;">DevSecOps</span>
+                    
+                    <span style="display: inline-block; background: var(--surface); border: 1px solid var(--border); padding: 0.25rem 0.5rem; border-radius: 0.5rem; font-size: 0.75rem; margin-right: 0.5rem;">Cloud</span>
+                    
+                    <span style="display: inline-block; background: var(--surface); border: 1px solid var(--border); padding: 0.25rem 0.5rem; border-radius: 0.5rem; font-size: 0.75rem; margin-right: 0.5rem;">Security</span>
+                    
+                    <span style="display: inline-block; background: var(--surface); border: 1px solid var(--border); padding: 0.25rem 0.5rem; border-radius: 0.5rem; font-size: 0.75rem; margin-right: 0.5rem;">Practicioner</span>
+                    
                 </div>
+                
                 <div style="margin-top: 1.5rem;">
-                    <a href="#" class="btn btn-primary" style="font-size: 0.875rem; padding: 0.5rem 1rem;">Read Article</a>
+                    <a href="https://www.datadoghq.com/state-of-devsecops/" class="btn btn-primary" style="font-size: 0.875rem; padding: 0.5rem 1rem;" target="_blank">Read Article</a>
                 </div>
             </div>
             
-            <div class="card">
-                <h3>The Evolution of Microservices Architecture</h3>
-                <p style="color: var(--text-secondary); margin-bottom: 1rem; font-weight: 500;">
-                    InfoQ • January 2024 • 12 min read
-                </p>
-                <p>
-                    An in-depth analysis of how microservices patterns have evolved and matured. Explores current best practices, common pitfalls, and emerging patterns for building resilient distributed systems.
-                </p>
-                <div style="margin-top: 1.5rem;">
-                    <span style="display: inline-block; background: var(--surface); border: 1px solid var(--border); padding: 0.25rem 0.5rem; border-radius: 0.5rem; font-size: 0.75rem; margin-right: 0.5rem;">Architecture</span>
-                    <span style="display: inline-block; background: var(--surface); border: 1px solid var(--border); padding: 0.25rem 0.5rem; border-radius: 0.5rem; font-size: 0.75rem; margin-right: 0.5rem;">Microservices</span>
-                    <span style="display: inline-block; background: var(--surface); border: 1px solid var(--border); padding: 0.25rem 0.5rem; border-radius: 0.5rem; font-size: 0.75rem;">Distributed Systems</span>
-                </div>
-                <div style="margin-top: 1.5rem;">
-                    <a href="#" class="btn btn-primary" style="font-size: 0.875rem; padding: 0.5rem 1rem;">Read Article</a>
-                </div>
-            </div>
-            
-            <div class="card">
-                <h3>DevOps in the Age of AI</h3>
-                <p style="color: var(--text-secondary); margin-bottom: 1rem; font-weight: 500;">
-                    Medium • December 2023 • 10 min read
-                </p>
-                <p>
-                    How artificial intelligence is transforming DevOps practices, from intelligent monitoring and automated incident response to predictive scaling and infrastructure optimization.
-                </p>
-                <div style="margin-top: 1.5rem;">
-                    <span style="display: inline-block; background: var(--surface); border: 1px solid var(--border); padding: 0.25rem 0.5rem; border-radius: 0.5rem; font-size: 0.75rem; margin-right: 0.5rem;">DevOps</span>
-                    <span style="display: inline-block; background: var(--surface); border: 1px solid var(--border); padding: 0.25rem 0.5rem; border-radius: 0.5rem; font-size: 0.75rem; margin-right: 0.5rem;">AI/ML</span>
-                    <span style="display: inline-block; background: var(--surface); border: 1px solid var(--border); padding: 0.25rem 0.5rem; border-radius: 0.5rem; font-size: 0.75rem;">Automation</span>
-                </div>
-                <div style="margin-top: 1.5rem;">
-                    <a href="#" class="btn btn-primary" style="font-size: 0.875rem; padding: 0.5rem 1rem;">Read Article</a>
-                </div>
-            </div>
         </div>
     </div>
 </section>
@@ -125,137 +167,36 @@
         <h2 class="section-title">Recent Articles</h2>
         
         <div style="max-width: 800px; margin: 0 auto;">
-            <article style="border-bottom: 1px solid var(--border); padding: 2rem 0;">
-                <h3 style="margin-bottom: 0.5rem;">
-                    <a href="#" style="text-decoration: none; color: var(--text-primary);">Platform Engineering: The Next Evolution of DevOps</a>
-                </h3>
-                <p style="color: var(--text-secondary); margin-bottom: 1rem; font-size: 0.875rem;">
-                    Published on DZone • March 2024 • 8 min read
-                </p>
-                <p style="margin-bottom: 1rem;">
-                    Exploring how platform engineering is becoming the foundation for scalable developer experiences and organizational efficiency.
-                </p>
-                <div>
-                    <span style="display: inline-block; background: var(--surface); border: 1px solid var(--border); padding: 0.25rem 0.5rem; border-radius: 0.5rem; font-size: 0.75rem; margin-right: 0.5rem;">Platform Engineering</span>
-                    <span style="display: inline-block; background: var(--surface); border: 1px solid var(--border); padding: 0.25rem 0.5rem; border-radius: 0.5rem; font-size: 0.75rem; margin-right: 0.5rem;">Developer Experience</span>
-                </div>
-            </article>
-            
-            <article style="border-bottom: 1px solid var(--border); padding: 2rem 0;">
-                <h3 style="margin-bottom: 0.5rem;">
-                    <a href="#" style="text-decoration: none; color: var(--text-primary);">The Hidden Costs of Technical Debt</a>
-                </h3>
-                <p style="color: var(--text-secondary); margin-bottom: 1rem; font-size: 0.875rem;">
-                    Published on Hacker Noon • February 2024 • 11 min read
-                </p>
-                <p style="margin-bottom: 1rem;">
-                    A deep dive into quantifying and managing technical debt, with practical strategies for balancing feature development with system health.
-                </p>
-                <div>
-                    <span style="display: inline-block; background: var(--surface); border: 1px solid var(--border); padding: 0.25rem 0.5rem; border-radius: 0.5rem; font-size: 0.75rem; margin-right: 0.5rem;">Technical Debt</span>
-                    <span style="display: inline-block; background: var(--surface); border: 1px solid var(--border); padding: 0.25rem 0.5rem; border-radius: 0.5rem; font-size: 0.75rem; margin-right: 0.5rem;">Software Engineering</span>
-                </div>
-            </article>
-            
-            <article style="border-bottom: 1px solid var(--border); padding: 2rem 0;">
-                <h3 style="margin-bottom: 0.5rem;">
-                    <a href="#" style="text-decoration: none; color: var(--text-primary);">Observability vs. Monitoring: What's the Difference?</a>
-                </h3>
-                <p style="color: var(--text-secondary); margin-bottom: 1rem; font-size: 0.875rem;">
-                    Published on The New Stack • January 2024 • 7 min read
-                </p>
-                <p style="margin-bottom: 1rem;">
-                    Clarifying the distinction between observability and monitoring, and how to build systems that provide meaningful insights into complex distributed architectures.
-                </p>
-                <div>
-                    <span style="display: inline-block; background: var(--surface); border: 1px solid var(--border); padding: 0.25rem 0.5rem; border-radius: 0.5rem; font-size: 0.75rem; margin-right: 0.5rem;">Observability</span>
-                    <span style="display: inline-block; background: var(--surface); border: 1px solid var(--border); padding: 0.25rem 0.5rem; border-radius: 0.5rem; font-size: 0.75rem; margin-right: 0.5rem;">Monitoring</span>
-                    <span style="display: inline-block; background: var(--surface); border: 1px solid var(--border); padding: 0.25rem 0.5rem; border-radius: 0.5rem; font-size: 0.75rem;">SRE</span>
-                </div>
-            </article>
-            
-            <article style="border-bottom: 1px solid var(--border); padding: 2rem 0;">
-                <h3 style="margin-bottom: 0.5rem;">
-                    <a href="#" style="text-decoration: none; color: var(--text-primary);">Remote Engineering Leadership: Lessons Learned</a>
-                </h3>
-                <p style="color: var(--text-secondary); margin-bottom: 1rem; font-size: 0.875rem;">
-                    Published on First Round Review • December 2023 • 13 min read
-                </p>
-                <p style="margin-bottom: 1rem;">
-                    Practical insights from leading distributed engineering teams, including communication strategies, culture building, and performance management in remote environments.
-                </p>
-                <div>
-                    <span style="display: inline-block; background: var(--surface); border: 1px solid var(--border); padding: 0.25rem 0.5rem; border-radius: 0.5rem; font-size: 0.75rem; margin-right: 0.5rem;">Remote Work</span>
-                    <span style="display: inline-block; background: var(--surface); border: 1px solid var(--border); padding: 0.25rem 0.5rem; border-radius: 0.5rem; font-size: 0.75rem; margin-right: 0.5rem;">Engineering Leadership</span>
-                </div>
-            </article>
             
             <article style="padding: 2rem 0;">
                 <h3 style="margin-bottom: 0.5rem;">
-                    <a href="#" style="text-decoration: none; color: var(--text-primary);">API Design Best Practices for 2024</a>
+                    <a href="https://www.datadoghq.com/state-of-devsecops/" style="text-decoration: none; color: var(--text-primary);" target="_blank">State of DevSecOps Report</a>
                 </h3>
                 <p style="color: var(--text-secondary); margin-bottom: 1rem; font-size: 0.875rem;">
-                    Published on API Evangelist • November 2023 • 9 min read
+                    Published on Datadog • May 2025 • 8 min read
                 </p>
                 <p style="margin-bottom: 1rem;">
-                    Modern API design principles that prioritize developer experience, security, and scalability. Includes practical examples and implementation strategies.
+                    The practice of DevSecOps emphasizes the need to identify and respond to security risks at each point in the software development life cycle (SDLC), and has increasingly become the standard in the tech industry. In order to assess the types of risks defenders need to be aware of and what practices they can adopt to improve their security posture, we analyzed tens of thousands of applications and container images within thousands of cloud environments.
                 </p>
+                
                 <div>
-                    <span style="display: inline-block; background: var(--surface); border: 1px solid var(--border); padding: 0.25rem 0.5rem; border-radius: 0.5rem; font-size: 0.75rem; margin-right: 0.5rem;">API Design</span>
-                    <span style="display: inline-block; background: var(--surface); border: 1px solid var(--border); padding: 0.25rem 0.5rem; border-radius: 0.5rem; font-size: 0.75rem; margin-right: 0.5rem;">Developer Experience</span>
-                    <span style="display: inline-block; background: var(--surface); border: 1px solid var(--border); padding: 0.25rem 0.5rem; border-radius: 0.5rem; font-size: 0.75rem;">REST</span>
+                    
+                    <span style="display: inline-block; background: var(--surface); border: 1px solid var(--border); padding: 0.25rem 0.5rem; border-radius: 0.5rem; font-size: 0.75rem; margin-right: 0.5rem;">DevSecOps</span>
+                    
+                    <span style="display: inline-block; background: var(--surface); border: 1px solid var(--border); padding: 0.25rem 0.5rem; border-radius: 0.5rem; font-size: 0.75rem; margin-right: 0.5rem;">Cloud</span>
+                    
+                    <span style="display: inline-block; background: var(--surface); border: 1px solid var(--border); padding: 0.25rem 0.5rem; border-radius: 0.5rem; font-size: 0.75rem; margin-right: 0.5rem;">Security</span>
+                    
+                    <span style="display: inline-block; background: var(--surface); border: 1px solid var(--border); padding: 0.25rem 0.5rem; border-radius: 0.5rem; font-size: 0.75rem; margin-right: 0.5rem;">Practicioner</span>
+                    
                 </div>
+                
             </article>
+            
         </div>
     </div>
 </section>
 
-<section class="section" style="background: var(--surface);">
-    <div class="container">
-        <h2 class="section-title">Publications & Media</h2>
-        
-        <div class="card-grid">
-            <div class="card">
-                <h3>📚 Book Contributions</h3>
-                <ul style="margin-top: 1rem; line-height: 1.8;">
-                    <li><strong>"Modern Engineering Leadership"</strong> - Contributing Author (O'Reilly, 2023)</li>
-                    <li><strong>"Cloud Native Patterns"</strong> - Technical Reviewer (Manning, 2022)</li>
-                    <li><strong>"The Platform Engineering Handbook"</strong> - Chapter on Developer Experience (Packt, 2024)</li>
-                </ul>
-            </div>
-            
-            <div class="card">
-                <h3>📰 Regular Publications</h3>
-                <ul style="margin-top: 1rem; line-height: 1.8;">
-                    <li><strong>InfoQ</strong> - Quarterly articles on architecture and leadership</li>
-                    <li><strong>IEEE Software</strong> - Peer-reviewed technical articles</li>
-                    <li><strong>ACM Communications</strong> - Research and industry insights</li>
-                    <li><strong>Medium</strong> - Weekly technical and leadership content</li>
-                </ul>
-            </div>
-            
-            <div class="card">
-                <h3>🎙️ Podcast Appearances</h3>
-                <ul style="margin-top: 1rem; line-height: 1.8;">
-                    <li><strong>The Tech Leadership Show</strong> - Regular contributor and guest host</li>
-                    <li><strong>Software Engineering Daily</strong> - Technical deep-dives</li>
-                    <li><strong>The CloudCast</strong> - Cloud architecture discussions</li>
-                    <li><strong>Engineering Management Podcast</strong> - Leadership insights</li>
-                </ul>
-            </div>
-            
-            <div class="card">
-                <h3>🏆 Recognition</h3>
-                <ul style="margin-top: 1rem; line-height: 1.8;">
-                    <li><strong>Top Writer in Technology</strong> - Medium (2023, 2024)</li>
-                    <li><strong>Most Influential Tech Voice</strong> - Tech Twitter Awards (2023)</li>
-                    <li><strong>Best Technical Article</strong> - DevCommunity Awards (2022)</li>
-                    <li><strong>Industry Thought Leader</strong> - CTO Forum Recognition (2023)</li>
-                </ul>
-            </div>
-        </div>
-    </div>
-</section>
 
 <section class="section">
     <div class="container">
@@ -266,9 +207,13 @@
             </p>
             
             <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; margin: 2rem 0;">
-                <a href="https://medium.com/@andrewkrug" class="btn btn-secondary">Follow on Medium</a>
-                <a href="https://twitter.com/andrewkrug" class="btn btn-secondary">Follow on Twitter</a>
-                <a href="/contact/" class="btn btn-primary">Writing Opportunities</a>
+                
+                <a href="https://farmstofirewalls.substack.com/" class="btn btn-secondary" target="_blank">Subscribe to my newsletter Farms to Firewalls</a>
+                
+                <a href="https://twitter.com/andrewkrug" class="btn btn-secondary" target="_blank">Follow on Twitter</a>
+                
+                <a href="/contact/" class="btn btn-primary" >Writing Opportunities</a>
+                
             </div>
         </div>
     </div>
@@ -281,7 +226,7 @@
             <a href="https://twitter.com/andrewkrug" class="social-link" title="Twitter">
                 <span>𝕏</span>
             </a>
-            <a href="https://linkedin.com/in/andrew-krug" class="social-link" title="LinkedIn">
+            <a href="https://linkedin.com/in/andrewkrug" class="social-link" title="LinkedIn">
                 <span>in</span>
             </a>
             <a href="https://github.com/andrewkrug" class="social-link" title="GitHub">
@@ -297,7 +242,7 @@
                 <span>📧</span>
             </a>
         </div>
-        <p>&copy; 2024 Andrew J. Krug. All rights reserved.</p>
+        <p>&copy; 2024 Andrew Krug. All rights reserved.</p>
         <p>Building the future of technology, one insight at a time.</p>
     </div>
 </footer>

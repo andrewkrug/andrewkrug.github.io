@@ -3,19 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Where&#39;s Andrew - Andrew J. Krug</title>
-    <meta name="description" content="Find Andrew J. Krug at conferences, events, and speaking engagements around the world. Interactive map of upcoming and recent appearances.">
+    <title>Where&#39;s Andrew - Andrew Krug</title>
+    <meta name="description" content="Find Andrew Krug at conferences, events, and speaking engagements around the world. Interactive map of upcoming and recent appearances.">
     
     <!-- Open Graph -->
-    <meta property="og:title" content="Where&#39;s Andrew - Andrew J. Krug">
-    <meta property="og:description" content="Find Andrew J. Krug at conferences, events, and speaking engagements around the world. Interactive map of upcoming and recent appearances.">
+    <meta property="og:title" content="Where&#39;s Andrew - Andrew Krug">
+    <meta property="og:description" content="Find Andrew Krug at conferences, events, and speaking engagements around the world. Interactive map of upcoming and recent appearances.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://andrewkrug.dev/wheres-andrew/">
     
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Where&#39;s Andrew - Andrew J. Krug">
-    <meta name="twitter:description" content="Find Andrew J. Krug at conferences, events, and speaking engagements around the world. Interactive map of upcoming and recent appearances.">
+    <meta name="twitter:title" content="Where&#39;s Andrew - Andrew Krug">
+    <meta name="twitter:description" content="Find Andrew Krug at conferences, events, and speaking engagements around the world. Interactive map of upcoming and recent appearances.">
     
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -26,13 +26,47 @@
     <link rel="stylesheet" href="/assets/css/style.css">
     
     <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/images/favicon.svg">
     <link rel="icon" type="image/x-icon" href="/assets/favicon.ico">
+
+    <!-- Datadog RUM -->
+    <script
+        src="https://www.datadoghq-browser-agent.com/us1/v6/datadog-rum.js"
+        type="text/javascript">
+    </script>
+    <script>
+        window.DD_RUM && window.DD_RUM.init({
+          clientToken: 'pubae28d391e220e8b68852f4c6579f1b3d',
+          applicationId: 'b6006ae4-6d34-405e-97ce-6a2bad8b48d2',
+          // `site` refers to the Datadog site parameter of your organization
+          // see https://docs.datadoghq.com/getting_started/site/
+          site: 'datadoghq.com',
+          service: 'andrewkrug.com',
+          env: '<ENV_NAME>',
+          // Specify a version number to identify the deployed version of your application in Datadog
+          // version: '1.0.0',
+          sessionSampleRate: 100,
+          sessionReplaySampleRate: 20,
+          trackBfcacheViews: true,
+          defaultPrivacyLevel: 'mask-user-input',
+        });
+    </script>
+
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-EF8DXYLJRG"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-EF8DXYLJRG');
+    </script>
 </head>
 <body>
     <nav class="nav">
     <div class="nav-container">
-        <a href="/" class="nav-logo">Andrew J. Krug</a>
-        <ul class="nav-menu">
+        <a href="/" class="nav-logo">Andrew Krug</a>
+        <button class="nav-toggle" onclick="toggleMobileMenu()">☰</button>
+        <ul class="nav-menu" id="nav-menu">
             <li><a href="/" class="nav-link">Home</a></li>
             <li><a href="/bio/" class="nav-link">About</a></li>
             <li><a href="/speaking/" class="nav-link">Speaking</a></li>
@@ -43,93 +77,72 @@
         </ul>
     </div>
 </nav>
+
+<script>
+function toggleMobileMenu() {
+    const navMenu = document.getElementById('nav-menu');
+    navMenu.classList.toggle('active');
+}
+
+// Close mobile menu when clicking on a link
+document.addEventListener('DOMContentLoaded', function() {
+    const navLinks = document.querySelectorAll('.nav-link');
+    navLinks.forEach(link => {
+        link.addEventListener('click', function() {
+            const navMenu = document.getElementById('nav-menu');
+            navMenu.classList.remove('active');
+        });
+    });
+});
+</script>
     
     <main>
         
-<section class="section">
-    <div class="container">
-        <h1 class="section-title">Where's Andrew? 🗺️</h1>
-        <p class="section-subtitle">
-            Track my conference appearances, speaking engagements, and travels around the world. Come say hi if you're at any of these events!
-        </p>
+<section class="full-width-hero" style="
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('/images/wheres-andrew-hero.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 70vh;
+    min-height: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    position: relative;
+">
+    <div class="container" style="position: relative; z-index: 2;">
+        <div class="hero-content" style="background: rgba(0, 0, 0, 0.3); padding: 3rem 2rem; border-radius: 12px; backdrop-filter: blur(10px);">
+            <h1 style="font-size: clamp(2.5rem, 5vw, 4rem); font-weight: 700; margin-bottom: 1rem; text-shadow: 3px 3px 6px rgba(0,0,0,0.8);">Where&#39;s Andrew? 🗺️</h1>
+            <p style="font-size: 1.25rem; margin-bottom: 2rem; max-width: 600px; margin-left: auto; margin-right: auto; text-shadow: 2px 2px 4px rgba(0,0,0,0.8);">Track my conference appearances, speaking engagements, and travels around the world. From BlackHat USA to international security conferences, come say hi if you&#39;re at any of these events!</p>
+            <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+                <a href="/contact/" class="btn btn-primary" style="box-shadow: 0 4px 8px rgba(0,0,0,0.3);">Let&#39;s Meet Up</a>
+                <a href="#upcoming" class="btn btn-secondary" style="background: rgba(255,255,255,0.2); border: 2px solid rgba(255,255,255,0.8); color: white; box-shadow: 0 4px 8px rgba(0,0,0,0.3);">View Events</a>
+            </div>
+        </div>
     </div>
 </section>
 
 
-<section class="section">
+<section class="section" id="upcoming">
     <div class="container">
         <h2 class="section-title">Upcoming Events</h2>
-        
-        
+
+
         <div class="card-grid">
             
-            <div class="card event-card" data-type="upcoming keynote">
-                <div style="display: flex; justify-content: between; align-items: start; margin-bottom: 1rem;">
-                    <h3 style="margin: 0; flex: 1;">DevLeadership Summit 2024</h3>
-                    <span style="background: var(--accent-color); color: white; padding: 0.25rem 0.75rem; border-radius: 1rem; font-size: 0.875rem; font-weight: 500;">Keynote</span>
-                </div>
-                
-                <div style="margin-bottom: 1rem;">
-                    <p style="color: var(--text-secondary); margin: 0; font-weight: 500;">
-                        📅 2024-07-15 • 📍 Austin, TX
-                    </p>
-                    <p style="color: var(--text-secondary); margin: 0;">
-                        🏢 Austin Convention Center
-                    </p>
-                </div>
-                
-                <h4 style="margin: 1rem 0 0.5rem; color: var(--primary-color);">The Evolution of Engineering Leadership</h4>
-                
-                <div style="margin-top: 1.5rem; display: flex; gap: 1rem; flex-wrap: wrap;">
-                    <a href="https://devleadershipsummit.com" class="btn btn-primary" style="font-size: 0.875rem; padding: 0.5rem 1rem;" target="_blank">Event Website</a>
-                    <button class="btn btn-secondary show-on-map" data-lat="30.2672" data-lng="-97.7431" style="font-size: 0.875rem; padding: 0.5rem 1rem;">Show on Map</button>
-                </div>
-            </div>
             
-            <div class="card event-card" data-type="upcoming technical">
-                <div style="display: flex; justify-content: between; align-items: start; margin-bottom: 1rem;">
-                    <h3 style="margin: 0; flex: 1;">CloudNative Conference</h3>
-                    <span style="background: var(--accent-color); color: white; padding: 0.25rem 0.75rem; border-radius: 1rem; font-size: 0.875rem; font-weight: 500;">Technical</span>
-                </div>
-                
-                <div style="margin-bottom: 1rem;">
-                    <p style="color: var(--text-secondary); margin: 0; font-weight: 500;">
-                        📅 2024-08-22 • 📍 San Francisco, CA
-                    </p>
-                    <p style="color: var(--text-secondary); margin: 0;">
-                        🏢 Moscone Center
-                    </p>
-                </div>
-                
-                <h4 style="margin: 1rem 0 0.5rem; color: var(--primary-color);">Building Resilient Distributed Systems</h4>
-                
-                <div style="margin-top: 1.5rem; display: flex; gap: 1rem; flex-wrap: wrap;">
-                    <a href="https://cloudnativecon.io" class="btn btn-primary" style="font-size: 0.875rem; padding: 0.5rem 1rem;" target="_blank">Event Website</a>
-                    <button class="btn btn-secondary show-on-map" data-lat="37.7749" data-lng="-122.4194" style="font-size: 0.875rem; padding: 0.5rem 1rem;">Show on Map</button>
-                </div>
-            </div>
             
-            <div class="card event-card" data-type="upcoming security">
-                <div style="display: flex; justify-content: between; align-items: start; margin-bottom: 1rem;">
-                    <h3 style="margin: 0; flex: 1;">BSides Las Vegas</h3>
-                    <span style="background: var(--accent-color); color: white; padding: 0.25rem 0.75rem; border-radius: 1rem; font-size: 0.875rem; font-weight: 500;">Security</span>
-                </div>
-                
-                <div style="margin-bottom: 1rem;">
-                    <p style="color: var(--text-secondary); margin: 0; font-weight: 500;">
-                        📅 2024-09-10 • 📍 Las Vegas, NV
-                    </p>
-                    <p style="color: var(--text-secondary); margin: 0;">
-                        🏢 Tuscany Casino
-                    </p>
-                </div>
-                
-                <h4 style="margin: 1rem 0 0.5rem; color: var(--primary-color);">Cloud Security Best Practices</h4>
-                
-                <div style="margin-top: 1.5rem; display: flex; gap: 1rem; flex-wrap: wrap;">
-                    <a href="https://bsideslv.org" class="btn btn-primary" style="font-size: 0.875rem; padding: 0.5rem 1rem;" target="_blank">Event Website</a>
-                    <button class="btn btn-secondary show-on-map" data-lat="36.1699" data-lng="-114.1398" style="font-size: 0.875rem; padding: 0.5rem 1rem;">Show on Map</button>
-                </div>
+            
+            
+            
+            
+            
+            
+            <div class="card" style="text-align: center; padding: 3rem;">
+                <h3 style="color: var(--text-secondary); font-weight: 400;">No upcoming events scheduled</h3>
+                <p style="color: var(--text-secondary); margin-top: 1rem;">Check back later for new events, or <a href="/contact/" style="color: var(--primary-color);">reach out</a> to connect at a future conference.</p>
             </div>
             
         </div>
@@ -138,25 +151,75 @@
 
 <section class="section" style="background: var(--surface);">
     <div class="container">
-        <h2 class="section-title">Recent Appearances</h2>
-        
+        <h2 class="section-title">Past Events</h2>
+
         <div style="max-width: 800px; margin: 0 auto;">
             
-            <div class="card event-card" data-type="recent security" style="margin-bottom: 1.5rem;">
+            
+            <div class="card event-card" data-type="past security" style="margin-bottom: 1.5rem;">
                 <div style="display: flex; justify-content: between; align-items: start;">
                     <div style="flex: 1;">
-                        <h3 style="margin: 0 0 0.5rem;">BlackHat USA 2024</h3>
+                        <h3 style="margin: 0 0 0.5rem;">AWS re:Inforce</h3>
                         <p style="color: var(--text-secondary); margin: 0 0 0.5rem;">
-                            📅 2024-03-15 • 📍 Las Vegas, NV
+                            📅 2025-06-15 • 📍 Phillidalphia, PA
                         </p>
                         <p style="margin: 0 0 1rem;">
-                            <strong>Advanced Cloud Security Patterns</strong> at Mandalay Bay
+                            <strong>Eliminating Blindspots in your security monitoring strategy</strong> at Phillidalphia Convention Center
                         </p>
                         
                         <div style="margin-top: 1rem;">
-                            <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" class="btn btn-primary" style="font-size: 0.875rem; padding: 0.5rem 1rem; margin-right: 0.5rem;" target="_blank">
-                                📺 Watch Video
+                            <a href="https://bsideslv.org" class="btn btn-secondary" style="font-size: 0.875rem; padding: 0.5rem 1rem;" target="_blank">
+                                Event Info
                             </a>
+                        </div>
+                        
+                    </div>
+                    <div style="margin-left: 1rem;">
+                        <span style="background: var(--primary-color); color: white; padding: 0.25rem 0.75rem; border-radius: 1rem; font-size: 0.875rem; font-weight: 500;">Security</span>
+                    </div>
+                </div>
+            </div>
+            
+            
+            
+            <div class="card event-card" data-type="past security" style="margin-bottom: 1.5rem;">
+                <div style="display: flex; justify-content: between; align-items: start;">
+                    <div style="flex: 1;">
+                        <h3 style="margin: 0 0 0.5rem;">BSides Las Vegas</h3>
+                        <p style="color: var(--text-secondary); margin: 0 0 0.5rem;">
+                            📅 2025-08-04 • 📍 Las Vegas, NV
+                        </p>
+                        <p style="margin: 0 0 1rem;">
+                            <strong></strong> at Tuscany Casino
+                        </p>
+                        
+                        <div style="margin-top: 1rem;">
+                            <a href="https://bsideslv.org" class="btn btn-secondary" style="font-size: 0.875rem; padding: 0.5rem 1rem;" target="_blank">
+                                Event Info
+                            </a>
+                        </div>
+                        
+                    </div>
+                    <div style="margin-left: 1rem;">
+                        <span style="background: var(--primary-color); color: white; padding: 0.25rem 0.75rem; border-radius: 1rem; font-size: 0.875rem; font-weight: 500;">Security</span>
+                    </div>
+                </div>
+            </div>
+            
+            
+            
+            <div class="card event-card" data-type="past security" style="margin-bottom: 1.5rem;">
+                <div style="display: flex; justify-content: between; align-items: start;">
+                    <div style="flex: 1;">
+                        <h3 style="margin: 0 0 0.5rem;">BlackHat USA 2025</h3>
+                        <p style="color: var(--text-secondary); margin: 0 0 0.5rem;">
+                            📅 2025-08-02 • 📍 Las Vegas, NV
+                        </p>
+                        <p style="margin: 0 0 1rem;">
+                            <strong>BlackHat Arsenal</strong> at Mandalay Bay
+                        </p>
+                        
+                        <div style="margin-top: 1rem;">
                             <a href="https://blackhat.com" class="btn btn-secondary" style="font-size: 0.875rem; padding: 0.5rem 1rem;" target="_blank">
                                 Event Info
                             </a>
@@ -169,83 +232,6 @@
                 </div>
             </div>
             
-            <div class="card event-card" data-type="recent cloud" style="margin-bottom: 1.5rem;">
-                <div style="display: flex; justify-content: between; align-items: start;">
-                    <div style="flex: 1;">
-                        <h3 style="margin: 0 0 0.5rem;">AWS re:Invent 2023</h3>
-                        <p style="color: var(--text-secondary); margin: 0 0 0.5rem;">
-                            📅 2023-11-28 • 📍 Las Vegas, NV
-                        </p>
-                        <p style="margin: 0 0 1rem;">
-                            <strong>Securing Serverless at Scale</strong> at Venetian
-                        </p>
-                        
-                        <div style="margin-top: 1rem;">
-                            <a href="https://www.youtube.com/watch?v=example123" class="btn btn-primary" style="font-size: 0.875rem; padding: 0.5rem 1rem; margin-right: 0.5rem;" target="_blank">
-                                📺 Watch Video
-                            </a>
-                            <a href="https://reinvent.awsevents.com" class="btn btn-secondary" style="font-size: 0.875rem; padding: 0.5rem 1rem;" target="_blank">
-                                Event Info
-                            </a>
-                        </div>
-                        
-                    </div>
-                    <div style="margin-left: 1rem;">
-                        <span style="background: var(--primary-color); color: white; padding: 0.25rem 0.75rem; border-radius: 1rem; font-size: 0.875rem; font-weight: 500;">Cloud</span>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="card event-card" data-type="recent security" style="margin-bottom: 1.5rem;">
-                <div style="display: flex; justify-content: between; align-items: start;">
-                    <div style="flex: 1;">
-                        <h3 style="margin: 0 0 0.5rem;">BSides San Francisco 2024</h3>
-                        <p style="color: var(--text-secondary); margin: 0 0 0.5rem;">
-                            📅 2024-02-18 • 📍 San Francisco, CA
-                        </p>
-                        <p style="margin: 0 0 1rem;">
-                            <strong>Identity Security in Multi-Cloud</strong> at DNA Lounge
-                        </p>
-                        
-                        <div style="margin-top: 1rem;">
-                            <a href="https://bsidessf.org" class="btn btn-secondary" style="font-size: 0.875rem; padding: 0.5rem 1rem;" target="_blank">
-                                Event Info
-                            </a>
-                        </div>
-                        
-                    </div>
-                    <div style="margin-left: 1rem;">
-                        <span style="background: var(--primary-color); color: white; padding: 0.25rem 0.75rem; border-radius: 1rem; font-size: 0.875rem; font-weight: 500;">Security</span>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="card event-card" data-type="recent security" style="margin-bottom: 1.5rem;">
-                <div style="display: flex; justify-content: between; align-items: start;">
-                    <div style="flex: 1;">
-                        <h3 style="margin: 0 0 0.5rem;">Wild West Hackin&#39; Fest 2023</h3>
-                        <p style="color: var(--text-secondary); margin: 0 0 0.5rem;">
-                            📅 2023-10-24 • 📍 Deadwood, SD
-                        </p>
-                        <p style="margin: 0 0 1rem;">
-                            <strong>Cloud Threat Hunting</strong> at Deadwood Mountain Grand
-                        </p>
-                        
-                        <div style="margin-top: 1rem;">
-                            <a href="https://www.youtube.com/watch?v=security456" class="btn btn-primary" style="font-size: 0.875rem; padding: 0.5rem 1rem; margin-right: 0.5rem;" target="_blank">
-                                📺 Watch Video
-                            </a>
-                            <a href="https://wildwesthackinfest.com" class="btn btn-secondary" style="font-size: 0.875rem; padding: 0.5rem 1rem;" target="_blank">
-                                Event Info
-                            </a>
-                        </div>
-                        
-                    </div>
-                    <div style="margin-left: 1rem;">
-                        <span style="background: var(--primary-color); color: white; padding: 0.25rem 0.75rem; border-radius: 1rem; font-size: 0.875rem; font-weight: 500;">Security</span>
-                    </div>
-                </div>
-            </div>
             
         </div>
     </div>
@@ -280,16 +266,21 @@
         <div style="text-align: center; max-width: 600px; margin: 0 auto;">
             <h2 class="section-title">Want to Meet Up?</h2>
             <p style="font-size: 1.125rem; color: var(--text-secondary); margin-bottom: 2rem;">
-                If you're attending any of these events or happen to be in one of these cities, I'd love to connect! Reach out and let's grab coffee or chat about cloud security.
+                If you&#39;re attending any of these events or happen to be in one of these cities, I&#39;d love to connect! Reach out and let&#39;s grab coffee or chat about cloud security.
             </p>
             
             <div style="background: var(--background); padding: 2rem; border-radius: var(--border-radius-lg); margin: 2rem 0;">
                 <h3 style="margin-bottom: 1rem; color: var(--primary-color);">Conference Tips</h3>
                 <ul style="text-align: left; max-width: 400px; margin: 0 auto; line-height: 1.8;">
+                    
                     <li>Follow me on social media for real-time updates</li>
+                    
                     <li>Check my talks schedule on event websites</li>
+                    
                     <li>Look for the Datadog booth at major conferences</li>
+                    
                     <li>Join my Datadog SecurityLabs workshops when available</li>
+                    
                 </ul>
             </div>
             
@@ -307,7 +298,7 @@
             <a href="https://twitter.com/andrewkrug" class="social-link" title="Twitter">
                 <span>𝕏</span>
             </a>
-            <a href="https://linkedin.com/in/andrew-krug" class="social-link" title="LinkedIn">
+            <a href="https://linkedin.com/in/andrewkrug" class="social-link" title="LinkedIn">
                 <span>in</span>
             </a>
             <a href="https://github.com/andrewkrug" class="social-link" title="GitHub">
@@ -323,7 +314,7 @@
                 <span>📧</span>
             </a>
         </div>
-        <p>&copy; 2024 Andrew J. Krug. All rights reserved.</p>
+        <p>&copy; 2024 Andrew Krug. All rights reserved.</p>
         <p>Building the future of technology, one insight at a time.</p>
     </div>
 </footer>

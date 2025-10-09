@@ -1,0 +1,21 @@
+hero:
+  title: "Where's Andrew? 🗺️"
+  description: "Track my conference appearances, speaking engagements, and travels around the world. From BlackHat USA to international security conferences, come say hi if you're at any of these events!"
+  primary_cta: "Let's Meet Up"
+  primary_url: "/contact/"
+  secondary_cta: "View Events"
+
+want_to_meet:
+  title: "Want to Meet Up?"
+  description: "If you're attending any of these events or happen to be in one of these cities, I'd love to connect! Reach out and let's grab coffee or chat about cloud security."
+  
+  conference_tips:
+    title: "Conference Tips"
+    items:
+      - "Follow me on social media for real-time updates"
+      - "Check my talks schedule on event websites"
+      - "Look for the Datadog booth at major conferences"
+      - "Join my Datadog SecurityLabs workshops when available"
+  
+  cta: "Get In Touch"
+  url: "/contact/"

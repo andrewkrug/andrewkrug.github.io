@@ -1,0 +1,38 @@
+hero:
+  title: "Technical Writing"
+  description: "I regularly write about software engineering, system architecture, and technology leadership. From Datadog SecurityLabs to industry publications, sharing knowledge through practical insights and research."
+  primary_cta: "Read Newsletter"
+  primary_url: "https://farmstofirewalls.substack.com/"
+  secondary_cta: "View Articles"
+
+featured_articles:
+  - title: "State of DevSecOps Report"
+    publication: "Datadog"
+    date: "May 2025"
+    read_time: "8 min read"
+    description: "The practice of DevSecOps emphasizes the need to identify and respond to security risks at each point in the software development life cycle (SDLC), and has increasingly become the standard in the tech industry. In order to assess the types of risks defenders need to be aware of and what practices they can adopt to improve their security posture, we analyzed tens of thousands of applications and container images within thousands of cloud environments."
+    tags: ["DevSecOps", "Cloud", "Security", "Practicioner"]
+    url: "https://www.datadoghq.com/state-of-devsecops/"
+
+recent_articles:
+  - title: "State of DevSecOps Report"
+    publication: "Datadog"
+    date: "May 2025"
+    read_time: "8 min read"
+    description: "The practice of DevSecOps emphasizes the need to identify and respond to security risks at each point in the software development life cycle (SDLC), and has increasingly become the standard in the tech industry. In order to assess the types of risks defenders need to be aware of and what practices they can adopt to improve their security posture, we analyzed tens of thousands of applications and container images within thousands of cloud environments."
+    tags: ["DevSecOps", "Cloud", "Security", "Practicioner"]
+    url: "https://www.datadoghq.com/state-of-devsecops/"
+
+call_to_action:
+  title: "Stay Updated"
+  description: "Want to stay up-to-date with my latest articles and insights? Follow me on your preferred platform or reach out to discuss writing opportunities."
+  links:
+    - title: "Subscribe to my newsletter Farms to Firewalls"
+      url: "https://farmstofirewalls.substack.com/"
+
+    - title: "Follow on Twitter"
+      url: "https://twitter.com/andrewkrug"
+
+    - title: "Writing Opportunities"
+      url: "/contact/"
+      primary: true

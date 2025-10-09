@@ -1,7 +1,8 @@
 <nav class="nav">
     <div class="nav-container">
         <a href="/" class="nav-logo">{{ site.name }}</a>
-        <ul class="nav-menu">
+        <button class="nav-toggle" onclick="toggleMobileMenu()">☰</button>
+        <ul class="nav-menu" id="nav-menu">
             <li><a href="/" class="nav-link">Home</a></li>
             <li><a href="/bio/" class="nav-link">About</a></li>
             <li><a href="/speaking/" class="nav-link">Speaking</a></li>
@@ -12,3 +13,21 @@
         </ul>
     </div>
 </nav>
+
+<script>
+function toggleMobileMenu() {
+    const navMenu = document.getElementById('nav-menu');
+    navMenu.classList.toggle('active');
+}
+
+// Close mobile menu when clicking on a link
+document.addEventListener('DOMContentLoaded', function() {
+    const navLinks = document.querySelectorAll('.nav-link');
+    navLinks.forEach(link => {
+        link.addEventListener('click', function() {
+            const navMenu = document.getElementById('nav-menu');
+            navMenu.classList.remove('active');
+        });
+    });
+});
+</script>

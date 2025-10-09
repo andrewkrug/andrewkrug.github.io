@@ -3,18 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home - Andrew J. Krug</title>
+    <title>Home - Andrew Krug</title>
     <meta name="description" content="Technical influencer, speaker, and thought leader sharing insights on modern software development and engineering leadership.">
     
     <!-- Open Graph -->
-    <meta property="og:title" content="Home - Andrew J. Krug">
+    <meta property="og:title" content="Home - Andrew Krug">
     <meta property="og:description" content="Technical influencer, speaker, and thought leader sharing insights on modern software development and engineering leadership.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://andrewkrug.dev/">
     
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Home - Andrew J. Krug">
+    <meta name="twitter:title" content="Home - Andrew Krug">
     <meta name="twitter:description" content="Technical influencer, speaker, and thought leader sharing insights on modern software development and engineering leadership.">
     
     <!-- Fonts -->
@@ -26,13 +26,47 @@
     <link rel="stylesheet" href="/assets/css/style.css">
     
     <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/images/favicon.svg">
     <link rel="icon" type="image/x-icon" href="/assets/favicon.ico">
+
+    <!-- Datadog RUM -->
+    <script
+        src="https://www.datadoghq-browser-agent.com/us1/v6/datadog-rum.js"
+        type="text/javascript">
+    </script>
+    <script>
+        window.DD_RUM && window.DD_RUM.init({
+          clientToken: 'pubae28d391e220e8b68852f4c6579f1b3d',
+          applicationId: 'b6006ae4-6d34-405e-97ce-6a2bad8b48d2',
+          // `site` refers to the Datadog site parameter of your organization
+          // see https://docs.datadoghq.com/getting_started/site/
+          site: 'datadoghq.com',
+          service: 'andrewkrug.com',
+          env: '<ENV_NAME>',
+          // Specify a version number to identify the deployed version of your application in Datadog
+          // version: '1.0.0',
+          sessionSampleRate: 100,
+          sessionReplaySampleRate: 20,
+          trackBfcacheViews: true,
+          defaultPrivacyLevel: 'mask-user-input',
+        });
+    </script>
+
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-EF8DXYLJRG"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-EF8DXYLJRG');
+    </script>
 </head>
 <body>
     <nav class="nav">
     <div class="nav-container">
-        <a href="/" class="nav-logo">Andrew J. Krug</a>
-        <ul class="nav-menu">
+        <a href="/" class="nav-logo">Andrew Krug</a>
+        <button class="nav-toggle" onclick="toggleMobileMenu()">☰</button>
+        <ul class="nav-menu" id="nav-menu">
             <li><a href="/" class="nav-link">Home</a></li>
             <li><a href="/bio/" class="nav-link">About</a></li>
             <li><a href="/speaking/" class="nav-link">Speaking</a></li>
@@ -43,17 +77,35 @@
         </ul>
     </div>
 </nav>
+
+<script>
+function toggleMobileMenu() {
+    const navMenu = document.getElementById('nav-menu');
+    navMenu.classList.toggle('active');
+}
+
+// Close mobile menu when clicking on a link
+document.addEventListener('DOMContentLoaded', function() {
+    const navLinks = document.querySelectorAll('.nav-link');
+    navLinks.forEach(link => {
+        link.addEventListener('click', function() {
+            const navMenu = document.getElementById('nav-menu');
+            navMenu.classList.remove('active');
+        });
+    });
+});
+</script>
     
     <main>
         
 <section class="hero">
     <div class="container">
         <div class="hero-content">
-            <img src="/images/hero-headshot.jpg" alt="Andrew J. Krug" class="hero-image" />
-            <h1>Hi, I'm Andrew J. Krug</h1>
+            <img src="/images/hero-headshot.jpg" alt="Andrew Krug" class="hero-image" />
+            <h1>Hi, I&#39;m Andrew Krug</h1>
             <p>Accomplished security leader with 10+ years of experience in cloud security, identity management, and technical advocacy. Currently serving as Head of Security Advocacy at Datadog, building research programs and fostering developer communities. Proven track record of architecting secure cloud solutions, speaking at BlackHat and AWS re:Invent, and building SecurityLabs to reach 80,000+ readers quarterly.</p>
             <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
-                <a href="/contact/" class="btn btn-primary">Let's Connect</a>
+                <a href="/contact/" class="btn btn-primary">Let&#39;s Connect</a>
                 <a href="/bio/" class="btn btn-secondary">Learn More</a>
             </div>
         </div>
@@ -64,10 +116,11 @@
     <div class="container">
         <h2 class="section-title">What I Do</h2>
         <p class="section-subtitle">
-            As Head of Security Advocacy at Datadog, I help organizations secure their cloud infrastructure through hands-on consulting, educational content, and community engagement. From Fortune 500 companies to startups, I provide practical security guidance that works in the real world. I'm also open to board advisory roles for companies looking to strengthen their security posture and technical leadership.
+            As Head of Security Advocacy at Datadog, I help organizations secure their cloud infrastructure through hands-on consulting, educational content, and community engagement. From Fortune 500 companies to startups, I provide practical security guidance that works in the real world. I&#39;m also open to board advisory roles for companies looking to strengthen their security posture and technical leadership.
         </p>
         
         <div class="card-grid">
+            
             <div class="card fade-in-up">
                 <h3>🎤 Security Speaking</h3>
                 <p>Keynote speaker at BlackHat USA, AWS re:Invent (9x), and BSides events (10+). Delivering practical insights on cloud security, DevSecOps, and threat detection to audiences worldwide.</p>
@@ -81,10 +134,11 @@
             </div>
             
             <div class="card fade-in-up">
-                <h3>🛡️ Cloud Security & Advisory</h3>
-                <p>Cloud Security Audits, Penetration Testing, and secure Architecture design for AWS, GCP, and Azure environments. Also available for board advisory roles to help companies strengthen their security posture and technical leadership.</p>
+                <h3>🛡️ Cloud Security &amp; Advisory</h3>
+                <p>Cloud Security Audits, Penetration Testing, and secure Architecture design for AWS, GCP, and Azure environments. Also available for board advisory roles, career coaching, and executive coaching to help companies strengthen their security posture and technical leadership.</p>
                 <a href="/contact/" class="btn btn-primary">Get In Touch</a>
             </div>
+            
         </div>
     </div>
 </section>
@@ -94,23 +148,34 @@
         <h2 class="section-title">Recent Highlights</h2>
         
         <div class="card-grid">
-            <div class="card">
+            
+            <div class="card" style="display: flex; flex-direction: column;">
                 <h3>Datadog SecurityLabs Growth</h3>
-                <p>Built and scaled Datadog SecurityLabs brand from ground up, now reaching 80,000+ unique readers per quarter with practical security research and educational content.</p>
+                <p style="flex: 1;">Built and scaled Datadog SecurityLabs brand from ground up, now reaching 80,000+ unique readers per quarter with practical security research and educational content.</p>
                 <small style="color: var(--text-secondary);">2020-Present • Global Reach</small>
+                <div style="margin-top: 1.5rem;">
+                    <a href="/writing/" class="btn btn-primary">Read SecurityLabs</a>
+                </div>
             </div>
             
-            <div class="card">
+            <div class="card" style="display: flex; flex-direction: column;">
                 <h3>BlackHat USA Speaker</h3>
-                <p>Presented advanced cloud security research at one of the world's premier security conferences, sharing practical insights from real-world cloud security assessments.</p>
+                <p style="flex: 1;">Presented advanced cloud security research at one of the world&#39;s premier security conferences, sharing practical insights from real-world cloud security assessments.</p>
                 <small style="color: var(--text-secondary);">2024 • Las Vegas, NV</small>
+                <div style="margin-top: 1.5rem;">
+                    <a href="/speaking/" class="btn btn-primary">View Speaking</a>
+                </div>
             </div>
             
-            <div class="card">
-                <h3>"Securing the Cloud Foundations" Course</h3>
-                <p>Created and delivered comprehensive training that has educated thousands of cloud practitioners on security best practices and real-world implementation.</p>
-                <small style="color: var(--text-secondary);">Ongoing • Online & In-Person</small>
+            <div class="card" style="display: flex; flex-direction: column;">
+                <h3>&quot;Securing the Cloud Foundations&quot; Course</h3>
+                <p style="flex: 1;">Created and delivered comprehensive training that has educated thousands of cloud practitioners on security best practices and real-world implementation.</p>
+                <small style="color: var(--text-secondary);">Ongoing • Online &amp; In-Person</small>
+                <div style="margin-top: 1.5rem;">
+                    <a href="/contact/" class="btn btn-primary">Get Training</a>
+                </div>
             </div>
+            
         </div>
     </div>
 </section>
@@ -120,7 +185,7 @@
         <div style="text-align: center; max-width: 600px; margin: 0 auto;">
             <h2 class="section-title">Ready to Connect?</h2>
             <p class="section-subtitle">
-                Whether you're looking for a speaker, seeking technical guidance, or want to collaborate on innovative projects, I'd love to hear from you.
+                Whether you&#39;re looking for a speaker, seeking technical guidance, or want to collaborate on innovative projects, I&#39;d love to hear from you.
             </p>
             <a href="/contact/" class="btn btn-primary">Get In Touch</a>
         </div>
@@ -134,7 +199,7 @@
             <a href="https://twitter.com/andrewkrug" class="social-link" title="Twitter">
                 <span>𝕏</span>
             </a>
-            <a href="https://linkedin.com/in/andrew-krug" class="social-link" title="LinkedIn">
+            <a href="https://linkedin.com/in/andrewkrug" class="social-link" title="LinkedIn">
                 <span>in</span>
             </a>
             <a href="https://github.com/andrewkrug" class="social-link" title="GitHub">
@@ -150,7 +215,7 @@
                 <span>📧</span>
             </a>
         </div>
-        <p>&copy; 2024 Andrew J. Krug. All rights reserved.</p>
+        <p>&copy; 2024 Andrew Krug. All rights reserved.</p>
         <p>Building the future of technology, one insight at a time.</p>
     </div>
 </footer>

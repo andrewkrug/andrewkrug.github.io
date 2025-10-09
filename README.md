@@ -12,11 +12,12 @@ A modern, responsive personal website built with 11ty (Eleventy) for technical i
 
 ## Pages
 
-- **Home**: Hero section with introduction and featured work
-- **Biography**: Detailed background with downloadable professional headshot
-- **Speaking**: Speaking engagements, topics, and booking information
-- **Writing**: Technical articles, publications, and thought leadership content
-- **Contact**: Contact form and professional service information
+- **Home** (`/`): Landing page featuring a hero section with introduction, overview of services, recent highlights, and call-to-action to connect
+- **Biography** (`/bio/`): Detailed professional background, career highlights, and downloadable high-resolution headshot for media and event organizers
+- **Where's Andrew** (`/wheres-andrew/`): Interactive event tracker showing upcoming conferences and speaking engagements, past events with video recordings, and regular locations. Includes map visualization for finding Andrew at events
+- **Speaking** (`/speaking/`): Speaking topics, previous engagements, testimonials, and booking information for conference organizers
+- **Writing** (`/writing/`): Collection of technical articles, blog posts, and thought leadership content with featured articles, recent publications, and links to external platforms
+- **Contact** (`/contact/`): Contact form and professional service information for collaboration, speaking requests, and general inquiries
 
 ## Technology Stack
 
@@ -69,6 +70,7 @@ The site is currently configured for Andrew Krug. Edit the site data in `src/_da
 
 - **Home Page**: Edit `src/index.njk`
 - **Biography**: Edit `src/bio.njk`
+- **Where's Andrew**: Edit `src/wheres-andrew.njk`
 - **Speaking**: Edit `src/speaking.njk`
 - **Writing**: Edit `src/writing.njk`
 - **Contact**: Edit `src/contact.njk`

@@ -7,7 +7,7 @@ hero:
 upcoming_talks:
   - title: "Elmininating Blindspots in your security monitoring strategy"
     type: "Breakout"
-    event: "DevLeadership Summit 2024"
+    event: "AWS re:Inforce 2025"
     location: "Phillidalphia, PA"
     date: "June 17, 2025"
     description: "Cloud security is being shaped by the rapid adoption of technologies like Generative AI, Kubernetes, and SaaS platforms, making comprehensive security monitoring more critical than ever. This session will explore strategies to eliminate blind spots in your security monitoring strategy. We will focus on precise instrumentation and data collection, and demonstrate an end-to-end detection strategy that includes cloud audit logs, runtime security, and data enrichment. The session will also emphasize leveraging runtime context to enhance threat detection and response. Participants will learn how to build a robust security monitoring framework that can adapt to evolving cloud technologies and ensure thorough coverage. This presentation is brought to you by Datadog, an AWS Partner."

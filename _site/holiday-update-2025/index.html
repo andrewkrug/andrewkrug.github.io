@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Holiday Update 2025 - Andrew Krug</title>
+    <meta name="description" content="A festive year-end update from Andrew with highlights and reflections from 2025">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="Holiday Update 2025 - Andrew Krug">
+    <meta property="og:description" content="A festive year-end update from Andrew with highlights and reflections from 2025">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://andrewkrug.dev/holiday-update-2025/">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Holiday Update 2025 - Andrew Krug">
+    <meta name="twitter:description" content="A festive year-end update from Andrew with highlights and reflections from 2025">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="/assets/css/style.css">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/images/favicon.svg">
+    <link rel="icon" type="image/x-icon" href="/assets/favicon.ico">
+
+    <!-- Datadog RUM -->
+    <script
+        src="https://www.datadoghq-browser-agent.com/us1/v6/datadog-rum.js"
+        type="text/javascript">
+    </script>
+    <script>
+        window.DD_RUM && window.DD_RUM.init({
+          clientToken: 'pubae28d391e220e8b68852f4c6579f1b3d',
+          applicationId: 'b6006ae4-6d34-405e-97ce-6a2bad8b48d2',
+          // `site` refers to the Datadog site parameter of your organization
+          // see https://docs.datadoghq.com/getting_started/site/
+          site: 'datadoghq.com',
+          service: 'andrewkrug.com',
+          env: '<ENV_NAME>',
+          // Specify a version number to identify the deployed version of your application in Datadog
+          // version: '1.0.0',
+          sessionSampleRate: 100,
+          sessionReplaySampleRate: 20,
+          trackBfcacheViews: true,
+          defaultPrivacyLevel: 'mask-user-input',
+        });
+    </script>
+
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-EF8DXYLJRG"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-EF8DXYLJRG');
+    </script>
+</head>
+<body>
+    <nav class="nav">
+    <div class="nav-container">
+        <a href="/" class="nav-logo">Andrew Krug</a>
+        <button class="nav-toggle" onclick="toggleMobileMenu()">☰</button>
+        <ul class="nav-menu" id="nav-menu">
+            <li><a href="/" class="nav-link">Home</a></li>
+            <li><a href="/bio/" class="nav-link">About</a></li>
+            <li><a href="/speaking/" class="nav-link">Speaking</a></li>
+            <li><a href="/writing/" class="nav-link">Writing</a></li>
+            <li><a href="/wheres-andrew/" class="nav-link">Where's Andrew</a></li>
+            <li><a href="/contact/" class="nav-link">Contact</a></li>
+            <li><a href="https://farmstofirewalls.substack.com/" class="nav-link" target="_blank" style="background: var(--accent-color); color: white; padding: 0.5rem 1rem; border-radius: var(--border-radius); font-weight: 600;">Newsletter</a></li>
+        </ul>
+    </div>
+</nav>
+
+<script>
+function toggleMobileMenu() {
+    const navMenu = document.getElementById('nav-menu');
+    navMenu.classList.toggle('active');
+}
+
+// Close mobile menu when clicking on a link
+document.addEventListener('DOMContentLoaded', function() {
+    const navLinks = document.querySelectorAll('.nav-link');
+    navLinks.forEach(link => {
+        link.addEventListener('click', function() {
+            const navMenu = document.getElementById('nav-menu');
+            navMenu.classList.remove('active');
+        });
+    });
+});
+</script>
+    
+    <main>
+        
+<style>
+/* Holiday-specific styles */
+.holiday-hero {
+    background: linear-gradient(135deg, #1e4d2b 0%, #2d7a3e 50%, #c41e3a 100%);
+    padding: 5rem 2rem 4rem 2rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.holiday-hero::before {
+    content: "❄️ ✨ 🎄 ⭐ 🎁 ❄️ ✨ 🎄 ⭐ 🎁";
+    position: absolute;
+    top: 1rem;
+    left: 0;
+    right: 0;
+    text-align: center;
+    font-size: 1.5rem;
+    opacity: 0.3;
+    animation: snowfall 20s linear infinite;
+}
+
+@keyframes snowfall {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(20px); }
+}
+
+.holiday-hero h1 {
+    color: #ffffff;
+    text-align: center;
+    font-size: 3rem;
+    margin-bottom: 0.5rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.holiday-hero .subtitle {
+    color: #f0f0f0;
+    text-align: center;
+    font-size: 1.25rem;
+    margin-bottom: 0;
+}
+
+.holiday-content {
+    background: #ffffff;
+    padding: 3rem 0;
+}
+
+.holiday-layout {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 3rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.portrait-section {
+    position: relative;
+}
+
+.portrait-placeholder {
+    width: 100%;
+    aspect-ratio: 3/4;
+    background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+    border-radius: 12px;
+    border: 3px solid #c41e3a;
+    box-shadow: var(--shadow-lg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 4rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.portrait-placeholder::after {
+    content: "🎄";
+    position: absolute;
+    font-size: 8rem;
+    opacity: 0.1;
+}
+
+.portrait-caption {
+    text-align: center;
+    margin-top: 1rem;
+    font-style: italic;
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+}
+
+.holly-accent {
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    font-size: 2rem;
+    transform: rotate(15deg);
+}
+
+.letter-section {
+    background: #ffffff;
+    position: relative;
+}
+
+.letter-header {
+    border-bottom: 3px solid #2d7a3e;
+    padding-bottom: 1rem;
+    margin-bottom: 2rem;
+}
+
+.letter-header h2 {
+    color: #1e4d2b;
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.letter-date {
+    color: var(--text-secondary);
+    font-style: italic;
+}
+
+.letter-content {
+    line-height: 1.8;
+    color: var(--text-primary);
+}
+
+.letter-content p {
+    margin-bottom: 1.5rem;
+}
+
+.letter-greeting {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #1e4d2b;
+}
+
+.metrics-section {
+    background: linear-gradient(135deg, #f8fafc 0%, #e8f4ea 100%);
+    border: 2px solid #2d7a3e;
+    border-radius: 12px;
+    padding: 1.25rem;
+    margin: 2rem 0;
+}
+
+.metrics-title {
+    color: #1e4d2b;
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+.metrics-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.75rem;
+}
+
+.metric-item {
+    text-align: center;
+    padding: 0.75rem;
+    background: #ffffff;
+    border-radius: 8px;
+    box-shadow: var(--shadow-sm);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.metric-item:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-md);
+}
+
+.metric-value {
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: #c41e3a;
+    margin-bottom: 0.25rem;
+}
+
+.metric-label {
+    color: var(--text-secondary);
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.letter-signature {
+    margin-top: 2rem;
+    font-family: 'Brush Script MT', cursive;
+    font-size: 1.5rem;
+    color: #1e4d2b;
+}
+
+.festive-decoration {
+    text-align: center;
+    font-size: 2rem;
+    margin: 1rem 0;
+    opacity: 0.6;
+}
+
+@media (max-width: 960px) {
+    .holiday-layout {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .portrait-placeholder {
+        max-width: 400px;
+        margin: 0 auto;
+    }
+
+    .metrics-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .holiday-hero h1 {
+        font-size: 2rem;
+    }
+}
+</style>
+
+<section class="holiday-hero">
+    <div class="container">
+        <h1>🎄 Holiday Update 2025 ✨</h1>
+        <p class="subtitle">Reflecting on a remarkable year</p>
+    </div>
+</section>
+
+<section class="holiday-content">
+    <div class="holiday-layout">
+        <!-- Portrait Section -->
+        <div class="portrait-section">
+            <img src="/images/holiday-pic-2025.jpg" alt="Holiday Photo 2025" style="width: 70%; max-width: 350px; aspect-ratio: 3/4; object-fit: cover; border-radius: 12px; border: 3px solid #c41e3a; box-shadow: var(--shadow-lg); margin: 0 auto; display: block;">
+            <span class="holly-accent">🎄</span>
+        </div>
+
+        <!-- Letter Section -->
+        <div class="letter-section">
+            <div class="letter-header">
+                <h2>🎄 Season's Greetings from Southern Oregon - Winter 2025 🎄</h2>
+                <p class="letter-date">December 2025</p>
+            </div>
+
+            <div class="letter-content">
+                <p class="letter-greeting">Dear Friends and Family,</p>
+
+                <p>
+                    As December settles over Southern Oregon and the days grow short, I find myself in that familiar space of year-end reflection - grateful for what has been, mindful of what's changed, and quietly hopeful for what's ahead.
+                </p>
+
+                <h3 style="color: #1e4d2b; font-size: 1.3rem; margin-top: 2rem; margin-bottom: 1rem;">The Changing Seasons</h3>
+
+                <p>
+                    "Riding horses and caring for horses are two different hobbies," someone told me years ago, and this year I've learned just how true that is. The farm has demanded its steady rhythm of maintenance - mending fences before winter storms, mucking stalls in the pre-dawn cold, the endless cycle of feed, water, and watchful care. There's something grounding about this work, especially as life grows more complex with each passing year. While my tech world moves at lightning speed, the horses remind me that some things can't be rushed. A worried horse at 2 AM doesn't care about your morning meetings.
+                </p>
+
+                <p>
+                    These quiet morning hours in the barn have become my meditation. The sound of horses eating hay, the steam rising from water buckets, the particular silence that comes before a winter storm - these moments anchor me.
+                </p>
+
+                <p>
+                    The saxophone continues to be my evening companion. Classical pieces have taken on new meaning lately; there's something about minor keys in winter that feels right.
+                </p>
+
+                <h3 style="color: #1e4d2b; font-size: 1.3rem; margin-top: 2rem; margin-bottom: 1rem;">Empty Chairs and Full Hearts</h3>
+
+                <p>
+                    Each winter now seems to add another empty chair to the holiday table. It's a peculiar arithmetic of aging - the growing space between place settings, the lengthening list of those we toast in memory rather than in person. This year particularly, I've felt the weight of accumulated absences. Yet somehow, maybe because of these losses rather than despite them, the conversations that do happen feel more precious, less rehearsed, more real.
+                </p>
+
+                <p>
+                    Berlin in September felt like a bright spot in the year - the energy of fwd:cloudsec Europe, the privilege of serving as MC, connecting with brilliant minds from around the world. But even there, walking those historic streets, I couldn't help but think about how many of us are building these incredible systems and securities that will outlast us. We're all just temporary custodians of this digital world we're creating.
+                </p>
+
+                <h3 style="color: #1e4d2b; font-size: 1.3rem; margin-top: 2rem; margin-bottom: 1rem;">Work as Anchor</h3>
+
+                <p>
+                    The professional world continues to provide structure and purpose. Our DevSecOps report this year - showing that only 18% of "critical" vulnerabilities truly matter - feels like a metaphor for life somehow. We spend so much energy on things that seem urgent but aren't essential. The SecurityLabs initiative reaches 80,000 readers now, and my cloud security course has trained thousands. There's comfort in knowing this knowledge will ripple outward, even as individual names and faces inevitably fade.
+                </p>
+
+                <p>
+                    Nine years of speaking at AWS re:Invent - when did I become one of the veterans? Each year I see eager new faces and notice familiar ones missing. The cycle continues.
+                </p>
+
+                <div class="metrics-section">
+                    <h3 class="metrics-title">⭐ 2025 By The Numbers ⭐</h3>
+                    <div class="metrics-grid">
+                        <div class="metric-item">
+                            <div class="metric-value">9</div>
+                            <div class="metric-label">Years at re:Invent</div>
+                        </div>
+                        <div class="metric-item">
+                            <div class="metric-value">80K</div>
+                            <div class="metric-label">SecurityLabs Readers</div>
+                        </div>
+                        <div class="metric-item">
+                            <div class="metric-value">18%</div>
+                            <div class="metric-label">Critical Vulns That Matter</div>
+                        </div>
+                        <div class="metric-item">
+                            <div class="metric-value">1</div>
+                            <div class="metric-label">fwd:cloudsec MC Gig</div>
+                        </div>
+                        <div class="metric-item">
+                            <div class="metric-value">365</div>
+                            <div class="metric-label">Days of Farm Work</div>
+                        </div>
+                        <div class="metric-item">
+                            <div class="metric-value">∞</div>
+                            <div class="metric-label">Minor Keys Played</div>
+                        </div>
+                    </div>
+                </div>
+
+                <h3 style="color: #1e4d2b; font-size: 1.3rem; margin-top: 2rem; margin-bottom: 1rem;">Finding Light in Winter</h3>
+
+                <p>
+                    Yet for all the melancholy that winter brings, there's also a particular beauty in this season of long shadows. The stripped-down honesty of bare trees. The way barn lights shine against early darkness. The warmth of a horse's breath as you break ice from their water trough. The resonance of a perfectly played note in a quiet room.
+                </p>
+
+                <p>
+                    I've been thinking about how we carry our departed with us - in stories retold, in habits inherited, in the empty chairs we still set out of hope or habit. They're present in their absence, shaping our gatherings even when - especially when - they can't attend. Even the horses seem to sense these absences; they still look for people who used to bring carrots.
+                </p>
+
+                <h3 style="color: #1e4d2b; font-size: 1.3rem; margin-top: 2rem; margin-bottom: 1rem;">Looking Forward, Gently</h3>
+
+                <p>
+                    As 2026 approaches, I make plans with a lighter grip than I used to. Yes, there's strategic planning at Datadog, more conferences to attend, fences to mend before spring, music to make. But I'm learning to hold these futures gently, knowing how quickly what seems solid can shift. The farm teaches this lesson daily - you can plan all you want, but a horse with colic at midnight rewrites your tomorrow.
+                </p>
+
+                <h3 style="color: #1e4d2b; font-size: 1.3rem; margin-top: 2rem; margin-bottom: 1rem;">A Quieter Wish</h3>
+
+                <p>
+                    This holiday season, my wish for you is simple: may you find moments of genuine connection amid the noise. May you have at least one conversation that matters. May you remember those who can't be with us with more sweetness than sorrow. And may you find, in this season of early darkness, your own small lights to kindle.
+                </p>
+
+                <p>
+                    From my farm among the Oregon pines, where winter fog softens all edges and makes the familiar mysterious again, I send you my love. Not the exuberant love of youth, but the deeper, quieter affection that comes from knowing how precious and precarious it all is.
+                </p>
+
+                <p>
+                    Here's to another turn of the wheel, to empty chairs and full memories, to the bittersweet beauty of still being here to notice it all.
+                </p>
+
+                <div class="festive-decoration">
+                    ❄️ ✨ 🎄 ✨ ❄️
+                </div>
+
+                <p class="letter-signature">
+                    With gentle hopes for the season,<br><br>
+                    Andrew<br>
+                    <span style="font-family: Inter, sans-serif; font-size: 0.9rem; font-style: italic;">Southern Oregon<br>Winter 2025</span>
+                </p>
+
+                <p style="font-size: 0.95rem; font-style: italic; color: var(--text-secondary); margin-top: 2rem; padding-top: 1.5rem; border-top: 1px solid var(--border);">
+                    <strong>P.S.</strong> - If you find yourself passing through Southern Oregon, please reach out. The coffee's always on, the barn door's open, and sometimes the best antidote to winter's melancholy is an unexpected visit from an old friend who doesn't mind talking while mucking stalls.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+    </main>
+    
+    <footer class="footer">
+    <div class="container">
+        <div class="social-links">
+            <a href="https://twitter.com/andrewkrug" class="social-link" title="Twitter">
+                <span>𝕏</span>
+            </a>
+            <a href="https://linkedin.com/in/andrewkrug" class="social-link" title="LinkedIn">
+                <span>in</span>
+            </a>
+            <a href="https://github.com/andrewkrug" class="social-link" title="GitHub">
+                <span>⚡</span>
+            </a>
+            <a href="https://instagram.com/therealandrewkrug" class="social-link" title="Instagram">
+                <span>📷</span>
+            </a>
+            <a href="mailto:andrewkrug@gmail.com" class="social-link" title="Email">
+                <span>@</span>
+            </a>
+            <a href="https://farmstofirewalls.substack.com/" class="social-link" title="Newsletter" target="_blank" style="background: var(--accent-color);">
+                <span>📧</span>
+            </a>
+        </div>
+        <p>&copy; 2024 Andrew Krug. All rights reserved.</p>
+        <p>Building the future of technology, one insight at a time.</p>
+    </div>
+</footer>
+    
+    <script>
+        // Simple navigation scroll effect
+        window.addEventListener('scroll', () => {
+            const nav = document.querySelector('.nav');
+            if (window.scrollY > 100) {
+                nav.style.background = 'rgba(255, 255, 255, 0.98)';
+            } else {
+                nav.style.background = 'rgba(255, 255, 255, 0.95)';
+            }
+        });
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>

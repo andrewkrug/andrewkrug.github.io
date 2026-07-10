@@ -8,6 +8,10 @@ module.exports = function(eleventyConfig) {
   // Copy static assets
   eleventyConfig.addPassthroughCopy("src/assets");
   eleventyConfig.addPassthroughCopy("src/images");
+  eleventyConfig.addPassthroughCopy("src/CNAME");
+
+  // Current year for the footer copyright
+  eleventyConfig.addShortcode("year", () => `${new Date().getFullYear()}`);
   
   // Watch for changes in CSS
   eleventyConfig.addWatchTarget("src/assets/css/");

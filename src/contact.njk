@@ -37,6 +37,19 @@ description: Get in touch for speaking opportunities, technical consulting, writ
                         <p style="margin: 0.25rem 0;">+1 (541) 708-1002</p>
                     </div>
                 </div>
+
+                <div style="margin-top: 2rem; text-align: center; padding: 2rem; background: var(--background); border-radius: var(--border-radius-lg); border: 1px solid var(--border);">
+                    <h3 style="margin-bottom: 0.5rem; color: var(--text-primary);">📅 Book a Meeting</h3>
+                    <p style="margin-bottom: 1rem; color: var(--text-secondary);">
+                        Grab time directly on my calendar for speaking, media, coaching, and collaboration conversations.
+                    </p>
+                    <p style="margin-bottom: 1rem; font-size: 0.875rem; color: var(--text-secondary);">
+                        <strong>Please note:</strong> no sales inquiries.
+                    </p>
+                    <!-- Calendly inline widget -->
+                    <div class="calendly-inline-widget" data-url="{{ site.calendly }}" style="min-width: 320px; height: 700px;"></div>
+                    <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
+                </div>
             </div>
             
             <div>
@@ -47,6 +60,7 @@ description: Get in touch for speaking opportunities, technical consulting, writ
                     <p>Security-focused keynotes, technical talks, workshops, and training on cloud security and DevSecOps.</p>
                     <ul style="margin-top: 1rem; line-height: 1.8;">
                         <li>Cloud security conference presentations</li>
+                        <li>Securing coding agents and AI-assisted development</li>
                         <li>"Securing the Cloud Foundations" training course</li>
                         <li>DevSecOps workshops and hands-on labs</li>
                         <li>Security advocacy and community building</li>
@@ -60,6 +74,8 @@ description: Get in touch for speaking opportunities, technical consulting, writ
                         <li>Cloud Security Audit - Comprehensive security assessments</li>
                         <li>Cloud Pentest - Penetration testing for cloud environments</li>
                         <li>Cloud Architecture - Secure cloud design and implementation</li>
+                        <li>AI & Agentic Security - Securing coding agents, agentic system design, and AI workflow development</li>
+                        <li>Model Tuning & Evaluation - Tuning and evaluating models for security use cases</li>
                         <li>DevSecOps strategy and implementation</li>
                         <li>Identity and access management design</li>
                         <li>Security automation and tooling</li>
@@ -111,7 +127,7 @@ description: Get in touch for speaking opportunities, technical consulting, writ
                     <div>
                         <h4 style="margin-bottom: 0.5rem; color: var(--primary-color);">Travel Information:</h4>
                         <ul style="line-height: 1.8;">
-                            <li>Based in San Francisco Bay Area</li>
+                            <li>Based in Medford, Oregon</li>
                             <li>Available for domestic and international events</li>
                             <li>Advance booking recommended</li>
                         </ul>
@@ -123,6 +139,8 @@ description: Get in touch for speaking opportunities, technical consulting, writ
                 <h3>🎯 Popular Speaking Topics</h3>
                 <div style="margin-top: 1rem;">
                     <span style="display: inline-block; background: var(--primary-color); color: white; padding: 0.5rem 1rem; border-radius: 2rem; font-size: 0.875rem; margin: 0.25rem;">Cloud Security</span>
+                    <span style="display: inline-block; background: var(--primary-color); color: white; padding: 0.5rem 1rem; border-radius: 2rem; font-size: 0.875rem; margin: 0.25rem;">Securing Coding Agents</span>
+                    <span style="display: inline-block; background: var(--primary-color); color: white; padding: 0.5rem 1rem; border-radius: 2rem; font-size: 0.875rem; margin: 0.25rem;">AI & Agentic Security</span>
                     <span style="display: inline-block; background: var(--primary-color); color: white; padding: 0.5rem 1rem; border-radius: 2rem; font-size: 0.875rem; margin: 0.25rem;">Cybersecurity</span>
                     <span style="display: inline-block; background: var(--primary-color); color: white; padding: 0.5rem 1rem; border-radius: 2rem; font-size: 0.875rem; margin: 0.25rem;">Engineering Leadership</span>
                     <span style="display: inline-block; background: var(--primary-color); color: white; padding: 0.5rem 1rem; border-radius: 2rem; font-size: 0.875rem; margin: 0.25rem;">System Architecture</span>
@@ -159,8 +177,8 @@ description: Get in touch for speaking opportunities, technical consulting, writ
             </p>
             
             <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
-                <a href="https://linkedin.com/in/andrew-krug" class="btn btn-secondary">Connect on LinkedIn</a>
-                <a href="https://twitter.com/andrewkrug" class="btn btn-secondary">Follow on Twitter</a>
+                <a href="https://linkedin.com/in/{{ site.social.linkedin }}" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">Connect on LinkedIn</a>
+                <a href="https://twitter.com/{{ site.social.twitter }}" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">Follow on Twitter</a>
                 <a href="mailto:andrewkrug@gmail.com" class="btn btn-primary">Send Email</a>
             </div>
         </div>

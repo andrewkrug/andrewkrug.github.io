@@ -31,10 +31,31 @@ description: Find Andrew Krug at conferences, events, and speaking engagements a
 </section>
 
 
+<section class="section" id="countdown-section" style="display: none; padding-bottom: 0;">
+    <div class="container">
+        <div style="background: var(--gradient); color: white; text-align: center; padding: 3rem 2rem; border-radius: var(--border-radius-lg); box-shadow: var(--shadow-lg);">
+            <p style="text-transform: uppercase; letter-spacing: 0.15em; font-size: 0.875rem; font-weight: 600; opacity: 0.85; margin-bottom: 0.5rem;">Next Event</p>
+            <div id="countdown-days" style="font-family: var(--font-secondary); font-size: clamp(4rem, 12vw, 8rem); font-weight: 700; line-height: 1;">–</div>
+            <p id="countdown-unit" style="font-size: 1.5rem; font-weight: 600; margin-bottom: 1rem;">days to go</p>
+            <p id="countdown-event" style="font-size: 1.125rem; opacity: 0.95;"></p>
+            <a href="{{ site.calendly }}" class="btn btn-secondary" style="margin-top: 1.5rem; background: rgba(255,255,255,0.15); border: 2px solid rgba(255,255,255,0.8); color: white;" target="_blank" rel="noopener noreferrer">📅 Book a Meeting There</a>
+        </div>
+    </div>
+</section>
+
+<section class="section" id="map-section">
+    <div class="container">
+        <h2 class="section-title">Event Map</h2>
+        <div id="event-map" style="height: 480px; border-radius: var(--border-radius-lg); border: 1px solid var(--border); z-index: 1;"></div>
+    </div>
+</section>
+
 <section class="section" id="upcoming">
     <div class="container">
         <h2 class="section-title">Upcoming Events</h2>
-
+        <p class="section-subtitle">
+            Attending one of these events? <a href="{{ site.calendly }}" target="_blank" rel="noopener noreferrer" style="color: var(--primary-color);">Book a meeting</a> to connect in person — speaking, media, and community conversations welcome. No sales inquiries, please.
+        </p>
 
         <div class="card-grid">
             {% set hasUpcoming = false %}
@@ -49,7 +70,7 @@ description: Find Andrew Krug at conferences, events, and speaking engagements a
 
                 <div style="margin-bottom: 1rem;">
                     <p style="color: var(--text-secondary); margin: 0; font-weight: 500;">
-                        📅 {{ event.date }} • 📍 {{ event.location }}
+                        📅 {{ event.date }}{% if event.end_date %} → {{ event.end_date }}{% endif %} • 📍 {{ event.location }}
                     </p>
                     <p style="color: var(--text-secondary); margin: 0;">
                         🏢 {{ event.venue }}
@@ -59,8 +80,9 @@ description: Find Andrew Krug at conferences, events, and speaking engagements a
                 <h4 style="margin: 1rem 0 0.5rem; color: var(--primary-color);">{{ event.talk }}</h4>
 
                 <div style="margin-top: 1.5rem; display: flex; gap: 1rem; flex-wrap: wrap;">
-                    <a href="{{ event.website }}" class="btn btn-primary" style="font-size: 0.875rem; padding: 0.5rem 1rem;" target="_blank">Event Website</a>
-                    <button class="btn btn-secondary show-on-map" data-lat="{{ event.coordinates[0] }}" data-lng="{{ event.coordinates[1] }}" style="font-size: 0.875rem; padding: 0.5rem 1rem;">Show on Map</button>
+                    <a href="{{ site.calendly }}" class="btn btn-primary" style="font-size: 0.875rem; padding: 0.5rem 1rem;" target="_blank" rel="noopener noreferrer" title="Book a meeting with Andrew at {{ event.name }} — no sales inquiries, please">📅 Book a Meeting</a>
+                    <a href="{{ event.website }}" class="btn btn-secondary" style="font-size: 0.875rem; padding: 0.5rem 1rem;" target="_blank" rel="noopener noreferrer">Event Website</a>
+                    <button class="btn btn-secondary show-on-map" data-lat="{{ event.coordinates[0] }}" data-lng="{{ event.coordinates[1] }}" data-name="{{ event.name }}" style="font-size: 0.875rem; padding: 0.5rem 1rem;">Show on Map</button>
                 </div>
             </div>
             {% endif %}
@@ -87,7 +109,7 @@ description: Find Andrew Krug at conferences, events, and speaking engagements a
                     <div style="flex: 1;">
                         <h3 style="margin: 0 0 0.5rem;">{{ event.name }}</h3>
                         <p style="color: var(--text-secondary); margin: 0 0 0.5rem;">
-                            📅 {{ event.date }} • 📍 {{ event.location }}
+                            📅 {{ event.date }}{% if event.end_date %} → {{ event.end_date }}{% endif %} • 📍 {{ event.location }}
                         </p>
                         <p style="margin: 0 0 1rem;">
                             <strong>{{ event.talk }}</strong> at {{ event.venue }}
@@ -154,8 +176,93 @@ description: Find Andrew Krug at conferences, events, and speaking engagements a
                 </ul>
             </div>
             
-            <a href="{{ wheres_andrew.want_to_meet.url }}" class="btn btn-primary">{{ wheres_andrew.want_to_meet.cta }}</a>
+            <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+                <a href="{{ site.calendly }}" class="btn btn-primary" target="_blank" rel="noopener noreferrer">📅 Book a Meeting</a>
+                <a href="{{ wheres_andrew.want_to_meet.url }}" class="btn btn-secondary">{{ wheres_andrew.want_to_meet.cta }}</a>
+            </div>
+            <p style="margin-top: 1rem; font-size: 0.875rem; color: var(--text-secondary);">No sales inquiries, please.</p>
         </div>
     </div>
 </section>
+
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="">
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    var mapEl = document.getElementById('event-map');
+    if (!mapEl || typeof L === 'undefined') return;
+
+    var map = L.map('event-map').setView([39.8283, -98.5795], 4);
+    L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        maxZoom: 18,
+        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+    }).addTo(map);
+
+    var markers = {};
+    var points = [
+        {% for event in events.upcoming %}
+        { name: {{ event.name | dump | safe }}, detail: {{ (event.venue + " • " + event.date) | dump | safe }}, lat: {{ event.coordinates[0] }}, lng: {{ event.coordinates[1] }} },
+        {% endfor %}
+        {% for location in events.regular_locations %}
+        { name: {{ location.name | dump | safe }}, detail: {{ location.location | dump | safe }}, lat: {{ location.coordinates[0] }}, lng: {{ location.coordinates[1] }} },
+        {% endfor %}
+    ];
+
+    points.forEach(function (p) {
+        var marker = L.marker([p.lat, p.lng]).addTo(map)
+            .bindPopup('<strong>' + p.name + '</strong><br>' + p.detail);
+        markers[p.lat + ',' + p.lng] = marker;
+    });
+
+    document.querySelectorAll('.show-on-map').forEach(function (btn) {
+        btn.addEventListener('click', function () {
+            var lat = parseFloat(btn.dataset.lat);
+            var lng = parseFloat(btn.dataset.lng);
+            document.getElementById('map-section').scrollIntoView({ behavior: 'smooth' });
+            map.flyTo([lat, lng], 10);
+            var marker = markers[lat + ',' + lng];
+            if (marker) marker.openPopup();
+        });
+    });
+});
+
+// Countdown to the next upcoming event (hidden when nothing is scheduled)
+document.addEventListener('DOMContentLoaded', function () {
+    var upcomingEvents = [
+        {% for event in events.upcoming %}
+        { name: {{ event.name | dump | safe }}, location: {{ event.location | dump | safe }}, date: {{ event.date | dump | safe }}, endDate: {{ (event.end_date or event.date) | dump | safe }} },
+        {% endfor %}
+    ];
+
+    var today = new Date();
+    today.setHours(0, 0, 0, 0);
+
+    var next = upcomingEvents
+        .map(function (e) {
+            var d = new Date(e.date + 'T00:00:00');
+            var end = new Date(e.endDate + 'T00:00:00');
+            return { name: e.name, location: e.location, start: d, end: end };
+        })
+        .filter(function (e) { return e.end >= today; })
+        .sort(function (a, b) { return a.start - b.start; })[0];
+
+    if (!next) return;
+
+    var daysEl = document.getElementById('countdown-days');
+    var unitEl = document.getElementById('countdown-unit');
+    var eventEl = document.getElementById('countdown-event');
+
+    var days = Math.ceil((next.start - today) / 86400000);
+    if (days <= 0) {
+        daysEl.textContent = '🎉';
+        unitEl.textContent = 'happening now';
+    } else {
+        daysEl.textContent = days;
+        unitEl.textContent = days === 1 ? 'day to go' : 'days to go';
+    }
+    eventEl.textContent = next.name + ' • ' + next.location + ' • ' + next.start.toLocaleDateString(undefined, { month: 'long', day: 'numeric', year: 'numeric' });
+
+    document.getElementById('countdown-section').style.display = '';
+});
+</script>
 

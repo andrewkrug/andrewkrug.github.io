@@ -9,7 +9,8 @@
     "debug": "DEBUG=* eleventy"
   },
   "devDependencies": {
-    "@11ty/eleventy": "^2.0.1"
+    "@11ty/eleventy": "^2.0.1",
+    "puppeteer-core": "^25.3.0"
   },
   "keywords": [
     "eleventy",

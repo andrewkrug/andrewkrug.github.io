@@ -3,19 +3,66 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{% if title %}{{ title }} - {% endif %}{{ site.name }}</title>
+    {% set pageTitle %}{% if title %}{{ title }} — {{ site.name }}{% else %}{{ site.name }} — Cloud Security & AI Security Speaker{% endif %}{% endset %}
+    <title>{{ pageTitle }}</title>
     <meta name="description" content="{{ description or site.description }}">
-    
+    <meta name="author" content="{{ site.author.name }}">
+    <link rel="canonical" href="{{ site.url }}{{ page.url }}">
+
     <!-- Open Graph -->
-    <meta property="og:title" content="{% if title %}{{ title }} - {% endif %}{{ site.name }}">
+    <meta property="og:title" content="{{ pageTitle }}">
     <meta property="og:description" content="{{ description or site.description }}">
     <meta property="og:type" content="website">
     <meta property="og:url" content="{{ site.url }}{{ page.url }}">
-    
+    <meta property="og:site_name" content="{{ site.name }}">
+    <meta property="og:image" content="{{ site.url }}{{ og_image or '/images/hero-headshot.jpg' }}">
+
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="{% if title %}{{ title }} - {% endif %}{{ site.name }}">
+    <meta name="twitter:title" content="{{ pageTitle }}">
     <meta name="twitter:description" content="{{ description or site.description }}">
+    <meta name="twitter:image" content="{{ site.url }}{{ og_image or '/images/hero-headshot.jpg' }}">
+    <meta name="twitter:creator" content="@{{ site.social.twitter }}">
+
+    <!-- Structured data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "{{ site.author.name }}",
+      "url": "{{ site.url }}",
+      "image": "{{ site.url }}{{ site.author.image }}",
+      "jobTitle": "{{ site.author.title }}",
+      "worksFor": {
+        "@type": "Organization",
+        "name": "{{ site.author.company }}"
+      },
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Medford",
+        "addressRegion": "OR",
+        "addressCountry": "US"
+      },
+      "knowsAbout": [
+        "Cloud Security",
+        "DevSecOps",
+        "AI Security",
+        "Securing Coding Agents",
+        "Agentic System Design",
+        "AI Workflow Development",
+        "Model Tuning and Evaluation",
+        "Identity and Access Management",
+        "Incident Response"
+      ],
+      "sameAs": [
+        "https://twitter.com/{{ site.social.twitter }}",
+        "https://linkedin.com/in/{{ site.social.linkedin }}",
+        "https://github.com/{{ site.social.github }}",
+        "https://instagram.com/{{ site.social.instagram }}",
+        "https://farmstofirewalls.substack.com/"
+      ]
+    }
+    </script>
     
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -29,36 +76,41 @@
     <link rel="icon" type="image/svg+xml" href="/images/favicon.svg">
     <link rel="icon" type="image/x-icon" href="/assets/favicon.ico">
 
-    <!-- Datadog RUM -->
-    <script
-        src="https://www.datadoghq-browser-agent.com/us1/v6/datadog-rum.js"
-        type="text/javascript">
-    </script>
+    <!-- Analytics (Datadog RUM + Google Analytics) — production only, so localhost/dev
+         hosts don't hit cookie-domain rejections or pollute analytics data -->
     <script>
-        window.DD_RUM && window.DD_RUM.init({
-          clientToken: 'pubae28d391e220e8b68852f4c6579f1b3d',
-          applicationId: 'b6006ae4-6d34-405e-97ce-6a2bad8b48d2',
-          // `site` refers to the Datadog site parameter of your organization
-          // see https://docs.datadoghq.com/getting_started/site/
-          site: 'datadoghq.com',
-          service: 'andrewkrug.com',
-          env: '<ENV_NAME>',
-          // Specify a version number to identify the deployed version of your application in Datadog
-          // version: '1.0.0',
-          sessionSampleRate: 100,
-          sessionReplaySampleRate: 20,
-          trackBfcacheViews: true,
-          defaultPrivacyLevel: 'mask-user-input',
-        });
-    </script>
+        (function () {
+            if (!/(^|\.)andrewkrug\.com$/.test(location.hostname)) return;
 
-    <!-- Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-EF8DXYLJRG"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', 'G-EF8DXYLJRG');
+            // Datadog RUM
+            var rum = document.createElement('script');
+            rum.src = 'https://www.datadoghq-browser-agent.com/us1/v6/datadog-rum.js';
+            rum.defer = true;
+            rum.onload = function () {
+                window.DD_RUM && window.DD_RUM.init({
+                    clientToken: 'pubae28d391e220e8b68852f4c6579f1b3d',
+                    applicationId: 'b6006ae4-6d34-405e-97ce-6a2bad8b48d2',
+                    site: 'datadoghq.com',
+                    service: 'andrewkrug.com',
+                    env: 'production',
+                    sessionSampleRate: 100,
+                    sessionReplaySampleRate: 20,
+                    trackBfcacheViews: true,
+                    defaultPrivacyLevel: 'mask-user-input',
+                });
+            };
+            document.head.appendChild(rum);
+
+            // Google Analytics
+            var ga = document.createElement('script');
+            ga.src = 'https://www.googletagmanager.com/gtag/js?id=G-EF8DXYLJRG';
+            ga.async = true;
+            document.head.appendChild(ga);
+            window.dataLayer = window.dataLayer || [];
+            window.gtag = function () { dataLayer.push(arguments); };
+            gtag('js', new Date());
+            gtag('config', 'G-EF8DXYLJRG');
+        })();
     </script>
 </head>
 <body>
@@ -79,20 +131,6 @@
             } else {
                 nav.style.background = 'rgba(255, 255, 255, 0.95)';
             }
-        });
-        
-        // Smooth scrolling for anchor links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
-            });
         });
     </script>
 </body>

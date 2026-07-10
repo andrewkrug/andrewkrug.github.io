@@ -1,13 +1,63 @@
 upcoming:
 
+  - name: "BlackHat USA 2026"
+    location: "Las Vegas, NV"
+    coordinates: [36.0909, -115.1763]
+    date: "2026-08-04"
+    end_date: "2026-08-06"
+    type: "security"
+    talk: "Breakout: BewAIre — Detecting Malicious Pull Requests at Scale with LLMs (day/time TBD) • Arsenal: Emulate Cloud-Native Attacks with Stratus Red Team (Wed Aug 5, 1:40pm, Arsenal Station 1)"
+    venue: "Mandalay Bay"
+    website: "https://blackhat.com/us-26/arsenal/schedule/index.html#emulate-cloud-native-attacks-with-stratus-red-team-53058"
+
+  - name: "DEF CON 34"
+    location: "Las Vegas, NV"
+    coordinates: [36.1300, -115.1516]
+    date: "2026-08-06"
+    end_date: "2026-08-08"
+    type: "security"
+    talk: ""
+    venue: "Las Vegas Convention Center"
+    website: "https://defcon.org"
+
+  - name: "fwd:cloudsec EU 2026"
+    location: "London, UK"
+    coordinates: [51.5074, -0.1278]
+    date: "2026-09-07"
+    end_date: "2026-09-08"
+    type: "security"
+    talk: ""
+    venue: "TBD"
+    website: "https://fwdcloudsec.org/conference/europe/"
+
+  - name: "Datadog Detect Chicago"
+    location: "Chicago, IL"
+    coordinates: [41.8789, -87.6359]
+    date: "2026-11-02"
+    type: "security"
+    talk: ""
+    venue: "Convene Willis Tower"
+    website: "https://www.datadoghq.com/event/detect-chicago/"
+
+  - name: "AWS re:Invent 2026"
+    location: "Las Vegas, NV"
+    coordinates: [36.1212, -115.1697]
+    date: "2026-11-30"
+    end_date: "2026-12-04"
+    type: "security"
+    talk: ""
+    venue: "The Venetian"
+    website: "https://reinvent.awsevents.com"
+
   - name: "AWS re:Inforce"
-    location: "Phillidalphia, PA"
-    coordinates: [36.1699, -114.1398]
+    location: "Philadelphia, PA"
+    coordinates: [39.9526, -75.1652]
     date: "2025-06-15"
     type: "security"
     talk: "Eliminating Blindspots in your security monitoring strategy"
-    venue: "Phillidalphia Convention Center"
-    website: "https://bsideslv.org"
+    venue: "Pennsylvania Convention Center"
+    website: "https://reinforce.awsevents.com"
+    youtube: "https://www.youtube.com/watch?v=ocB506XpQT0"
 
   - name: "BSides Las Vegas"
     location: "Las Vegas, NV"
@@ -30,7 +80,7 @@ upcoming:
 recent:
   - name: "Datadog DASH"
     location: "New York, NY"
-    coordinates: [36.1699, -114.1398]
+    coordinates: [40.7570, -74.0027]
     date: "2024-03-15"
     type: "security"
     talk: ""

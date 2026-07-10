@@ -5,16 +5,81 @@ hero:
   secondary_cta: "View Topics"
 
 upcoming_talks:
-  - title: "Elmininating Blindspots in your security monitoring strategy"
+  - title: "BewAIre: Detecting Malicious Pull Requests at Scale with LLMs"
+    type: "Breakout"
+    event: "BlackHat USA 2026"
+    location: "Las Vegas, NV"
+    date: "August 2026"
+    description: "As AI coding assistants accelerate software development, the volume of pull requests at Datadog has grown to nearly 10,000 per week, increasing the risk that malicious changes slip through due to review fatigue. To address this, Datadog built BewAIre, an LLM-powered code review system designed to identify malicious source code changes introduced by threat actors. By reducing approval fatigue for developers while increasing friction for attackers, BewAIre guides human reviewers to the areas where judgment matters most, without slowing developer velocity. In this breakout session, Andrew Krug (Head of Security Advocacy) will share why BewAIre was built, how it evolved from a hackathon experiment into a production-grade internal system, and the key architectural decisions and trade-offs involved along the way. He will discuss what worked, what didn't, and the limitations the team encountered when applying LLMs to security-critical workflows. He will also cover how BewAIre is now being integrated into Datadog Code Security, and what it takes to turn an internal engineering tool into a product capability used at scale. Attendees will leave with practical lessons on building, hardening, and productizing LLM-powered systems and how you can use LLMs to minimize the security risks introduced by the new LLM-code-generation paradigm. Day and time TBD."
+    tags: ["AI Security", "LLMs", "Supply Chain Security", "DevSecOps"]
+    links:
+      - title: "BlackHat USA 2026"
+        url: "https://blackhat.com/us-26/"
+
+  - title: "Emulate Cloud-Native Attacks with Stratus Red Team"
+    type: "Arsenal"
+    event: "BlackHat USA 2026"
+    location: "Las Vegas, NV"
+    date: "August 5, 2026"
+    description: "What attacks are used by threat actors in cloud environments? How do you reproduce them easily to ensure that your threat detection mechanisms are working as expected? Stratus Red Team provides a solution to these two questions. With support for AWS, Azure, Google Cloud, Entra ID, and Kubernetes, it allows threat detection and cloud security engineering teams to reproduce common cloud attacks in a self-contained manner, along with actionable detection insights. Wednesday, August 5, 1:40pm–2:40pm at Arsenal Station 1, Business Hall."
+    tags: ["Cloud Security", "Threat Detection", "Adversary Emulation", "Open Source"]
+    links:
+      - title: "Session Details"
+        url: "https://blackhat.com/us-26/arsenal/schedule/index.html#emulate-cloud-native-attacks-with-stratus-red-team-53058"
+
+  - title: "Eliminating Blindspots in your security monitoring strategy"
     type: "Breakout"
     event: "AWS re:Inforce 2025"
-    location: "Phillidalphia, PA"
+    location: "Philadelphia, PA"
     date: "June 17, 2025"
     description: "Cloud security is being shaped by the rapid adoption of technologies like Generative AI, Kubernetes, and SaaS platforms, making comprehensive security monitoring more critical than ever. This session will explore strategies to eliminate blind spots in your security monitoring strategy. We will focus on precise instrumentation and data collection, and demonstrate an end-to-end detection strategy that includes cloud audit logs, runtime security, and data enrichment. The session will also emphasize leveraging runtime context to enhance threat detection and response. Participants will learn how to build a robust security monitoring framework that can adapt to evolving cloud technologies and ensure thorough coverage. This presentation is brought to you by Datadog, an AWS Partner."
-    tags: ["Cloud", "Cloud Security", "SIEM", "Practicioner"]
+    tags: ["Cloud", "Cloud Security", "SIEM", "Practitioner"]
+    links:
+      - title: "Watch Recording"
+        url: "https://www.youtube.com/watch?v=ocB506XpQT0"
 
 
 recent_talks:
+  - title: "Datadog Detect Virtual"
+    type: "Virtual"
+    event: "Datadog Detect"
+    location: "Virtual"
+    date: "May 20, 2026"
+    description: "The latest edition of Datadog Detect, a virtual mini-conference focused on modernizing detection and response through engineering principles. Technical sessions and live Q&A covering practical tactics for building a more resilient and scalable detection program."
+    links:
+      - title: "Watch Recording"
+        url: "https://www.youtube.com/watch?v=HiXHE25q4sc"
+
+  - title: "Securing the Cloud in the Age of AI"
+    type: "Virtual"
+    event: "Anticast"
+    location: "Virtual"
+    date: "March 19, 2026"
+    description: "An Antisyphon Anti-cast on what AI adoption means for cloud security: how AI-assisted development and agentic workflows change the attack surface, and what practitioners should do to keep guardrails in place as velocity increases."
+    links:
+      - title: "Watch Recording"
+        url: "https://www.youtube.com/watch?v=vIc_21xUpys"
+
+  - title: "Detection Engineering at Scale: Building High-Fidelity Security Operations (SEC327)"
+    type: "Conference"
+    event: "Amazon re:Invent"
+    location: "Las Vegas, NV"
+    date: "December 2025"
+    description: "How do you build security operations that scale without drowning analysts in noise? This AWS re:Invent 2025 session covers detection engineering practices for building high-fidelity security operations — treating detections as code, tuning for signal over volume, and measuring what matters in a modern SOC."
+    links:
+      - title: "Watch Recording"
+        url: "https://www.youtube.com/watch?v=9C4YSBR9tqY"
+
+  - title: "Cloud Security Adoption Curves"
+    type: "Virtual"
+    event: "Anticast"
+    location: "Virtual"
+    date: "January 22, 2025"
+    description: "An Antisyphon Anti-cast on cloud security adoption curves: how organizations mature their cloud security practices over time, where teams commonly stall, and how to prioritize the controls that move the needle at each stage."
+    links:
+      - title: "Watch Recording"
+        url: "https://www.youtube.com/watch?v=F3ZCppf-Fbw"
+
   - title: "Datadog Detect"
     type: "Conference"
     event: "Datadog Detect"
@@ -23,7 +88,7 @@ recent_talks:
     description: "Datadog Detect is a virtual mini-conference focused on modernizing detection and response through engineering principles. This event includes multiple technical sessions and a live Q&A with our expert speakers from Datadog, Snowflake, FireMon, and more. Whether you’re a security leader or hands-on engineer, you’ll leave with concrete tactics to build a more resilient and scalable detection program."
     links:
       - title: "Watch Recording"
-        url: "https://ddog.io/datadog-detect-25"
+        url: "https://www.youtube.com/watch?v=CPn9G0hLWzc"
 
   - title: "Beyond just observing, protecting your whole software supply chain (SEC406)"
     type: "Conference"
@@ -55,6 +120,16 @@ recent_talks:
       - title: "Watch Recording"
         url: "https://www.youtube.com/watch?v=PKYOCgBzXcE"
 
+  - title: "AWS Cloud: DevSecOps Essentials"
+    type: "Virtual"
+    event: "Anticast"
+    location: "Virtual"
+    date: "April 3, 2024"
+    description: "An Antisyphon Anti-cast covering the essentials of DevSecOps on AWS: the core practices, tooling, and skills security practitioners need to secure cloud development pipelines."
+    links:
+      - title: "Watch Recording"
+        url: "https://www.youtube.com/watch?v=0EevVoD2LrA"
+
 topics:
   - title: "🚀 Engineering Leadership"
     items:
@@ -77,12 +152,13 @@ topics:
       - "Observability and monitoring strategies"
       - "Platform engineering and developer experience"
 
-  - title: "🤖 AI & Future Tech"
+  - title: "🤖 AI & Agentic Security"
     items:
-      - "AI/ML integration in software systems"
-      - "The future of software development"
-      - "Emerging technologies and their impact"
-      - "Ethics in AI and technology leadership"
+      - "Securing coding agents and AI-assisted development workflows"
+      - "Agentic system design: guardrails, least privilege, and human-in-the-loop"
+      - "AI workflow development for security and engineering teams"
+      - "Model tuning and evaluation for security use cases"
+      - "Threat modeling LLM applications and prompt injection defense"
 
 call_to_action:
   title: "Let's Speak Together"

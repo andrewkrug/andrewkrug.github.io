@@ -46,7 +46,7 @@ description: Technical articles, insights, and thought leadership on software en
                 <h3>{{ article.title }}</h3>
                 {% endif %}
                 <p style="color: var(--text-secondary); margin-bottom: 1rem; font-weight: 500;">
-                    {{ article.publication }} • {{ article.date }} • {{ article.read_time }}
+                    {{ article.publication }} • {{ article.date }}{% if article.read_time %} • {{ article.read_time }}{% endif %}
                 </p>
                 <p>
                     {{ article.description }}
@@ -78,7 +78,7 @@ description: Technical articles, insights, and thought leadership on software en
                     <a href="{{ article.url }}" style="text-decoration: none; color: var(--text-primary);" {% if article.url != '#' %}target="_blank"{% endif %}>{{ article.title }}</a>
                 </h3>
                 <p style="color: var(--text-secondary); margin-bottom: 1rem; font-size: 0.875rem;">
-                    Published on {{ article.publication }} • {{ article.date }} • {{ article.read_time }}
+                    Published on {{ article.publication }} • {{ article.date }}{% if article.read_time %} • {{ article.read_time }}{% endif %}
                 </p>
                 <p style="margin-bottom: 1rem;">
                     {{ article.description }}

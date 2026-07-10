@@ -6,22 +6,56 @@ hero:
   secondary_cta: "View Articles"
 
 featured_articles:
-  - title: "State of DevSecOps Report"
+  - title: "Key learnings from the 2026 State of DevSecOps study"
     publication: "Datadog"
-    date: "May 2025"
-    read_time: "8 min read"
-    description: "The practice of DevSecOps emphasizes the need to identify and respond to security risks at each point in the software development life cycle (SDLC), and has increasingly become the standard in the tech industry. In order to assess the types of risks defenders need to be aware of and what practices they can adopt to improve their security posture, we analyzed tens of thousands of applications and container images within thousands of cloud environments."
-    tags: ["DevSecOps", "Cloud", "Security", "Practicioner"]
-    url: "https://www.datadoghq.com/state-of-devsecops/"
+    date: "March 2026"
+    featured: true
+    description: "Datadog's DevSecOps research identifies critical vulnerabilities in deployment practices, revealing that nearly all organizations have exploitable security gaps, while recommending safer dependency upgrade strategies and improved GitHub Actions security."
+    tags: ["DevSecOps", "Cloud", "Security", "Research"]
+    url: "https://www.datadoghq.com/blog/devsecops-2026-study-learnings/"
+
+  - title: "Key learnings from the 2025 State of Cloud Security study"
+    publication: "Datadog"
+    date: "November 2025"
+    description: "The 2025 State of Cloud Security research reveals why organizations should adopt multi-account AWS architectures, implement data perimeters, eliminate long-lived credentials, enforce IMDSv2, block public storage access, and limit workload permissions."
+    tags: ["Cloud Security", "AWS", "Azure", "Google Cloud"]
+    url: "https://www.datadoghq.com/blog/cloud-security-study-learnings-2025/"
 
 recent_articles:
-  - title: "State of DevSecOps Report"
+  - title: "Key learnings from the 2026 State of DevSecOps study"
     publication: "Datadog"
-    date: "May 2025"
-    read_time: "8 min read"
-    description: "The practice of DevSecOps emphasizes the need to identify and respond to security risks at each point in the software development life cycle (SDLC), and has increasingly become the standard in the tech industry. In order to assess the types of risks defenders need to be aware of and what practices they can adopt to improve their security posture, we analyzed tens of thousands of applications and container images within thousands of cloud environments."
-    tags: ["DevSecOps", "Cloud", "Security", "Practicioner"]
-    url: "https://www.datadoghq.com/state-of-devsecops/"
+    date: "March 4, 2026"
+    description: "Key takeaways from the 2026 State of DevSecOps study: exploitable security gaps in deployment practices, safer dependency upgrade strategies, and hardening GitHub Actions."
+    tags: ["DevSecOps", "Cloud", "Security", "Research"]
+    url: "https://www.datadoghq.com/blog/devsecops-2026-study-learnings/"
+
+  - title: "Highlights from AWS re:Invent 2025: Making sense of applied AI, trust, and going faster"
+    publication: "Datadog"
+    date: "December 11, 2025"
+    description: "A breakdown of the major announcements from AWS re:Invent 2025 across agentic AI capabilities and observability, security governance and threat prioritization, and developer velocity — balancing speed with safety."
+    tags: ["AWS", "AI", "Agentic AI", "Security"]
+    url: "https://www.datadoghq.com/blog/aws-reinvent-2025-recap/"
+
+  - title: "Key learnings from the 2025 State of Cloud Security study"
+    publication: "Datadog"
+    date: "November 10, 2025"
+    description: "Key takeaways from the 2025 State of Cloud Security study: multi-account architectures, data perimeters, eliminating long-lived credentials, IMDSv2 enforcement, and least-privilege workloads."
+    tags: ["Cloud Security", "AWS", "Azure", "Google Cloud"]
+    url: "https://www.datadoghq.com/blog/cloud-security-study-learnings-2025/"
+
+  - title: "Key learnings from the 2025 State of DevSecOps study"
+    publication: "Datadog"
+    date: "April 23, 2025"
+    description: "The 2025 State of DevSecOps study reveals that exploitable vulnerabilities plague web applications and supply chain attacks persist — and why teams should prioritize vulnerabilities using runtime context, infrastructure as code, and minimal container images."
+    tags: ["DevSecOps", "Cloud", "Security", "Practitioner"]
+    url: "https://www.datadoghq.com/blog/devsecops-2025-study-learnings/"
+
+  - title: "Key learnings from the 2024 State of Cloud Security study"
+    publication: "Datadog"
+    date: "October 21, 2024"
+    description: "The 2024 State of Cloud Security study shows why organizations must eliminate long-lived credentials, enforce IMDSv2, secure storage buckets, and limit workload privileges across AWS, Azure, and Google Cloud."
+    tags: ["Cloud Security", "AWS", "Azure", "Google Cloud"]
+    url: "https://www.datadoghq.com/blog/cloud-security-study-learnings-2024/"
 
 call_to_action:
   title: "Stay Updated"

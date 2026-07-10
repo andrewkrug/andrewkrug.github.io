@@ -1,15 +1,15 @@
 <nav class="nav">
     <div class="nav-container">
         <a href="/" class="nav-logo">{{ site.name }}</a>
-        <button class="nav-toggle" onclick="toggleMobileMenu()">☰</button>
+        <button class="nav-toggle" onclick="toggleMobileMenu()" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="nav-menu">☰</button>
         <ul class="nav-menu" id="nav-menu">
-            <li><a href="/" class="nav-link">Home</a></li>
-            <li><a href="/bio/" class="nav-link">About</a></li>
-            <li><a href="/speaking/" class="nav-link">Speaking</a></li>
-            <li><a href="/writing/" class="nav-link">Writing</a></li>
-            <li><a href="/wheres-andrew/" class="nav-link">Where's Andrew</a></li>
-            <li><a href="/contact/" class="nav-link">Contact</a></li>
-            <li><a href="https://farmstofirewalls.substack.com/" class="nav-link" target="_blank" style="background: var(--accent-color); color: white; padding: 0.5rem 1rem; border-radius: var(--border-radius); font-weight: 600;">Newsletter</a></li>
+            <li><a href="/" class="nav-link" {% if page.url == "/" %}aria-current="page"{% endif %}>Home</a></li>
+            <li><a href="/bio/" class="nav-link" {% if page.url == "/bio/" %}aria-current="page"{% endif %}>About</a></li>
+            <li><a href="/speaking/" class="nav-link" {% if page.url == "/speaking/" %}aria-current="page"{% endif %}>Speaking</a></li>
+            <li><a href="/writing/" class="nav-link" {% if page.url == "/writing/" %}aria-current="page"{% endif %}>Writing</a></li>
+            <li><a href="/wheres-andrew/" class="nav-link" {% if page.url == "/wheres-andrew/" %}aria-current="page"{% endif %}>Where's Andrew</a></li>
+            <li><a href="/contact/" class="nav-link" {% if page.url == "/contact/" %}aria-current="page"{% endif %}>Contact</a></li>
+            <li><a href="https://farmstofirewalls.substack.com/" class="nav-link" target="_blank" rel="noopener noreferrer" style="background: var(--accent-color); color: white; padding: 0.5rem 1rem; border-radius: var(--border-radius); font-weight: 600;">Newsletter</a></li>
         </ul>
     </div>
 </nav>
@@ -17,7 +17,9 @@
 <script>
 function toggleMobileMenu() {
     const navMenu = document.getElementById('nav-menu');
-    navMenu.classList.toggle('active');
+    const toggle = document.querySelector('.nav-toggle');
+    const isOpen = navMenu.classList.toggle('active');
+    toggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
 }
 
 // Close mobile menu when clicking on a link
@@ -27,6 +29,7 @@ document.addEventListener('DOMContentLoaded', function() {
         link.addEventListener('click', function() {
             const navMenu = document.getElementById('nav-menu');
             navMenu.classList.remove('active');
+            document.querySelector('.nav-toggle').setAttribute('aria-expanded', 'false');
         });
     });
 });

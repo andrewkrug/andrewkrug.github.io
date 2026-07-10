@@ -1,8 +1,9 @@
 {
   "name": "Andrew Krug",
-  "description": "Head of Security Advocacy at Datadog. Cloud security expert, technical leader, and speaker sharing insights on cloud security, DevSecOps, and security advocacy.",
-  "url": "https://andrewkrug.dev",
+  "description": "Head of Security Advocacy at Datadog. Cloud security expert and speaker on cloud security, DevSecOps, AI security, securing coding agents, and agentic system design.",
+  "url": "https://www.andrewkrug.com",
   "email": "andrewkrug@gmail.com",
+  "calendly": "https://calendly.com/andrewkrug/new-meeting",
   "phone": "541.708.1002",
   "social": {
     "twitter": "andrewkrug",
@@ -14,7 +15,7 @@
     "name": "Andrew Krug",
     "title": "Head of Security Advocacy",
     "company": "Datadog",
-    "bio": "Accomplished security leader with 10+ years of experience in cloud security, identity management, and technical advocacy. Currently serving as Head of Security Advocacy at Datadog, building research programs and fostering developer communities.",
+    "bio": "Accomplished security leader with 10+ years of experience in cloud security, identity management, and technical advocacy. Currently serving as Head of Security Advocacy at Datadog, building research programs and fostering developer communities. Recent work focuses on AI security: securing coding agents, agentic system design, AI workflow development, and model tuning for security use cases.",
     "image": "/images/headshot.jpg",
     "location": "Medford, OR"
   }

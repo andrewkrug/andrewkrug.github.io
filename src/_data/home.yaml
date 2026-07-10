@@ -26,6 +26,11 @@ what_i_do:
       cta: "Get In Touch"
       url: "/contact/"
 
+    - title: "🤖 AI & Agentic Security"
+      description: "Securing coding agents and AI-assisted development workflows, agentic system design with guardrails built in, AI workflow development for security teams, and model tuning and evaluation for security use cases."
+      cta: "Learn More"
+      url: "/bio/"
+
 recent_highlights:
   title: "Recent Highlights"
   

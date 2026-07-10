@@ -1,7 +1,7 @@
 ---
 layout: base.njk
 title: Speaking
-description: Technical speaking engagements, keynotes, and conference talks on software engineering, leadership, and technology innovation.
+description: Book Andrew Krug to speak on cloud security, DevSecOps, and AI security — securing coding agents, agentic system design, and model evaluation. Speaker at BlackHat USA, AWS re:Invent (9x), and BSides.
 ---
 
 <section class="full-width-hero" style="
@@ -33,6 +33,9 @@ description: Technical speaking engagements, keynotes, and conference talks on s
 <section class="section" style="background: var(--surface);">
     <div class="container">
         <h2 class="section-title">Upcoming Talks</h2>
+        <p class="section-subtitle">
+            Catching one of these events? See <a href="/wheres-andrew/" style="color: var(--primary-color);">Where's Andrew</a> to book a meeting on site.
+        </p>
 
         <div class="card-grid" id="upcoming-talks-container">
             <div id="no-upcoming-talks" class="card" style="display: none; text-align: center; padding: 3rem;">
@@ -61,7 +64,11 @@ description: Technical speaking engagements, keynotes, and conference talks on s
                 {% if talk.links %}
                 <div style="margin-top: 1.5rem; display: flex; gap: 1rem; flex-wrap: wrap;">
                     {% for link in talk.links %}
-                    <a href="{{ link.url }}" class="btn btn-secondary" style="font-size: 0.875rem; padding: 0.5rem 1rem;">{{ link.title }}</a>
+                    {% if "youtube.com" in link.url or "youtu.be" in link.url %}
+                    <a href="{{ link.url }}" class="btn btn-primary" style="font-size: 0.875rem; padding: 0.5rem 1rem;" target="_blank" rel="noopener noreferrer">📺 Watch Video</a>
+                    {% else %}
+                    <a href="{{ link.url }}" class="btn btn-secondary" style="font-size: 0.875rem; padding: 0.5rem 1rem;" target="_blank" rel="noopener noreferrer">{{ link.title }}</a>
+                    {% endif %}
                     {% endfor %}
                 </div>
                 {% endif %}
@@ -91,7 +98,11 @@ description: Technical speaking engagements, keynotes, and conference talks on s
                 {% if talk.links %}
                 <div style="margin-top: 1.5rem; display: flex; gap: 1rem; flex-wrap: wrap;">
                     {% for link in talk.links %}
-                    <a href="{{ link.url }}" class="btn btn-secondary" style="font-size: 0.875rem; padding: 0.5rem 1rem;">{{ link.title }}</a>
+                    {% if "youtube.com" in link.url or "youtu.be" in link.url %}
+                    <a href="{{ link.url }}" class="btn btn-primary" style="font-size: 0.875rem; padding: 0.5rem 1rem;" target="_blank" rel="noopener noreferrer">📺 Watch Video</a>
+                    {% else %}
+                    <a href="{{ link.url }}" class="btn btn-secondary" style="font-size: 0.875rem; padding: 0.5rem 1rem;" target="_blank" rel="noopener noreferrer">{{ link.title }}</a>
+                    {% endif %}
                     {% endfor %}
                 </div>
                 {% endif %}

@@ -58,8 +58,10 @@ description: Find Andrew Krug at conferences, events, and speaking engagements a
         </p>
 
         <div class="card-grid">
-            {% set upcomingList = events.upcoming | selectattr("date", "isFutureEvent") | list %}
-            {% for event in upcomingList %}
+            {% set hasUpcoming = false %}
+            {% for event in events.upcoming %}
+            {% if event.date | isFutureEvent %}
+            {% set hasUpcoming = true %}
             <div class="card event-card" data-type="upcoming {{ event.type }}">
                 <div style="display: flex; justify-content: between; align-items: start; margin-bottom: 1rem;">
                     <h3 style="margin: 0; flex: 1;">{{ event.name }}</h3>
@@ -83,8 +85,9 @@ description: Find Andrew Krug at conferences, events, and speaking engagements a
                     <button class="btn btn-secondary show-on-map" data-lat="{{ event.coordinates[0] }}" data-lng="{{ event.coordinates[1] }}" data-name="{{ event.name }}" style="font-size: 0.875rem; padding: 0.5rem 1rem;">Show on Map</button>
                 </div>
             </div>
+            {% endif %}
             {% endfor %}
-            {% if upcomingList.length === 0 %}
+            {% if not hasUpcoming %}
             <div class="card" style="text-align: center; padding: 3rem;">
                 <h3 style="color: var(--text-secondary); font-weight: 400;">No upcoming events scheduled</h3>
                 <p style="color: var(--text-secondary); margin-top: 1rem;">Check back later for new events, or <a href="/contact/" style="color: var(--primary-color);">reach out</a> to connect at a future conference.</p>

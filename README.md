@@ -17,8 +17,7 @@ A modern, responsive personal website built with 11ty (Eleventy) for technical i
 - **Where's Andrew** (`/wheres-andrew/`): Interactive event tracker showing upcoming conferences and speaking engagements, past events with video recordings, and regular locations. Includes map visualization for finding Andrew at events
 - **Speaking** (`/speaking/`): Speaking topics, previous engagements, testimonials, and booking information for conference organizers
 - **Writing** (`/writing/`): Collection of technical articles, blog posts, and thought leadership content with featured articles, recent publications, and links to external platforms
-- **Contact** (`/contact/`): Calendly booking widget, email links, and professional service information for collaboration, speaking requests, and general inquiries
-- **Holiday Update 2025** (`/holiday-update-2025/`): Seasonal year-end update post
+- **Contact** (`/contact/`): Contact form and professional service information for collaboration, speaking requests, and general inquiries
 
 ## Technology Stack
 
@@ -86,24 +85,18 @@ The main styles are in `src/assets/css/style.css`. The design uses CSS custom pr
 
 ### Images
 
-The images referenced by the templates live in `src/images/`:
+Replace the placeholder image references in `src/images/` with professional photos:
 
-- `hero-headshot.jpg` - Hero section profile image (home page)
-- `headshot.jpg` - Biography page image
+- `hero-portrait.jpg` - Hero section profile image
+- `professional-headshot.jpg` - Biography page image
 - `headshot-high-res.jpg` - Downloadable high-resolution headshot
-- `speaking-hero.jpg`, `writing-hero.jpg`, `wheres-andrew-hero.jpg` - Page hero backgrounds
 
 ## Project Structure
 
 ```
 ├── src/
 │   ├── _data/
-│   │   ├── site.json          # Site-wide data
-│   │   ├── events.yaml        # Event and location data (Where's Andrew)
-│   │   ├── home.yaml          # Home page data
-│   │   ├── speaking.yaml      # Speaking page data
-│   │   ├── wheres_andrew.yaml # Where's Andrew page data
-│   │   └── writing.yaml       # Writing page data
+│   │   └── site.json          # Site-wide data
 │   ├── _includes/
 │   │   ├── nav.njk            # Navigation component
 │   │   └── footer.njk         # Footer component
@@ -113,13 +106,8 @@ The images referenced by the templates live in `src/images/`:
 │   │   └── css/
 │   │       └── style.css      # Main stylesheet
 │   ├── images/                # Image assets
-│   ├── 404.njk                # 404 error page
-│   ├── holiday-update-2025.njk # Holiday update post
 │   ├── index.njk              # Home page
 │   ├── bio.njk                # Biography page
-│   ├── wheres-andrew.njk      # Where's Andrew page
-│   ├── robots.njk             # robots.txt
-│   ├── sitemap.njk            # sitemap.xml
 │   ├── speaking.njk           # Speaking page
 │   ├── writing.njk            # Writing page
 │   └── contact.njk            # Contact page

@@ -1,0 +1,48 @@
+---
+permalink: /llms.txt
+eleventyExcludeFromCollections: true
+---
+# {{ site.name }}
+
+> {{ site.description }}
+
+{{ site.author.bio }}
+
+Based in {{ site.author.location }}. This site is a personal site: a bio, a speaking
+history, a writing index, an upcoming-travel list and a contact page. It sells nothing
+and has no login, no search and no API.
+
+## Pages
+
+- [Home]({{ site.url }}/): who Andrew is, what he works on now, and where to go next.
+- [Bio]({{ site.url }}/bio/): full professional background, role history and areas of expertise. Also offers the same bio as copyable Markdown and plain text, for reuse in event programs and introductions.
+- [Speaking]({{ site.url }}/speaking/): past and upcoming talks, with venue and date for each. The longest page on the site, and the best source for conference history.
+- [Where's Andrew]({{ site.url }}/wheres-andrew/): upcoming and recent travel, one entry per event, server-rendered with dates.
+- [Writing]({{ site.url }}/writing/): index of published writing and research, with links out to where each piece lives.
+- [Contact]({{ site.url }}/contact/): how to reach Andrew — email, a Calendly link for booking time, and social profiles. There is no contact form.
+- [Holiday Update 2025]({{ site.url }}/holiday-update-2025/): a personal year-end letter, not professional content.
+
+## Facts an agent is likely to want
+
+- Name: {{ site.author.name }}
+- Role: {{ site.author.title }} at {{ site.author.company }}
+- Location: {{ site.author.location }}
+- Contact: email and social links are published on {{ site.url }}/contact/ (the address is
+  obfuscated at the edge there on purpose, so it is not repeated in this file)
+- Book time directly: {{ site.calendly }}
+- GitHub: https://github.com/{{ site.social.github }}
+- LinkedIn: https://www.linkedin.com/in/{{ site.social.linkedin }}
+- Speaking topics: cloud security, DevSecOps, AI security, securing coding agents, agentic system design
+- Notable venues: BlackHat USA, AWS re:Invent, DEF CON, fwd:cloudsec
+
+## Notes for agents
+
+- Every page is server-rendered static HTML; nothing here needs JavaScript to read. Client-side
+  scripts only add a countdown and relative-time labels on the travel page.
+- Each page carries schema.org `Person` JSON-LD in its `<head>`, which is the most reliable
+  machine-readable source for identity, role and expertise.
+- A full URL list with last-modified dates is at [{{ site.url }}/sitemap.xml]({{ site.url }}/sitemap.xml).
+- Crawling is welcome; see [{{ site.url }}/robots.txt]({{ site.url }}/robots.txt). Please attribute
+  quotes to {{ site.url }} and the page you took them from.
+- Dates on the speaking and travel pages are authored by hand and are the source of truth; do not
+  infer a schedule from anything else on the site.

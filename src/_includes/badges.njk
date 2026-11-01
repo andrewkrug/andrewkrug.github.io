@@ -11,10 +11,16 @@
   "Quoted in" byline and the "Read the coverage" button now carry that fact where
   a reader will actually see it, instead of burying it in the first five words of
   every summary. Add a kind here before the script can emit it, never after.
+
+  The icon carries its own width and height attributes on purpose. An inline <svg>
+  with a viewBox and no dimensions falls back to 300x150px, so when the stylesheet is
+  stale the quote marks render enormous rather than merely unstyled -- which is what
+  happened to anyone still holding a style.css cached from before the badge rules
+  existed. The .badge svg rule still overrides these to scale with the text.
 #}
 
 {%- macro quoteIcon() -%}
-<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><path d="M7.4 6.3C5 7.6 3.5 9.9 3.5 12.7c0 2.6 1.6 4.4 3.9 4.4 1.9 0 3.3-1.4 3.3-3.2 0-1.8-1.2-3.1-2.9-3.1-.3 0-.6.1-.9.1.3-1.5 1.5-2.7 3.1-3.5l-.6-1.1zm9.2 0c-2.4 1.3-3.9 3.6-3.9 6.4 0 2.6 1.6 4.4 3.9 4.4 1.9 0 3.3-1.4 3.3-3.2 0-1.8-1.2-3.1-2.9-3.1-.3 0-.6.1-.9.1.3-1.5 1.5-2.7 3.1-3.5l-.6-1.1z"/></svg>
+<svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><path d="M7.4 6.3C5 7.6 3.5 9.9 3.5 12.7c0 2.6 1.6 4.4 3.9 4.4 1.9 0 3.3-1.4 3.3-3.2 0-1.8-1.2-3.1-2.9-3.1-.3 0-.6.1-.9.1.3-1.5 1.5-2.7 3.1-3.5l-.6-1.1zm9.2 0c-2.4 1.3-3.9 3.6-3.9 6.4 0 2.6 1.6 4.4 3.9 4.4 1.9 0 3.3-1.4 3.3-3.2 0-1.8-1.2-3.1-2.9-3.1-.3 0-.6.1-.9.1.3-1.5 1.5-2.7 3.1-3.5l-.6-1.1z"/></svg>
 {%- endmacro -%}
 
 {#- Every badge an entry has earned. Both can apply, so neither branch is an else. -#}

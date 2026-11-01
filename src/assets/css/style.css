@@ -117,6 +117,11 @@ section[id] {
   scroll-margin-top: 5rem;
 }
 
+/* Same offset for in-post citation anchors (e.g. blog references) */
+.post-content a[id] {
+  scroll-margin-top: 5rem;
+}
+
 /* Mobile navigation toggle - hidden by default */
 .nav-toggle {
   display: none;
@@ -265,6 +270,101 @@ section[id] {
 .card p {
   color: var(--text-secondary);
   margin-bottom: 1.5rem;
+}
+
+/* Blog index: a chronological feed of posts, not a grid of tiles - each entry
+   is a row separated by a rule, so new posts read as "latest first" rather
+   than a wall of equal-weight cards. */
+.post-feed {
+  max-width: 760px;
+  margin: 3rem auto 0;
+}
+
+.post-feed-item {
+  padding: 2.5rem 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.post-feed-item.has-thumb {
+  display: flex;
+  gap: 1.75rem;
+  align-items: flex-start;
+}
+
+.post-feed-thumb {
+  flex-shrink: 0;
+  display: block;
+  width: 180px;
+  border-radius: var(--border-radius);
+  overflow: hidden;
+}
+
+.post-feed-thumb img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 1.91 / 1;
+  object-fit: cover;
+}
+
+.post-feed-body {
+  min-width: 0;
+  flex: 1;
+}
+
+@media (max-width: 600px) {
+  .post-feed-item.has-thumb {
+    flex-direction: column;
+  }
+
+  .post-feed-thumb {
+    width: 100%;
+  }
+}
+
+.post-feed-item:first-child {
+  padding-top: 0;
+}
+
+.post-feed-item:last-child {
+  border-bottom: none;
+}
+
+.post-feed-date {
+  color: var(--text-secondary);
+  font-size: 0.875rem;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+}
+
+.post-feed-item h3 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+}
+
+.post-feed-item h3 a {
+  color: var(--text-primary);
+  text-decoration: none;
+}
+
+.post-feed-item h3 a:hover {
+  color: var(--primary-color);
+}
+
+.post-feed-item p {
+  color: var(--text-secondary);
+  margin-bottom: 1rem;
+}
+
+.post-feed-link {
+  color: var(--primary-color);
+  font-weight: 600;
+  font-size: 0.9375rem;
+  text-decoration: none;
+}
+
+.post-feed-link:hover {
+  text-decoration: underline;
 }
 
 /* Bio page specific */
@@ -449,6 +549,39 @@ section[id] {
   }
 }
 
+/* full-width-hero sections (speaking, writing, blog) are sized with a fixed
+   height/min-height tuned for desktop background art. On narrow screens the
+   stacked title + description + CTAs grow taller than that fixed box, so the
+   overflow paints past the hero's bottom edge and covers the next section's
+   heading. Below this breakpoint the hero grows to fit its content instead. */
+@media (max-width: 600px) {
+  .full-width-hero {
+    height: auto !important;
+    min-height: 0 !important;
+    padding: 6.5rem 1rem 3rem !important;
+  }
+
+  .full-width-hero .hero-content {
+    padding: 2rem 1.25rem !important;
+  }
+
+  .full-width-hero h1 {
+    font-size: 1.85rem !important;
+  }
+
+  .full-width-hero p {
+    font-size: 1.05rem !important;
+  }
+
+  .full-width-hero .hero-content > div {
+    flex-direction: column !important;
+  }
+
+  .full-width-hero .hero-content > div a {
+    width: 100%;
+  }
+}
+
 /* Animations */
 @keyframes fadeInUp {
   from {
@@ -575,12 +708,87 @@ section[id] {
   color: var(--primary-color);
 }
 
+.post-content .post-disclosure {
+  color: var(--text-secondary);
+  font-size: 0.875rem;
+  font-style: italic;
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.post-content .post-callout {
+  background: var(--surface);
+  border-left: 4px solid var(--primary-color);
+  border-radius: 0 var(--border-radius) var(--border-radius) 0;
+  padding: 1.25rem 1.5rem;
+  margin: 1.5rem 0;
+}
+
+.post-content .post-callout-label {
+  color: var(--primary-color);
+  font-size: 0.8125rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  margin-bottom: 0.5rem;
+}
+
+.post-content .post-callout p:last-child {
+  margin-bottom: 0;
+}
+
 .post-content blockquote {
   border-left: 4px solid var(--primary-color);
   padding-left: 1.5rem;
   margin: 1.5rem 0;
   color: var(--text-secondary);
   font-style: italic;
+}
+
+/* A direct quote from Andrew gets his headshot alongside it, instead of a
+   plain blockquote, so it reads as him speaking rather than a citation. */
+.post-content .post-quote {
+  display: flex;
+  gap: 1.25rem;
+  align-items: flex-start;
+  background: var(--surface);
+  border-left: 4px solid var(--primary-color);
+  border-radius: 0 var(--border-radius) var(--border-radius) 0;
+  padding: 1.5rem;
+  margin: 1.5rem 0;
+}
+
+.post-content .post-quote img {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  object-fit: cover;
+  flex-shrink: 0;
+  margin: 0;
+}
+
+.post-content .post-quote blockquote {
+  margin: 0;
+  padding: 0;
+  border: none;
+  font-style: italic;
+  color: var(--text-primary);
+}
+
+.post-content .post-quote footer {
+  margin-top: 0.75rem;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+}
+
+@media (max-width: 480px) {
+  .post-content .post-quote {
+    flex-direction: column;
+    align-items: flex-start;
+  }
 }
 
 .post-content code {
@@ -604,6 +812,46 @@ section[id] {
   background: none;
   padding: 0;
   color: inherit;
+}
+
+/* KaTeX display equations can run wider than the post column on a phone;
+   scroll the equation itself rather than letting it force the whole page
+   to scroll horizontally. */
+.post-content .katex-display {
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding: 0.5rem 0;
+}
+
+/* Stat tables scroll horizontally on narrow screens rather than squeezing
+   columns unreadable. */
+.post-content table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1.5rem 0;
+  font-size: 0.95rem;
+  display: block;
+  overflow-x: auto;
+}
+
+.post-content th,
+.post-content td {
+  padding: 0.65rem 1rem;
+  text-align: left;
+  border-bottom: 1px solid var(--border);
+  white-space: nowrap;
+}
+
+.post-content th {
+  color: var(--text-secondary);
+  font-weight: 600;
+  font-size: 0.8125rem;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+}
+
+.post-content tr:last-child td {
+  border-bottom: none;
 }
 
 .post-content img {

@@ -31,18 +31,21 @@ description: Original, longer-form writing from Andrew Krug on cloud security, A
 <section class="section">
     <div class="container">
         {% if collections.posts.length %}
-        <div class="card-grid">
+        <div class="post-feed">
             {% for post in collections.posts | reverse %}
-            <div class="card">
-                <h3><a href="{{ post.url }}" style="color: var(--text-primary); text-decoration: none;">{{ post.data.title }}</a></h3>
-                <p style="color: var(--text-secondary); margin-bottom: 1rem; font-size: 0.875rem; font-weight: 500;">
-                    {{ post.date | readableDate }}
-                </p>
-                <p>{{ post.data.description }}</p>
-                <div style="margin-top: 1.5rem;">
-                    <a href="{{ post.url }}" class="btn btn-primary" style="font-size: 0.875rem; padding: 0.5rem 1rem;">Read Post</a>
+            <article class="post-feed-item{% if post.data.image %} has-thumb{% endif %}">
+                {% if post.data.image %}
+                <a href="{{ post.url }}" class="post-feed-thumb">
+                    <img src="{{ post.data.image }}" alt="" loading="lazy" />
+                </a>
+                {% endif %}
+                <div class="post-feed-body">
+                    <p class="post-feed-date">{{ post.date | readableDate }}</p>
+                    <h3><a href="{{ post.url }}">{{ post.data.title }}</a></h3>
+                    <p>{{ post.data.description }}</p>
+                    <a href="{{ post.url }}" class="post-feed-link">Read post &rarr;</a>
                 </div>
-            </div>
+            </article>
             {% endfor %}
         </div>
         {% else %}

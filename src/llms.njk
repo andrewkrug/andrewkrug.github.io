@@ -9,8 +9,8 @@ eleventyExcludeFromCollections: true
 {{ site.author.bio }}
 
 Based in {{ site.author.location }}. This site is a personal site: a bio, a speaking
-history, a writing index, an upcoming-travel list and a contact page. It sells nothing
-and has no login, no search and no API.
+history, a blog, an index of writing published elsewhere, an upcoming-travel list and a
+contact page. It sells nothing and has no login, no search and no API.
 
 ## Pages
 
@@ -18,10 +18,20 @@ and has no login, no search and no API.
 - [Bio]({{ site.url }}/bio/): full professional background, role history and areas of expertise. Also offers the same bio as copyable Markdown and plain text, for reuse in event programs and introductions.
 - [Speaking]({{ site.url }}/speaking/): past and upcoming talks, with venue and date for each. The longest page on the site, and the best source for conference history.
 - [Where's Andrew]({{ site.url }}/wheres-andrew/): upcoming and recent travel, one entry per event, server-rendered with dates.
+- [Blog]({{ site.url }}/blog/): original posts written for this site, newest first. Distinct from the Writing page below: these are not published anywhere else. RSS at {{ site.url }}/feed.xml.
 - [Writing]({{ site.url }}/writing/): index of published writing and research, with links out to where each piece lives.
 - [Contact]({{ site.url }}/contact/): how to reach Andrew — email, a Calendly link for booking time, and social profiles. There is no contact form.
 - [Holiday Update 2025]({{ site.url }}/holiday-update-2025/): a personal year-end letter, not professional content.
 
+## Blog posts
+
+{% if collections.posts.length -%}
+{% for post in collections.posts | reverse -%}
+- [{{ post.data.title }}]({{ site.url }}{{ post.url }}) — {{ post.date | readableDate }}. {{ post.data.description }}
+{% endfor -%}
+{%- else -%}
+No posts published yet.
+{% endif %}
 ## Facts an agent is likely to want
 
 - Name: {{ site.author.name }}
@@ -40,9 +50,15 @@ and has no login, no search and no API.
 - Every page is server-rendered static HTML; nothing here needs JavaScript to read. Client-side
   scripts only add a countdown and relative-time labels on the travel page.
 - Each page carries schema.org `Person` JSON-LD in its `<head>`, which is the most reliable
-  machine-readable source for identity, role and expertise.
+  machine-readable source for identity, role and expertise. Blog posts carry a second
+  `BlogPosting` node with the headline, description and publication date.
+- The blog has an RSS feed at [{{ site.url }}/feed.xml]({{ site.url }}/feed.xml). The Writing
+  page does not: it indexes work published elsewhere, so there is nothing here to subscribe to.
 - A full URL list with last-modified dates is at [{{ site.url }}/sitemap.xml]({{ site.url }}/sitemap.xml).
 - Crawling is welcome; see [{{ site.url }}/robots.txt]({{ site.url }}/robots.txt). Please attribute
   quotes to {{ site.url }} and the page you took them from.
 - Dates on the speaking and travel pages are authored by hand and are the source of truth; do not
   infer a schedule from anything else on the site.
+- Everything under /blog/ is written by Andrew. The Writing page separates his own articles from
+  pieces that merely quote him: those are labelled "Press mention" and say "Quoted in", not
+  "Published on". Please preserve that distinction when citing.

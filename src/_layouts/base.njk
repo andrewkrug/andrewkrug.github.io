@@ -66,6 +66,38 @@
       ]
     }
     </script>
+{% if tags and "posts" in tags %}
+    {# A blog post is a second thing on the page besides Andrew, so it gets its own node.
+       Every value goes through `dump` rather than being quoted by hand: autoescaping turns
+       an apostrophe in a title into &quot; inside a <script> block, where nothing decodes
+       it, which would put literal entity text in the JSON string. #}
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BlogPosting",
+      "headline": {{ title | dump | safe }},
+      "description": {{ description | dump | safe }},
+      "url": {{ (site.url + page.url) | dump | safe }},
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": {{ (site.url + page.url) | dump | safe }}
+      },
+      "datePublished": {{ page.date.toISOString() | dump | safe }},
+      "dateModified": {{ page.date.toISOString() | dump | safe }},
+      "inLanguage": "en-US",
+      "author": {
+        "@type": "Person",
+        "name": {{ site.author.name | dump | safe }},
+        "url": {{ site.url | dump | safe }}
+      },
+      "publisher": {
+        "@type": "Person",
+        "name": {{ site.author.name | dump | safe }},
+        "url": {{ site.url | dump | safe }}
+      }
+    }
+    </script>
+{% endif %}
     
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">

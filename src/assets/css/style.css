@@ -473,3 +473,64 @@ section[id] {
 .mt-2 { margin-top: 2rem; }
 .mb-1 { margin-bottom: 1rem; }
 .mb-2 { margin-bottom: 2rem; }
+/* Badges -------------------------------------------------------------------
+   A badge says what a card *is*, so the description does not have to. The two
+   kinds are deliberately different shapes: "Featured" is a filled promotion,
+   while a press mention is provenance — the piece is somebody else's writing
+   that quotes Andrew — so it is outlined and quieter, and must never be
+   mistaken for a byline. Values come from an entry's `kind` field; see
+   scripts/sync_talks_writing.py, which is what sets it. */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.2rem 0.7rem;
+  border: 1px solid transparent;
+  border-radius: 1rem;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  line-height: 1.5;
+  letter-spacing: 0.01em;
+  white-space: nowrap;
+}
+
+.badge svg {
+  width: 0.85em;
+  height: 0.85em;
+  flex-shrink: 0;
+}
+
+.badge-featured {
+  background: var(--accent-color);
+  color: #ffffff;
+}
+
+/* Amber on cream: 6.5:1 against the badge fill, clear of WCAG AA at this size. */
+.badge-mention {
+  background: #fffbeb;
+  border-color: #f3cd6b;
+  color: #8a4b08;
+}
+
+.card-heading {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.card-heading h3 {
+  margin: 0;
+  flex: 1;
+}
+
+/* The badge sits beside the heading on a card, but wraps under a long title in a
+   list row rather than squeezing it. */
+.badge-row {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+}

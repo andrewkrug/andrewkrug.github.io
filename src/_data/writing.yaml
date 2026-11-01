@@ -36,20 +36,18 @@ recent_articles:
 - title: Datadog flags rising DevSecOps risk from ageing code
   publication: securitybrief.com.au
   date: February 27, 2026
-  description: 'Quoted in this piece: The article discusses Datadog flagging rising DevSecOps risk from
-    ageing code, referencing Andrew Krug.'
-  tags:
-  - Press Mention
+  description: The article discusses Datadog flagging rising DevSecOps risk from ageing code, referencing
+    Andrew Krug.
   url: https://securitybrief.com.au/story/datadog-flags-rising-devsecops-risk-from-ageing-code
+  kind: press_mention
 - title: Datadog's State of Cloud Security 2024 Finds Room for Improvement in the Use of Long-Lived Credentials
     Across All Major Clouds
   publication: finansavisen.no
   date: October 21, 2024
-  description: 'Quoted in this piece: This article discusses Datadog''s State of Cloud Security 2024 report,
-    which focuses on long-lived credentials.'
-  tags:
-  - Press Mention
+  description: This article discusses Datadog's State of Cloud Security 2024 report, which focuses on
+    long-lived credentials.
   url: https://www.finansavisen.no/pressemeldinger/2024/10/21/9a026571-3086-4e9f-93c0-7f211b4f8d12/datadog-s-state-of-cloud-security-2024-finds-room-for-improvement-in-the-use-of-long-lived-credentials-across-all-major-clouds
+  kind: press_mention
 - title: Key learnings from the 2026 State of DevSecOps study
   publication: Datadog
   date: March 4, 2026

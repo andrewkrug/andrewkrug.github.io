@@ -1,0 +1,33 @@
+{#
+  Badges for a writing entry, in one place so the two loops on the writing page —
+  and any page added later — cannot disagree about what a press mention looks like.
+
+  An entry's `kind` field says what the entry *is*:
+    (absent) or "article"  Andrew wrote it.
+    "press_mention"        Somebody else's piece that quotes him.
+
+  scripts/sync_talks_writing.py is what sets `kind`. It also strips the scraper's
+  "Quoted in this piece: " prefix from the description, because this badge, the
+  "Quoted in" byline and the "Read the coverage" button now carry that fact where
+  a reader will actually see it, instead of burying it in the first five words of
+  every summary. Add a kind here before the script can emit it, never after.
+#}
+
+{%- macro quoteIcon() -%}
+<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><path d="M7.4 6.3C5 7.6 3.5 9.9 3.5 12.7c0 2.6 1.6 4.4 3.9 4.4 1.9 0 3.3-1.4 3.3-3.2 0-1.8-1.2-3.1-2.9-3.1-.3 0-.6.1-.9.1.3-1.5 1.5-2.7 3.1-3.5l-.6-1.1zm9.2 0c-2.4 1.3-3.9 3.6-3.9 6.4 0 2.6 1.6 4.4 3.9 4.4 1.9 0 3.3-1.4 3.3-3.2 0-1.8-1.2-3.1-2.9-3.1-.3 0-.6.1-.9.1.3-1.5 1.5-2.7 3.1-3.5l-.6-1.1z"/></svg>
+{%- endmacro -%}
+
+{#- Every badge an entry has earned. Both can apply, so neither branch is an else. -#}
+{%- macro writingBadges(article) -%}
+{%- if article.featured %}<span class="badge badge-featured">Featured</span>{% endif -%}
+{%- if article.kind == 'press_mention' %}<span class="badge badge-mention" title="Andrew is quoted in this piece; he did not write it">{{ quoteIcon() }}Press mention</span>{% endif -%}
+{%- endmacro -%}
+
+{#- "Quoted in Wired" and "Published on Wired" are different claims. -#}
+{%- macro publishedVerb(article) -%}
+{%- if article.kind == 'press_mention' %}Quoted in{% else %}Published on{% endif -%}
+{%- endmacro -%}
+
+{%- macro readLabel(article) -%}
+{%- if article.kind == 'press_mention' %}Read the coverage{% else %}Read Article{% endif -%}
+{%- endmacro -%}

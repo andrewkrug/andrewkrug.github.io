@@ -67,6 +67,27 @@ REDIRECT_HOSTS = (
 )
 REDIRECT_PATHS = ("/goto", "/url", "/aclk", "/imgres", "/interstitial")
 
+# The scrapers mark a piece that merely quotes Andrew by prefixing its summary, so every
+# press entry on the site used to open with the same five words. The page now states that
+# as a badge instead (src/_includes/badges.njk), so the prefix is stripped here and the
+# fact recorded as kind: press_mention. Longest first — the loop stops at the first match.
+PRESS_PREFIXES = (
+    "andrew krug is quoted in this piece:",
+    "andrew is quoted in this piece:",
+    "quoted in this piece:",
+    "quoted in this article:",
+    "press mention:",
+    "quoted in:",
+)
+
+# Tags that say the same thing as the badge. Compared with norm(), so case and
+# punctuation do not matter.
+PRESS_TAGS = {"press mention", "press", "media mention", "quoted", "quote"}
+
+# The kinds the writing template knows how to render. Anything else would fall through
+# to the plain-article styling and quietly claim Andrew wrote it, so it is held instead.
+WRITING_KINDS = ("article", "press_mention")
+
 MIN_DESCRIPTION_CHARS = 40
 YEAR_RE = re.compile(r"\b(19|20)\d{2}\b")
 
@@ -166,6 +187,41 @@ def description_problem(raw):
     return None
 
 
+def classify(entry):
+    """Move "this is a press mention" out of the prose and into a field the template can
+    badge. Returns a new entry: the only things removed are the scraper's prefix and a tag
+    the badge now says better. No value is invented, and a mention that loses its whole
+    description to the prefix is left empty on purpose, so validate() holds it for review."""
+    if not isinstance(entry, dict):
+        return entry
+    out = dict(entry)
+    raw = out.get("description")
+    text = str(raw).strip() if raw is not None else ""
+    mention = norm(out.get("kind")) in ("press mention", "press_mention", "pressmention")
+
+    for prefix in PRESS_PREFIXES:
+        if text[: len(prefix)].lower() == prefix:
+            text = text[len(prefix):].lstrip(" :-\u2013\u2014")
+            mention = True
+            break
+
+    tags = out.get("tags")
+    if isinstance(tags, list):
+        kept = [t for t in tags if norm(t) not in PRESS_TAGS]
+        if len(kept) != len(tags):
+            mention = True
+        if kept:
+            out["tags"] = kept
+        else:
+            out.pop("tags", None)   # keeps the template's {% if article.tags %} honest
+
+    if mention:
+        out["kind"] = "press_mention"
+    if raw is not None:
+        out["description"] = text
+    return out
+
+
 def validate(entry, kind):
     """Every reason this entry cannot be published, in the order a human would check them."""
     problems = []
@@ -187,6 +243,9 @@ def validate(entry, kind):
             problems.append(p)
 
     if kind == "writing":
+        entry_kind = entry.get("kind")
+        if entry_kind is not None and str(entry_kind) not in WRITING_KINDS:
+            problems.append(f"kind {entry_kind!r} is not one of {', '.join(WRITING_KINDS)}")
         if not blank(entry.get("url")):
             p = url_problem(entry["url"])
             if p:
@@ -314,6 +373,8 @@ def merge(path, payload, sections, kind, held, dry_run):
             title = (entry or {}).get("title") if isinstance(entry, dict) else None
             label = str(title or "<untitled>")[:70]
 
+            if kind == "writing":
+                entry = classify(entry)
             problems = validate(entry, kind)
             if problems:
                 held.append({"kind": kind, "section": section, "title": label,

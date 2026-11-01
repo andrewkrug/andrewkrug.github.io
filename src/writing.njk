@@ -4,6 +4,8 @@ title: Writing
 description: Technical articles, insights, and thought leadership on software engineering, system architecture, and technology innovation.
 ---
 
+{% import "badges.njk" as b %}
+
 <section class="full-width-hero" style="
     background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('/images/writing-hero.jpg');
     background-size: cover;
@@ -37,16 +39,17 @@ description: Technical articles, insights, and thought leadership on software en
         <div class="card-grid">
             {% for article in writing.featured_articles %}
             <div class="card">
-                {% if article.featured %}
-                <div style="display: flex; justify-content: between; align-items: start; margin-bottom: 1rem;">
-                    <h3 style="margin: 0; flex: 1;">{{ article.title }}</h3>
-                    <span style="background: var(--accent-color); color: white; padding: 0.25rem 0.75rem; border-radius: 1rem; font-size: 0.875rem; font-weight: 500;">Featured</span>
+                {% set badges = b.writingBadges(article) %}
+                {% if badges | trim %}
+                <div class="card-heading">
+                    <h3>{{ article.title }}</h3>
+                    <div class="badge-row" style="margin-bottom: 0;">{{ badges }}</div>
                 </div>
                 {% else %}
                 <h3>{{ article.title }}</h3>
                 {% endif %}
                 <p style="color: var(--text-secondary); margin-bottom: 1rem; font-weight: 500;">
-                    {{ article.publication }} • {{ article.date }}{% if article.read_time %} • {{ article.read_time }}{% endif %}
+                    {% if article.kind == 'press_mention' %}Quoted in {% endif %}{{ article.publication }} • {{ article.date }}{% if article.read_time %} • {{ article.read_time }}{% endif %}
                 </p>
                 <p>
                     {{ article.description }}
@@ -59,7 +62,7 @@ description: Technical articles, insights, and thought leadership on software en
                 </div>
                 {% endif %}
                 <div style="margin-top: 1.5rem;">
-                    <a href="{{ article.url }}" class="btn btn-primary" style="font-size: 0.875rem; padding: 0.5rem 1rem;" {% if article.url != '#' %}target="_blank"{% endif %}>Read Article</a>
+                    <a href="{{ article.url }}" class="btn btn-primary" style="font-size: 0.875rem; padding: 0.5rem 1rem;" {% if article.url != '#' %}target="_blank"{% endif %}>{{ b.readLabel(article) }}</a>
                 </div>
             </div>
             {% endfor %}
@@ -74,11 +77,13 @@ description: Technical articles, insights, and thought leadership on software en
         <div style="max-width: 800px; margin: 0 auto;">
             {% for article in writing.recent_articles %}
             <article style="{% if not loop.last %}border-bottom: 1px solid var(--border); {% endif %}padding: 2rem 0;">
+                {% set badges = b.writingBadges(article) %}
+                {% if badges | trim %}<div class="badge-row">{{ badges }}</div>{% endif %}
                 <h3 style="margin-bottom: 0.5rem;">
                     <a href="{{ article.url }}" style="text-decoration: none; color: var(--text-primary);" {% if article.url != '#' %}target="_blank"{% endif %}>{{ article.title }}</a>
                 </h3>
                 <p style="color: var(--text-secondary); margin-bottom: 1rem; font-size: 0.875rem;">
-                    Published on {{ article.publication }} • {{ article.date }}{% if article.read_time %} • {{ article.read_time }}{% endif %}
+                    {{ b.publishedVerb(article) }} {{ article.publication }} • {{ article.date }}{% if article.read_time %} • {{ article.read_time }}{% endif %}
                 </p>
                 <p style="margin-bottom: 1rem;">
                     {{ article.description }}

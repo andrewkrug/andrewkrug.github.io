@@ -34,6 +34,21 @@ module.exports = function(eleventyConfig) {
     return eventDate >= today;
   });
 
+  // "March 4, 2026" for blog post dates (feed.njk and sitemap.njk still use
+  // the raw Date object directly - this filter is only for human-facing
+  // text). timeZone: "UTC" matters: a bare "2026-11-01" in front matter
+  // parses to midnight UTC, and formatting that in a US build machine's
+  // local time prints "October 31" - the day before what's in the file.
+  eleventyConfig.addFilter("readableDate", function(dateObj) {
+    if (!dateObj) return "";
+    return new Date(dateObj).toLocaleDateString("en-US", {
+      year: "numeric",
+      month: "long",
+      day: "numeric",
+      timeZone: "UTC",
+    });
+  });
+
   return {
     dir: {
       input: "src",

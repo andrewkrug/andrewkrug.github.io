@@ -534,3 +534,80 @@ section[id] {
   gap: 0.5rem;
   margin-bottom: 0.5rem;
 }
+
+/* Blog post bodies render from Markdown, so there's no element here to hang
+   an inline style="" off of the way the rest of the site's hand-authored
+   pages do - this is the one block carrying that styling instead. */
+.post-content {
+  font-size: 1.125rem;
+  line-height: 1.8;
+  color: var(--text-primary);
+}
+
+.post-content p {
+  margin-bottom: 1.5rem;
+}
+
+.post-content h2 {
+  font-size: 1.75rem;
+  font-weight: 700;
+  margin: 2.5rem 0 1rem;
+  color: var(--text-primary);
+}
+
+.post-content h3 {
+  font-size: 1.375rem;
+  font-weight: 600;
+  margin: 2rem 0 1rem;
+  color: var(--text-primary);
+}
+
+.post-content ul,
+.post-content ol {
+  margin: 0 0 1.5rem 1.5rem;
+}
+
+.post-content li {
+  margin-bottom: 0.5rem;
+}
+
+.post-content a {
+  color: var(--primary-color);
+}
+
+.post-content blockquote {
+  border-left: 4px solid var(--primary-color);
+  padding-left: 1.5rem;
+  margin: 1.5rem 0;
+  color: var(--text-secondary);
+  font-style: italic;
+}
+
+.post-content code {
+  background: var(--surface);
+  padding: 0.2rem 0.4rem;
+  border-radius: 4px;
+  font-family: var(--font-secondary);
+  font-size: 0.9em;
+}
+
+.post-content pre {
+  background: var(--text-primary);
+  color: white;
+  padding: 1.5rem;
+  border-radius: var(--border-radius);
+  overflow-x: auto;
+  margin-bottom: 1.5rem;
+}
+
+.post-content pre code {
+  background: none;
+  padding: 0;
+  color: inherit;
+}
+
+.post-content img {
+  max-width: 100%;
+  border-radius: var(--border-radius);
+  margin: 1.5rem 0;
+}

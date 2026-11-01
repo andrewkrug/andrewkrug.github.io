@@ -15,18 +15,19 @@
     <meta property="og:type" content="website">
     <meta property="og:url" content="{{ site.url }}{{ page.url }}">
     <meta property="og:site_name" content="{{ site.name }}">
-    <meta property="og:image" content="{{ site.url }}{{ og_image or '/images/hero-headshot.jpg' }}">
+    <meta property="og:image" content="{{ site.url }}{{ og_image or image or '/images/hero-headshot.jpg' }}">
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="{{ pageTitle }}">
     <meta name="twitter:description" content="{{ description or site.description }}">
-    <meta name="twitter:image" content="{{ site.url }}{{ og_image or '/images/hero-headshot.jpg' }}">
+    <meta name="twitter:image" content="{{ site.url }}{{ og_image or image or '/images/hero-headshot.jpg' }}">
     <meta name="twitter:creator" content="@{{ site.social.twitter }}">
 
     <!-- Structured data -->
     <link rel="alternate" type="text/plain" href="/llms.txt" title="Site summary for AI agents">
     <link rel="sitemap" type="application/xml" href="/sitemap.xml">
+    <link rel="alternate" type="application/rss+xml" title="{{ site.name }} Blog" href="/feed.xml">
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",

@@ -1,0 +1,56 @@
+---
+layout: base.njk
+title: Blog
+description: Original, longer-form writing from Andrew Krug on cloud security, AI security, and building systems that don't fall over.
+---
+
+<section class="full-width-hero" style="
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('/images/writing-hero.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 50vh;
+    min-height: 380px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    position: relative;
+">
+    <div class="container" style="position: relative; z-index: 2;">
+        <div class="hero-content" style="background: rgba(0, 0, 0, 0.3); padding: 3rem 2rem; border-radius: 12px; backdrop-filter: blur(10px);">
+            <h1 style="font-size: clamp(2.5rem, 5vw, 4rem); font-weight: 700; margin-bottom: 1rem; text-shadow: 3px 3px 6px rgba(0,0,0,0.8);">Blog</h1>
+            <p style="font-size: 1.25rem; max-width: 600px; margin: 0 auto; text-shadow: 2px 2px 4px rgba(0,0,0,0.8);">
+                Original, longer-form posts that live here instead of (or alongside) the newsletter.
+            </p>
+        </div>
+    </div>
+</section>
+
+<section class="section">
+    <div class="container">
+        {% if collections.posts.length %}
+        <div class="card-grid">
+            {% for post in collections.posts | reverse %}
+            <div class="card">
+                <h3><a href="{{ post.url }}" style="color: var(--text-primary); text-decoration: none;">{{ post.data.title }}</a></h3>
+                <p style="color: var(--text-secondary); margin-bottom: 1rem; font-size: 0.875rem; font-weight: 500;">
+                    {{ post.date | readableDate }}
+                </p>
+                <p>{{ post.data.description }}</p>
+                <div style="margin-top: 1.5rem;">
+                    <a href="{{ post.url }}" class="btn btn-primary" style="font-size: 0.875rem; padding: 0.5rem 1rem;">Read Post</a>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+        {% else %}
+        <p style="text-align: center; color: var(--text-secondary);">No posts yet - check back soon.</p>
+        {% endif %}
+
+        <div style="text-align: center; margin-top: 3rem;">
+            <a href="/feed.xml" style="color: var(--text-secondary); font-size: 0.875rem;">Subscribe via RSS</a>
+        </div>
+    </div>
+</section>

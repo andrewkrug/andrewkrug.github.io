@@ -1,72 +1,122 @@
 hero:
-  title: "Technical Writing"
-  description: "I regularly write about software engineering, system architecture, and technology leadership. From Datadog SecurityLabs to industry publications, sharing knowledge through practical insights and research."
-  primary_cta: "Read Newsletter"
-  primary_url: "https://farmstofirewalls.substack.com/"
-  secondary_cta: "View Articles"
-
+  title: Technical Writing
+  description: I regularly write about software engineering, system architecture, and technology leadership.
+    From Datadog SecurityLabs to industry publications, sharing knowledge through practical insights and
+    research.
+  primary_cta: Read Newsletter
+  primary_url: https://farmstofirewalls.substack.com/
+  secondary_cta: View Articles
 featured_articles:
-  - title: "Key learnings from the 2026 State of DevSecOps study"
-    publication: "Datadog"
-    date: "March 2026"
-    featured: true
-    description: "Datadog's DevSecOps research identifies critical vulnerabilities in deployment practices, revealing that nearly all organizations have exploitable security gaps, while recommending safer dependency upgrade strategies and improved GitHub Actions security."
-    tags: ["DevSecOps", "Cloud", "Security", "Research"]
-    url: "https://www.datadoghq.com/blog/devsecops-2026-study-learnings/"
-
-  - title: "Key learnings from the 2025 State of Cloud Security study"
-    publication: "Datadog"
-    date: "November 2025"
-    description: "The 2025 State of Cloud Security research reveals why organizations should adopt multi-account AWS architectures, implement data perimeters, eliminate long-lived credentials, enforce IMDSv2, block public storage access, and limit workload permissions."
-    tags: ["Cloud Security", "AWS", "Azure", "Google Cloud"]
-    url: "https://www.datadoghq.com/blog/cloud-security-study-learnings-2025/"
-
+- title: Key learnings from the 2026 State of DevSecOps study
+  publication: Datadog
+  date: March 2026
+  featured: true
+  description: Datadog's DevSecOps research identifies critical vulnerabilities in deployment practices,
+    revealing that nearly all organizations have exploitable security gaps, while recommending safer dependency
+    upgrade strategies and improved GitHub Actions security.
+  tags:
+  - DevSecOps
+  - Cloud
+  - Security
+  - Research
+  url: https://www.datadoghq.com/blog/devsecops-2026-study-learnings/
+- title: Key learnings from the 2025 State of Cloud Security study
+  publication: Datadog
+  date: November 2025
+  description: The 2025 State of Cloud Security research reveals why organizations should adopt multi-account
+    AWS architectures, implement data perimeters, eliminate long-lived credentials, enforce IMDSv2, block
+    public storage access, and limit workload permissions.
+  tags:
+  - Cloud Security
+  - AWS
+  - Azure
+  - Google Cloud
+  url: https://www.datadoghq.com/blog/cloud-security-study-learnings-2025/
 recent_articles:
-  - title: "Key learnings from the 2026 State of DevSecOps study"
-    publication: "Datadog"
-    date: "March 4, 2026"
-    description: "Key takeaways from the 2026 State of DevSecOps study: exploitable security gaps in deployment practices, safer dependency upgrade strategies, and hardening GitHub Actions."
-    tags: ["DevSecOps", "Cloud", "Security", "Research"]
-    url: "https://www.datadoghq.com/blog/devsecops-2026-study-learnings/"
-
-  - title: "Highlights from AWS re:Invent 2025: Making sense of applied AI, trust, and going faster"
-    publication: "Datadog"
-    date: "December 11, 2025"
-    description: "A breakdown of the major announcements from AWS re:Invent 2025 across agentic AI capabilities and observability, security governance and threat prioritization, and developer velocity — balancing speed with safety."
-    tags: ["AWS", "AI", "Agentic AI", "Security"]
-    url: "https://www.datadoghq.com/blog/aws-reinvent-2025-recap/"
-
-  - title: "Key learnings from the 2025 State of Cloud Security study"
-    publication: "Datadog"
-    date: "November 10, 2025"
-    description: "Key takeaways from the 2025 State of Cloud Security study: multi-account architectures, data perimeters, eliminating long-lived credentials, IMDSv2 enforcement, and least-privilege workloads."
-    tags: ["Cloud Security", "AWS", "Azure", "Google Cloud"]
-    url: "https://www.datadoghq.com/blog/cloud-security-study-learnings-2025/"
-
-  - title: "Key learnings from the 2025 State of DevSecOps study"
-    publication: "Datadog"
-    date: "April 23, 2025"
-    description: "The 2025 State of DevSecOps study reveals that exploitable vulnerabilities plague web applications and supply chain attacks persist — and why teams should prioritize vulnerabilities using runtime context, infrastructure as code, and minimal container images."
-    tags: ["DevSecOps", "Cloud", "Security", "Practitioner"]
-    url: "https://www.datadoghq.com/blog/devsecops-2025-study-learnings/"
-
-  - title: "Key learnings from the 2024 State of Cloud Security study"
-    publication: "Datadog"
-    date: "October 21, 2024"
-    description: "The 2024 State of Cloud Security study shows why organizations must eliminate long-lived credentials, enforce IMDSv2, secure storage buckets, and limit workload privileges across AWS, Azure, and Google Cloud."
-    tags: ["Cloud Security", "AWS", "Azure", "Google Cloud"]
-    url: "https://www.datadoghq.com/blog/cloud-security-study-learnings-2024/"
-
+- title: Datadog flags rising DevSecOps risk from ageing code
+  publication: securitybrief.com.au
+  date: February 27, 2026
+  description: 'Quoted in this piece: The article discusses Datadog flagging rising DevSecOps risk from
+    ageing code, referencing Andrew Krug.'
+  tags:
+  - Press Mention
+  url: https://securitybrief.com.au/story/datadog-flags-rising-devsecops-risk-from-ageing-code
+- title: Datadog's State of Cloud Security 2024 Finds Room for Improvement in the Use of Long-Lived Credentials
+    Across All Major Clouds
+  publication: finansavisen.no
+  date: October 21, 2024
+  description: 'Quoted in this piece: This article discusses Datadog''s State of Cloud Security 2024 report,
+    which focuses on long-lived credentials.'
+  tags:
+  - Press Mention
+  url: https://www.finansavisen.no/pressemeldinger/2024/10/21/9a026571-3086-4e9f-93c0-7f211b4f8d12/datadog-s-state-of-cloud-security-2024-finds-room-for-improvement-in-the-use-of-long-lived-credentials-across-all-major-clouds
+- title: Key learnings from the 2026 State of DevSecOps study
+  publication: Datadog
+  date: March 4, 2026
+  description: 'Key takeaways from the 2026 State of DevSecOps study: exploitable security gaps in deployment
+    practices, safer dependency upgrade strategies, and hardening GitHub Actions.'
+  tags:
+  - DevSecOps
+  - Cloud
+  - Security
+  - Research
+  url: https://www.datadoghq.com/blog/devsecops-2026-study-learnings/
+- title: 'Highlights from AWS re:Invent 2025: Making sense of applied AI, trust, and going faster'
+  publication: Datadog
+  date: December 11, 2025
+  description: A breakdown of the major announcements from AWS re:Invent 2025 across agentic AI capabilities
+    and observability, security governance and threat prioritization, and developer velocity — balancing
+    speed with safety.
+  tags:
+  - AWS
+  - AI
+  - Agentic AI
+  - Security
+  url: https://www.datadoghq.com/blog/aws-reinvent-2025-recap/
+- title: Key learnings from the 2025 State of Cloud Security study
+  publication: Datadog
+  date: November 10, 2025
+  description: 'Key takeaways from the 2025 State of Cloud Security study: multi-account architectures,
+    data perimeters, eliminating long-lived credentials, IMDSv2 enforcement, and least-privilege workloads.'
+  tags:
+  - Cloud Security
+  - AWS
+  - Azure
+  - Google Cloud
+  url: https://www.datadoghq.com/blog/cloud-security-study-learnings-2025/
+- title: Key learnings from the 2025 State of DevSecOps study
+  publication: Datadog
+  date: April 23, 2025
+  description: The 2025 State of DevSecOps study reveals that exploitable vulnerabilities plague web applications
+    and supply chain attacks persist — and why teams should prioritize vulnerabilities using runtime context,
+    infrastructure as code, and minimal container images.
+  tags:
+  - DevSecOps
+  - Cloud
+  - Security
+  - Practitioner
+  url: https://www.datadoghq.com/blog/devsecops-2025-study-learnings/
+- title: Key learnings from the 2024 State of Cloud Security study
+  publication: Datadog
+  date: October 21, 2024
+  description: The 2024 State of Cloud Security study shows why organizations must eliminate long-lived
+    credentials, enforce IMDSv2, secure storage buckets, and limit workload privileges across AWS, Azure,
+    and Google Cloud.
+  tags:
+  - Cloud Security
+  - AWS
+  - Azure
+  - Google Cloud
+  url: https://www.datadoghq.com/blog/cloud-security-study-learnings-2024/
 call_to_action:
-  title: "Stay Updated"
-  description: "Want to stay up-to-date with my latest articles and insights? Follow me on your preferred platform or reach out to discuss writing opportunities."
+  title: Stay Updated
+  description: Want to stay up-to-date with my latest articles and insights? Follow me on your preferred
+    platform or reach out to discuss writing opportunities.
   links:
-    - title: "Subscribe to my newsletter Farms to Firewalls"
-      url: "https://farmstofirewalls.substack.com/"
-
-    - title: "Follow on Twitter"
-      url: "https://twitter.com/andrewkrug"
-
-    - title: "Writing Opportunities"
-      url: "/contact/"
-      primary: true
+  - title: Subscribe to my newsletter Farms to Firewalls
+    url: https://farmstofirewalls.substack.com/
+  - title: Follow on Twitter
+    url: https://twitter.com/andrewkrug
+  - title: Writing Opportunities
+    url: /contact/
+    primary: true

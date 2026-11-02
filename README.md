@@ -17,7 +17,8 @@ A modern, responsive personal website built with 11ty (Eleventy) for technical i
 - **Where's Andrew** (`/wheres-andrew/`): Interactive event tracker showing upcoming conferences and speaking engagements, past events with video recordings, and regular locations. Includes map visualization for finding Andrew at events
 - **Speaking** (`/speaking/`): Speaking topics, previous engagements, testimonials, and booking information for conference organizers
 - **Writing** (`/writing/`): Collection of technical articles, blog posts, and thought leadership content with featured articles, recent publications, and links to external platforms
-- **Contact** (`/contact/`): Contact form and professional service information for collaboration, speaking requests, and general inquiries
+- **Blog** (`/blog/`): Original longer-form posts published on this site, with an RSS feed at `/feed.xml`
+- **Contact** (`/contact/`): Contact information (email, Calendly booking link, social profiles) and professional service information for collaboration, speaking requests, and general inquiries. There is no contact form
 
 ## Technology Stack
 
@@ -30,7 +31,7 @@ A modern, responsive personal website built with 11ty (Eleventy) for technical i
 
 ### Prerequisites
 
-- Node.js (version 14 or higher)
+- Node.js (version 18 or higher, required by Eleventy 3.x)
 - npm or yarn
 
 ### Installation
@@ -87,30 +88,40 @@ The main styles are in `src/assets/css/style.css`. The design uses CSS custom pr
 
 Replace the placeholder image references in `src/images/` with professional photos:
 
-- `hero-portrait.jpg` - Hero section profile image
-- `professional-headshot.jpg` - Biography page image
+- `hero-headshot.jpg` - Home page hero profile image
+- `headshot.jpg` - Biography page image
 - `headshot-high-res.jpg` - Downloadable high-resolution headshot
 
 ## Project Structure
 
 ```
 ├── src/
-│   ├── _data/
-│   │   └── site.json          # Site-wide data
+│   ├── _data/                 # Site-wide data (site.json plus YAML content files)
 │   ├── _includes/
 │   │   ├── nav.njk            # Navigation component
-│   │   └── footer.njk         # Footer component
+│   │   ├── footer.njk         # Footer component
+│   │   └── badges.njk         # Writing/press-mention badge macros
 │   ├── _layouts/
-│   │   └── base.njk           # Base HTML template
+│   │   ├── base.njk           # Base HTML template
+│   │   └── post.njk           # Blog post template
 │   ├── assets/
 │   │   └── css/
 │   │       └── style.css      # Main stylesheet
 │   ├── images/                # Image assets
+│   ├── posts/                 # Blog post content (Markdown)
 │   ├── index.njk              # Home page
 │   ├── bio.njk                # Biography page
 │   ├── speaking.njk           # Speaking page
 │   ├── writing.njk            # Writing page
-│   └── contact.njk            # Contact page
+│   ├── wheres-andrew.njk      # Event/travel tracker page
+│   ├── blog.njk               # Blog index page
+│   ├── contact.njk            # Contact page
+│   ├── 404.njk                # Not-found page
+│   ├── holiday-update-2025.njk # Holiday letter page
+│   ├── llms.njk               # Template for /llms.txt (AI-agent site summary)
+│   ├── robots.njk             # Template for /robots.txt
+│   ├── sitemap.njk            # Template for /sitemap.xml
+│   └── feed.njk               # Template for /feed.xml (RSS)
 ├── .eleventy.js               # 11ty configuration
 ├── package.json               # Dependencies and scripts
 └── README.md                  # This file

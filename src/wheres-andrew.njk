@@ -31,7 +31,7 @@ description: Find Andrew Krug at conferences, events, and speaking engagements a
 </section>
 
 
-<section class="section" id="countdown-section" style="display: none; padding-bottom: 0;">
+<section class="section" id="countdown-section" style="padding-bottom: 0; min-height: 490px; visibility: hidden;">
     <div class="container">
         <div style="background: var(--gradient); color: white; text-align: center; padding: 3rem 2rem; border-radius: var(--border-radius-lg); box-shadow: var(--shadow-lg);">
             <p style="text-transform: uppercase; letter-spacing: 0.15em; font-size: 0.875rem; font-weight: 600; opacity: 0.85; margin-bottom: 0.5rem;">Next Event</p>
@@ -262,7 +262,7 @@ document.addEventListener('DOMContentLoaded', function () {
     }
     eventEl.textContent = next.name + ' • ' + next.location + ' • ' + next.start.toLocaleDateString(undefined, { month: 'long', day: 'numeric', year: 'numeric' });
 
-    document.getElementById('countdown-section').style.display = '';
+    document.getElementById('countdown-section').style.visibility = 'visible';
 });
 </script>
 

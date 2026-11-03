@@ -12,7 +12,7 @@ math: true
 
 PHP2Shell sounds like a drink special. It is not a drink special. On October 17, 2026, someone started exploiting it anyway. The fix didn't ship until October 21, and proof-of-concept code was already circulating twelve hours before the embargo lifted. By the time most teams finished reading the advisory, Cloudflare was counting attack attempts in the millions against roughly 37 million exposed hosts ([Moses, 2026](#ref-moses-2026); [Lakshmanan, 2026](#ref-lakshmanan-2026)). PHP2Shell wasn't a zero-day. It's a preview of how little a four-day patch window is worth once exploitation moves this fast. Good news: none of this calls for panic, just better plumbing.
 
-<img src="/images/blog/the-bugs-are-damn-near-free/img-1-flood-of-bugs.jpg" alt="" />
+<img src="/images/blog/the-bugs-are-damn-near-free/img-1-flood-of-bugs.jpg" alt="" width="1376" height="768" style="height: auto;" loading="lazy" />
 
 ## Attacker Economics
 
@@ -20,7 +20,7 @@ An attacker runs a campaign when expected value is positive:
 
 $$EV = p(\text{success}) \times \text{value} - \text{cost}$$
 
-<img src="/images/blog/the-bugs-are-damn-near-free/img-2-attacker-economics.jpg" alt="" />
+<img src="/images/blog/the-bugs-are-damn-near-free/img-2-attacker-economics.jpg" alt="" width="1376" height="768" style="height: auto;" loading="lazy" />
 
 AI has spent the last two years driving that cost term toward zero. Finding a bug, writing an exploit, and turning it into something you can run at scale all got cheaper, and the trend hasn't slowed ([Fang et al., 2024](#ref-fang-2024); [Anthropic, 2026a](#ref-anthropic-2026a); [de Moor, 2026](#ref-de-moor-2026)). That leaves defenders two levers, $p$ and $\text{value}$, owned by three teams that do not share a queue.
 
@@ -41,7 +41,7 @@ Tim Gonda opened fwd:cloudsec Europe 2026 with "Cloud Security Is Dead. Long Liv
 <p>Tim Gonda has worked cloud security from every side: building infrastructure, defending it in SOC and Fortune 500 security programs, attacking it as an offensive security director, and now leading cloud security engineering at Datadog, where he co-authored the company's public security playbook. When he says the old playbook is finished, it's not a hot take from the sidelines; it's a verdict from someone who's played all four positions.</p>
 </div>
 
-<img src="/images/blog/the-bugs-are-damn-near-free/img-3-infrastructure-security.jpg" alt="" />
+<img src="/images/blog/the-bugs-are-damn-near-free/img-3-infrastructure-security.jpg" alt="" width="1376" height="768" style="height: auto;" loading="lazy" />
 
 The incident record agrees. Storm-0558 started with a signing key in a crash dump. tj-actions started with a bot token. Nx s1ngularity started with three ordinary CI misconfigurations. Salesloft Drift went GitHub account to AWS to customer OAuth tokens. Shai-Hulud rode maintainer identity and publish automation ([Waldman, 2024](#ref-waldman-2024); [Bar et al., 2025](#ref-bar-2025); [Strumpflohner, 2025](#ref-strumpflohner-2025); [Lakshmanan, 2025](#ref-lakshmanan-2025); [Check Point Research, 2025](#ref-check-point-research-2025)). The cloud was the destination every time, never the entry point. Whoever owns identity on the control plane owns the outcome.
 
@@ -51,7 +51,7 @@ That's why access hardening ranks first in the bugonomics ROI analysis I'll publ
 
 Gonda's claim has a precondition. It holds if you've already locked down the pipeline, you catch misconfigurations, your guardrails block instead of just alert, and broken things fix themselves without a ticket. Then, in Gonda's own framing, posture is solved and the risk moves to the seams.
 
-<img src="/images/blog/the-bugs-are-damn-near-free/img-4-cant-check-boxes.jpg" alt="" />
+<img src="/images/blog/the-bugs-are-damn-near-free/img-4-cant-check-boxes.jpg" alt="" width="1376" height="768" style="height: auto;" loading="lazy" />
 
 Most organizations are not there, and the numbers that matter are not moving ([Datadog, 2025b](#ref-datadog-2025b)):
 
@@ -78,7 +78,7 @@ That's the playbook unfinished, not obsolete. The attacker's cost just dropped. 
 
 "Multi-incident per day" depends on what you count, so say what you count. In-the-wild zero-days have not moved: Google counts 90 for 2025 and a 60 to 100 band for years ([Google Threat Intelligence Group, 2026](#ref-gtig-2026)). That's one every four days, and anyone claiming "a zero-day a day" is using the wrong number.
 
-<img src="/images/blog/the-bugs-are-damn-near-free/img-5-multi-incident.jpg" alt="" />
+<img src="/images/blog/the-bugs-are-damn-near-free/img-5-multi-incident.jpg" alt="" width="1376" height="768" style="height: auto;" loading="lazy" />
 
 The honest unit is a CVE with first-known in-the-wild exploitation. VulnCheck counted 884 in 2025, about 2.4 a day, and 495 in the first half of 2026, about 2.7 a day ([VulnCheck, 2026a](#ref-vulncheck-2026a), [2026b](#ref-vulncheck-2026b)). Nearly a third were exploited on or before publication day. CISA KEV catches a fraction of them.
 
@@ -103,7 +103,7 @@ AI isn't producing more zero-days; GTIG didn't attribute a single 2025 zero-day 
 
 Each term in the equation has an owner. AppSec owns $\text{cost}$: exploit prevention and patch velocity. Cloud Security owns $\text{value}$: how little access an attacker gets, how far they can spread from there, and whether the target is even reachable in the first place. Detection owns $p$: it shortens the window and tells everyone what is actually being hit. When AI pushes $\text{cost}$ to zero, the game is $p$ and $\text{value}$, so Detection and Cloud Security set AppSec's priorities, not CVSS.
 
-<img src="/images/blog/the-bugs-are-damn-near-free/img-6-tighter-loops.jpg" alt="" />
+<img src="/images/blog/the-bugs-are-damn-near-free/img-6-tighter-loops.jpg" alt="" width="1376" height="768" style="height: auto;" loading="lazy" />
 
 About 6% of published CVEs have ever been exploited, and EPSS, built from detection telemetry, catches 93% of actually-exploited CVEs for the same investigation budget that gets CVSS only 37% ([Cyentia Institute, 2024](#ref-cyentia-2024); [Jacobs, 2025](#ref-jacobs-2025)). Only 18% of CVSS-critical findings stay critical once you check whether the system is actually in production and reachable from the internet, and Wiz finds that check removes more than half of high-priority findings ([Datadog, 2025a](#ref-datadog-2025a); [Wiz, 2026b](#ref-wiz-2026b)). 77% of organizations need more than a week to ship a critical patch while time-to-exploit is negative ([Cloud Security Alliance, 2026a](#ref-csa-2026a); [Mandiant, 2026](#ref-mandiant-2026)). Patch SLA cannot close that gap. The loops can.
 
@@ -118,7 +118,7 @@ The loops that are missing:
 
 The four levers in the bugonomics model are access hardening, exploit prevention, least privilege, and observability. Stack them and attacker expected value crosses zero. No one of the three teams owns more than two. That's the argument for the feedback loop: not because collaboration is nice, but because the equation doesn't go negative any other way. Share the queue, and the math finally works in your favor for once.
 
-<img src="/images/blog/the-bugs-are-damn-near-free/img-7-feedback.jpg" alt="" />
+<img src="/images/blog/the-bugs-are-damn-near-free/img-7-feedback.jpg" alt="" width="1376" height="768" style="height: auto;" loading="lazy" />
 
 ## Methodology
 

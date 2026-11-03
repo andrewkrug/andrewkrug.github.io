@@ -27,7 +27,7 @@ contact page. It sells nothing and has no login, no search and no API.
 
 {% if collections.posts.length -%}
 {% for post in collections.posts | reverse -%}
-- [{{ post.data.title }}]({{ site.url }}{{ post.url }}) — {{ post.date | readableDate }}. {{ post.data.description }}
+- [{{ post.data.title | safe }}]({{ site.url }}{{ post.url }}) — {{ post.date | readableDate }}. {{ post.data.description | safe }}
 {% endfor -%}
 {%- else -%}
 No posts published yet.

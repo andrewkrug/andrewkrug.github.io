@@ -538,15 +538,6 @@ section[id] {
     height: 300px !important;
   }
   
-  .map-filter {
-    font-size: 0.75rem !important;
-    padding: 0.375rem 0.75rem !important;
-  }
-  
-  /* Video button styling */
-  .btn:has-text("📺") {
-    background: #ff0000 !important;
-  }
 }
 
 /* full-width-hero sections (speaking, writing, blog) are sized with a fixed

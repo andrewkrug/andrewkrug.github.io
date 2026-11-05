@@ -1,36 +1,25 @@
 # Image Assets
 
-This directory contains the image assets for the personal website. Replace these placeholder descriptions with actual professional stock photos.
+This directory contains the image assets for andrewkrug.com.
 
-## Required Images:
+## Profile
 
-### Hero/Profile Images
-- **hero-portrait.jpg** (400x400px) - Professional headshot for hero section
-- **professional-headshot.jpg** (600x800px) - Full professional headshot for bio page
-- **headshot-high-res.jpg** (1200x1600px) - High-resolution downloadable headshot
+- **hero-headshot.jpg** - Home page hero profile image
+- **headshot.jpg** - Biography page image
+- **headshot-high-res.jpg** - Downloadable high-resolution headshot
 
-### Recommended Image Specifications:
-- **Format**: JPG or WebP for photos, PNG for graphics
-- **Quality**: High resolution, professionally lit
-- **Style**: Modern, professional, consistent lighting and background
-- **Optimization**: Compress for web use while maintaining quality
+## Page heroes
 
-### Stock Photo Suggestions:
-Look for professional stock photos that convey:
-- Technical expertise and confidence
-- Modern, approachable leadership style
-- Professional business attire
-- Clean, minimal backgrounds
-- Good lighting and high image quality
+- **speaking-hero.jpg** - Speaking page background
+- **writing-hero.jpg** - Writing/blog page background
+- **wheres-andrew-hero.jpg** - Where's Andrew page background
 
-Popular stock photo sites:
-- Unsplash (free)
-- Pexels (free)
-- Getty Images (paid)
-- Shutterstock (paid)
-- Adobe Stock (paid)
+Hero images are full-bleed CSS backgrounds rendered under a dark overlay;
+keep them under ~150KB (re-export/compress before replacing).
 
-### Image Placement:
-- Hero section: Square crop, focused on face and upper body
-- Bio page: Vertical orientation, full professional portrait
-- Downloadable headshot: Highest quality version for media use
+## Other
+
+- **holiday-pic-2025.jpg** - Holiday Update 2025 portrait
+- **blog/** - Images referenced by individual blog posts (each post points
+  at its hero via the `image` front-matter field)
+- **favicon.svg** / **assets/favicon.ico** - Site icons

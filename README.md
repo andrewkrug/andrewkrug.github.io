@@ -87,11 +87,15 @@ The main styles are in `src/assets/css/style.css`. The design uses CSS custom pr
 
 ### Images
 
-Replace the placeholder image references in `src/images/` with professional photos:
+Site photos live in `src/images/`:
 
 - `hero-headshot.jpg` - Home page hero profile image
 - `headshot.jpg` - Biography page image
 - `headshot-high-res.jpg` - Downloadable high-resolution headshot
+- `speaking-hero.jpg`, `writing-hero.jpg`, `wheres-andrew-hero.jpg` - Page hero background images
+- `holiday-pic-2025.jpg` - Holiday Update 2025 portrait
+- `blog/` - Images referenced by individual blog posts (each post points at its hero via the `image` front-matter field)
+- `favicon.svg` / `assets/favicon.ico` - Site icons
 
 ## Project Structure
 
@@ -130,13 +134,11 @@ Replace the placeholder image references in `src/images/` with professional phot
 
 ## Deployment
 
-This site can be deployed to any static hosting service:
-
-- **Netlify**: Connect your GitHub repository for automatic deployments
-- **Vercel**: Deploy with zero configuration
-- **GitHub Pages**: Use GitHub Actions for deployment
-- **AWS S3**: Static website hosting
-- **Cloudflare Pages**: Fast global deployment
+The site deploys automatically: `.github/workflows/release.yml` builds with `npm ci` +
+`npm run build` on every push to `main`/`master` and publishes `_site/` to GitHub Pages
+(the custom domain comes from `src/CNAME`). The output is a fully static site, so it can
+also be hosted on any static hosting service (Netlify, Vercel, AWS S3, Cloudflare Pages)
+by serving the `_site/` directory.
 
 ## Development Scripts
 

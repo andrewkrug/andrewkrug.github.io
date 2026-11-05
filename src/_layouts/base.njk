@@ -111,42 +111,8 @@
     <link rel="icon" type="image/svg+xml" href="/images/favicon.svg">
     <link rel="icon" type="image/x-icon" href="/assets/favicon.ico">
 
-    <!-- Analytics (Datadog RUM + Google Analytics) — production only, so localhost/dev
-         hosts don't hit cookie-domain rejections or pollute analytics data -->
-    <script>
-        (function () {
-            if (!/(^|\.)andrewkrug\.com$/.test(location.hostname)) return;
-
-            // Datadog RUM
-            var rum = document.createElement('script');
-            rum.src = 'https://www.datadoghq-browser-agent.com/us1/v6/datadog-rum.js';
-            rum.defer = true;
-            rum.onload = function () {
-                window.DD_RUM && window.DD_RUM.init({
-                    clientToken: 'pubae28d391e220e8b68852f4c6579f1b3d',
-                    applicationId: 'b6006ae4-6d34-405e-97ce-6a2bad8b48d2',
-                    site: 'datadoghq.com',
-                    service: 'andrewkrug.com',
-                    env: 'production',
-                    sessionSampleRate: 100,
-                    sessionReplaySampleRate: 20,
-                    trackBfcacheViews: true,
-                    defaultPrivacyLevel: 'mask-user-input',
-                });
-            };
-            document.head.appendChild(rum);
-
-            // Google Analytics
-            var ga = document.createElement('script');
-            ga.src = 'https://www.googletagmanager.com/gtag/js?id=G-EF8DXYLJRG';
-            ga.async = true;
-            document.head.appendChild(ga);
-            window.dataLayer = window.dataLayer || [];
-            window.gtag = function () { dataLayer.push(arguments); };
-            gtag('js', new Date());
-            gtag('config', 'G-EF8DXYLJRG');
-        })();
-    </script>
+    <!-- Analytics: RUM is injected at the edge by Cloudflare (app id
+         b6006ae4-6d34-405e-97ce-6a2bad8b48d2, service andrewkrug.com) — do not add it here. -->
 </head>
 <body>
     {% include "nav.njk" %}

@@ -2,7 +2,7 @@ ROOT_DIR	:= $(shell dirname $(realpath $(lastword $(MAKEFILE_LIST))))
 
 all:
 	@echo 'Available make targets:'
-	@grep '^[^#[:space:]^\.PHONY.*].*:' Makefile
+	@grep '^[^#[:space:].A-Z].*:' Makefile
 
 .PHONY: setup
 setup: 

@@ -44,7 +44,7 @@ description: Book Andrew Krug to speak on cloud security, DevSecOps, and AI secu
             </div>
             {% for talk in speaking.upcoming_talks %}
             <div class="card talk-card" data-date="{{ talk.date }}" data-section="upcoming">
-                <div style="display: flex; justify-content: between; align-items: start; margin-bottom: 1rem;">
+                <div style="display: flex; justify-content: space-between; align-items: start; margin-bottom: 1rem;">
                     <h3 style="margin: 0; flex: 1;">{{ talk.title }}</h3>
                     <span style="background: {% if talk.type == 'Keynote' %}var(--accent-color){% elif talk.type == 'Technical' %}var(--primary-color){% else %}var(--primary-color){% endif %}; color: white; padding: 0.25rem 0.75rem; border-radius: 1rem; font-size: 0.875rem; font-weight: 500;">{{ talk.type }}</span>
                 </div>
@@ -85,7 +85,7 @@ description: Book Andrew Krug to speak on cloud security, DevSecOps, and AI secu
         <div class="card-grid" id="recent-talks-container">
             {% for talk in speaking.recent_talks %}
             <div class="card talk-card" data-date="{{ talk.date }}" data-section="recent">
-                <div style="display: flex; justify-content: between; align-items: start; margin-bottom: 1rem;">
+                <div style="display: flex; justify-content: space-between; align-items: start; margin-bottom: 1rem;">
                     <h3 style="margin: 0; flex: 1;">{{ talk.title }}</h3>
                     <span style="background: {% if talk.type == 'Keynote' %}var(--accent-color){% elif talk.type == 'Workshop' %}var(--primary-color){% elif talk.type == 'Conference' %}var(--accent-color){% elif talk.type == 'Virtual' %}var(--primary-color){% else %}var(--primary-color){% endif %}; color: white; padding: 0.25rem 0.75rem; border-radius: 1rem; font-size: 0.875rem; font-weight: 500;">{{ talk.type }}</span>
                 </div>

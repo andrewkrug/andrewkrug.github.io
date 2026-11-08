@@ -63,7 +63,7 @@ description: Find Andrew Krug at conferences, events, and speaking engagements a
             {% if event.date | isFutureEvent %}
             {% set hasUpcoming = true %}
             <div class="card event-card" data-type="upcoming {{ event.type }}">
-                <div style="display: flex; justify-content: between; align-items: start; margin-bottom: 1rem;">
+                <div style="display: flex; justify-content: space-between; align-items: start; margin-bottom: 1rem;">
                     <h3 style="margin: 0; flex: 1;">{{ event.name }}</h3>
                     <span style="background: var(--accent-color); color: white; padding: 0.25rem 0.75rem; border-radius: 1rem; font-size: 0.875rem; font-weight: 500;">{{ event.type | capitalize }}</span>
                 </div>
@@ -105,7 +105,7 @@ description: Find Andrew Krug at conferences, events, and speaking engagements a
             {% for event in events.upcoming %}
             {% if event.date | isPastEvent %}
             <div class="card event-card" data-type="past {{ event.type }}" style="margin-bottom: 1.5rem;">
-                <div style="display: flex; justify-content: between; align-items: start;">
+                <div style="display: flex; justify-content: space-between; align-items: start;">
                     <div style="flex: 1;">
                         <h3 style="margin: 0 0 0.5rem;">{{ event.name }}</h3>
                         <p style="color: var(--text-secondary); margin: 0 0 0.5rem;">

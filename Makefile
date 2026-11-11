@@ -16,8 +16,8 @@ clean:
 
 .PHONY: preview
 preview:
-	npm run serve
 	@echo 'The site is now being served at http://localhost:8080'
+	npm run serve
 
 .PHONY: run
 run: preview

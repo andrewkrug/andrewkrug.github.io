@@ -20,6 +20,7 @@ A modern, responsive personal website built with 11ty (Eleventy) for technical i
 - **Blog** (`/blog/`): Original longer-form posts published on this site, with an RSS feed at `/feed.xml`
 - **Contact** (`/contact/`): Contact information (email, Calendly booking link, social profiles) and professional service information for collaboration, speaking requests, and general inquiries. There is no contact form
 - **Holiday Update 2025** (`/holiday-update-2025/`): Personal year-end letter, separate from the professional content
+- **404** (`/404.html`): Not-found page (excluded from the sitemap and collections)
 
 ## Technology Stack
 

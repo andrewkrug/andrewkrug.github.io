@@ -146,6 +146,11 @@ by serving the `_site/` directory.
 - `npm start` or `npm run serve` - Start development server
 - `npm run build` - Build for production
 - `npm run debug` - Run with debug output
+- `python3 scripts/sync_talks_writing.py [--dry-run|--report-only|--strict]` - Pull approved
+  talks/writing from the n8n scraper webhooks into `src/_data/`. Only complete entries are merged;
+  incomplete ones are held back with a reason. Without a flag it also build-checks, commits and
+  pushes (which deploys). Run on a schedule by the host LaunchAgent
+  `~/Library/LaunchAgents/com.krug.talks-writing-sync.plist`, not by anything in this repo.
 
 ## Browser Support
 
